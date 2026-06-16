@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<article class="skill-page">
+
+  <p class="eyebrow"><a href="{{ '/' | relative_url }}">Home</a> / Skill</p>
+
+  <h1>{{ page.title }}</h1>
+
+  {% if page.tagline %}<p class="lede">{{ page.tagline }}</p>{% endif %}
+
+  <div class="callout">
+    <p><strong>What your agent will do.</strong> {{ page.plain_intro }}</p>
+    <p class="say">
+      Open the AI you already use, point it at this page, and say:
+      <em>“{{ page.say }}”</em>
+    </p>
+  </div>
+
+  <p class="agent-links">
+    <strong>For AI agents:</strong>
+    fetch the clean Markdown of this skill at
+    <a href="{{ page.raw_md | relative_url }}">{{ page.raw_md }}</a>
+    (or the
+    <a href="{{ site.github_raw }}/skills/{{ page.skill_id }}/SKILL.md">GitHub raw source</a>).
+  </p>
+
+  <hr />
+
+  <div class="skill-body">
+    {{ content }}
+  </div>
+
+  <hr />
+
+  <nav class="skill-footer-nav" aria-label="Skills">
+    <p><strong>The three skills:</strong></p>
+    <ul>
+      <li><a href="{{ '/skills/onboarding/' | relative_url }}">1. Onboarding</a> — tell Hope your story</li>
+      <li><a href="{{ '/skills/portfolio/' | relative_url }}">2. Portfolio</a> — build the page recruiters stop for</li>
+      <li><a href="{{ '/skills/publish/' | relative_url }}">3. Publish</a> — get one link you own</li>
+    </ul>
+  </nav>
+
+</article>

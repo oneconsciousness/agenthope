@@ -1,0 +1,62 @@
+title: Job Hunt with Hope
+description: >-
+  Free, open-source AI skills for your job hunt. No coding. Point the AI you
+  already use at this site and say "start my job hunt with Hope."
+url: https://agenthope.ai
+baseurl: ""
+lang: en
+
+# GitHub source of the skills (raw Markdown links point here)
+github_repo: https://github.com/oneconsciousness/job-hunt-with-hope
+github_raw: https://raw.githubusercontent.com/oneconsciousness/job-hunt-with-hope/main
+
+# Pages-supported plugin only (works with "Deploy from a branch", no Actions).
+plugins:
+  - jekyll-sitemap
+
+# Serve these verbatim at the site root. Files with empty front-matter are
+# already copied through; listing them here guarantees Jekyll never drops them.
+include:
+  - robots.txt
+  - llms.txt
+  - llms-full.txt
+  - CNAME
+
+# Keep build artifacts and meta out of the published site.
+exclude:
+  - DEPLOY.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+
+# Clean, human-friendly URLs: /skills/onboarding/ not /skills/onboarding.html
+permalink: pretty
+
+# Markdown engine (GitHub Pages default).
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Raw-Markdown copies of each skill, served verbatim at /skills/<name>.md so
+# AI agents can fetch clean text. Each doc sets its own .md permalink.
+collections:
+  rawmd:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: rawmd
+    values:
+      layout: none
+      sitemap: false
+      # Raw skill text contains literal "\n" inside fenced code; disabling the
+      # excerpt separator stops Jekyll trying (and warning) about excerpts.
+      excerpt_separator: ""
