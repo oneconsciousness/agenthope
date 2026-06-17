@@ -224,7 +224,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.4em 0; }
 .topbar-inner { max-width: var(--shell-max); height: 100%; margin: 0 auto; padding: 0 var(--gutter); display: flex; align-items: center; gap: 14px; }
 .brand { display: inline-flex; align-items: center; gap: 9px; font-weight: 750; letter-spacing: -0.01em; color: var(--text-primary); font-size: 1.04rem; }
 .brand:hover { color: var(--text-primary); text-decoration: none; }
-.brand-mark { color: var(--accent); filter: drop-shadow(0 0 6px var(--accent-edge)); font-size: 1.05em; }
+.brand-logo { width: 26px; height: 26px; border-radius: 7px; border: 1px solid var(--border); flex-shrink: 0; display: block; }
 .topbar-right { margin-left: auto; display: flex; align-items: center; gap: 6px 20px; }
 .topbar-nav { display: flex; gap: 22px; font-size: 0.92rem; font-weight: 500; }
 .topbar-nav a { color: var(--text-secondary); }

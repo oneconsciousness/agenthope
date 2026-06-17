@@ -30,7 +30,8 @@
   <meta name="twitter:description" content="{{ page.description | default: site.description | strip_newlines }}" />
   {% if page.og_image %}<meta name="twitter:image" content="{{ page.og_image | absolute_url }}" />{% endif %}
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23D97706' d='M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" href="{{ '/assets/img/app-icon.png' | relative_url }}" />
+  <link rel="apple-touch-icon" href="{{ '/assets/img/app-icon.png' | relative_url }}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" />
@@ -46,7 +47,7 @@
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
       <a class="brand" href="{{ '/' | relative_url }}">
-        <span class="brand-mark" aria-hidden="true">✦</span>
+        <img class="brand-logo" src="{{ '/assets/img/app-icon.png' | relative_url }}" alt="" width="26" height="26" />
         <span class="brand-name">Job Hunt with Hope</span>
       </a>
       <div class="topbar-right">
