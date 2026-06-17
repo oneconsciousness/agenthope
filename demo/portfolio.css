@@ -220,6 +220,15 @@ body.dc-open .demo-controls { transform: translateX(0); box-shadow: 0 12px 48px 
 }
 .dc-toggle:hover { background: var(--accent-orange-bg); color: var(--accent-orange); }
 .dc-toggle .material-symbols-rounded { font-size: 20px; }
+.dc-home {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
+  width: 46px; padding: 7px 0; border-radius: 11px; flex-shrink: 0;
+  background: var(--accent-orange); color: #fff; text-decoration: none; text-align: center;
+  transition: filter 0.15s, transform 0.15s;
+}
+.dc-home:hover { filter: brightness(1.07); transform: translateY(-1px); }
+.dc-home .material-symbols-rounded { font-size: 20px; }
+.dc-home-label { font-family: var(--font-sans); font-size: 9px; font-weight: 700; letter-spacing: 0.02em; line-height: 1; }
 .persona-strip-sep { width: 26px; height: 1px; background: var(--border-default); flex-shrink: 0; }
 .persona-strip-list { display: flex; flex-direction: column; align-items: center; gap: 9px; }
 .persona-strip .persona-btn {
