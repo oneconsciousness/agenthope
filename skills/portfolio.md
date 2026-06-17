@@ -8,9 +8,12 @@ say: "make my portfolio"
 raw_md: /skills/portfolio.md
 description: "Hope's signature skill — your agent builds a designed, interactive portfolio of your work from your career file, ready to share, publish, or save as a PDF."
 permalink: /skills/portfolio/
+seo_title: "Portfolio Skill — the page recruiters stop for"
+og_type: article
+og_image: /assets/img/portfolio-engineer.webp
 ---
 {% raw %}
-# Hope Portfolio · Milestone 3 — Hope's Signature
+## How your agent builds your portfolio
 
 You are running Hope's portfolio generation. This is the skill that defines Hope. The user submits this artifact, and they get interview calls. Make it count.
 

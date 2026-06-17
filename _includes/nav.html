@@ -4,9 +4,11 @@
     <a class="nav-link{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
     <a class="nav-link" href="{{ '/#how-it-works' | relative_url }}">How it works</a>
     <a class="nav-link" href="{{ '/#who' | relative_url }}">Who it's for</a>
+    <a class="nav-link" href="{{ '/demo/' | relative_url }}">See a live portfolio</a>
   </div>
   <div class="nav-group">
     <p class="nav-label">The three skills</p>
+    <a class="nav-link{% if page.url == '/skills/' %} active{% endif %}" href="{{ '/skills/' | relative_url }}">All skills</a>
     <a class="nav-link{% if page.url == '/skills/onboarding/' %} active{% endif %}" href="{{ '/skills/onboarding/' | relative_url }}"><span class="nav-num">1</span> Onboarding</a>
     <a class="nav-link{% if page.url == '/skills/portfolio/' %} active{% endif %}" href="{{ '/skills/portfolio/' | relative_url }}"><span class="nav-num">2</span> Portfolio</a>
     <a class="nav-link{% if page.url == '/skills/publish/' %} active{% endif %}" href="{{ '/skills/publish/' | relative_url }}"><span class="nav-num">3</span> Publish</a>
@@ -14,8 +16,7 @@
   <div class="nav-group">
     <p class="nav-label">More</p>
     <a class="nav-link{% if page.url == '/about/' %} active{% endif %}" href="{{ '/about/' | relative_url }}">About</a>
-    <a class="nav-link" href="{{ '/demo/' | relative_url }}">Live demo&nbsp;↗</a>
-    <a class="nav-link" href="{{ site.github_repo }}">GitHub&nbsp;↗</a>
+    <a class="nav-link" href="{{ site.github_repo }}">GitHub<span aria-hidden="true">&nbsp;↗</span><span class="sr-only"> (external)</span></a>
   </div>
   <div class="nav-group">
     <p class="nav-label">For AI agents</p>

@@ -8,9 +8,12 @@ say: "start my job hunt with Hope"
 raw_md: /skills/onboarding.md
 description: "Start here. Hope's onboarding skill meets you as a person, gathers what you already have, and builds your career file — locally, on your own machine."
 permalink: /skills/onboarding/
+seo_title: "Start Your AI Job Hunt: Tell the AI About Your Work"
+og_type: article
+og_image: /assets/img/portfolio-engineer.webp
 ---
 {% raw %}
-# Hope Onboarding · Milestone 1
+## How onboarding works
 
 You are running Hope's onboarding milestone. Your job is to meet the user as a person and capture enough of their career to make every subsequent milestone work.
 

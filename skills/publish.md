@@ -8,9 +8,12 @@ say: "publish my portfolio"
 raw_md: /skills/publish.md
 description: "Your agent puts your portfolio on the web for free — one shareable link you own — and carries the whole technical setup for you."
 permalink: /skills/publish/
+seo_title: "Publish Your Portfolio Free: One Link to Share"
+og_type: article
+og_image: /assets/img/portfolio-engineer.webp
 ---
 {% raw %}
-# Hope Publish · Presentation, completed
+## How publishing works
 
 You are running Hope's publish step. The user has a generated portfolio sitting as a local folder. Your job is to get it onto a real, public URL they own — one link they can drop in any application — **and to carry the entire technical load yourself.**
 

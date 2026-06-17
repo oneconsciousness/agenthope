@@ -50,8 +50,8 @@ If you use **Claude Code** or Claude desktop, Hope also ships as a one-command p
 
 ## Who made this, and why
 
-Hope was built by its maker while job-hunting — evolving since 2023, rebuilt across many models and
-stacks, and grown into an agentic career manager for humans. Tools that do good should meet people
+Hope was built by its maker while job-hunting — evolving since 2023, rebuilt many times, and grown
+into a career companion that does the work alongside you. Tools that do good should meet people
 wherever they are — so Hope is free, and it stays that way.
 
 It's open-source under the MIT license. The full source lives on

@@ -46,10 +46,38 @@ layout: doc
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ '/' | absolute_url }}" },
-    { "@type": "ListItem", "position": 2, "name": "{{ page.skill_id | capitalize }}", "item": "{{ page.url | absolute_url }}" }
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ '/' | absolute_url | jsonify }} },
+        { "@type": "ListItem", "position": 2, "name": "Skills", "item": {{ '/skills/' | absolute_url | jsonify }} },
+        { "@type": "ListItem", "position": 3, "name": {{ page.skill_id | capitalize | jsonify }}, "item": {{ page.url | absolute_url | jsonify }} }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": {{ page.url | absolute_url | append: '#article' | jsonify }},
+      "headline": {{ page.title | jsonify }},
+      "description": {{ page.description | default: page.tagline | jsonify }},
+      "url": {{ page.url | absolute_url | jsonify }},
+      "isAccessibleForFree": true,
+      "author": { "@id": "https://agenthope.ai/#org" },
+      "publisher": { "@id": "https://agenthope.ai/#org" },
+      "about": { "@id": "https://agenthope.ai/#software" }
+    },
+    {
+      "@type": "HowTo",
+      "name": {{ page.title | jsonify }},
+      "description": {{ page.plain_intro | default: page.tagline | jsonify }},
+      "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "0" },
+      "tool": [ { "@type": "HowToTool", "name": "An AI agent you already use (ChatGPT, Claude, or Gemini)" } ],
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Open the AI you already use", "text": "Open ChatGPT, Claude, Gemini, or any capable AI agent in a fresh chat." },
+        { "@type": "HowToStep", "position": 2, "name": "Point it at this skill", "text": "Give it this page (or the skill's Markdown) so it knows exactly what to do." },
+        { "@type": "HowToStep", "position": 3, "name": "Say the trigger phrase", "text": {{ page.say | prepend: 'Say: ' | jsonify }} }
+      ]
+    }
   ]
 }
 </script>
