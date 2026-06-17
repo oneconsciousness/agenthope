@@ -1,92 +1,304 @@
 ---
-layout: default
-title: Job Hunt with Hope
-description: AI already changed hiring. Use it to get hired. Free job-hunt skills for any AI agent — no coding, no catch. Point the AI you already use at this site.
+layout: home
+title: "Use AI to Build Your Job-Hunt Portfolio & Résumé — Free"
+description: "Free, open-source AI skills that turn your work into a designed portfolio, a recruiter-ready résumé, and one shareable link. No coding. Your data stays on your computer."
+og_image: /assets/img/portfolio-hero.png
 ---
 
-<section class="hero reveal">
-  <p class="kicker">Free · Open source · Works with any AI</p>
-  <h1>AI already changed hiring.<br />Use it to get hired.</h1>
-  <p class="lede">
-    <strong>Job Hunt with Hope</strong> is a free, open-source pack of AI skills that
-    builds you a portfolio recruiters stop scrolling for, a résumé that beats the bots
-    and still reads human, and <strong>one link you own</strong>.
-  </p>
-  <p>
-    You don’t need to code. You don’t need an account with us. You don’t need to navigate
-    GitHub. If you can chat with an AI, you can do this — and it’s free.
-  </p>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="{{ '/skills/onboarding/' | relative_url }}">Start with your AI <span class="arrow">→</span></a>
-    <a class="btn btn-ghost" href="{{ '/demo/' | relative_url }}">See a live portfolio</a>
+<!-- ░░ Hero — lead with the outcome ░░ -->
+<section class="hero-band" aria-label="Introduction">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="kicker">Free · Open source · Works with any AI</p>
+      <h1>Build a portfolio, a résumé, and one link you own — with the AI you already use.</h1>
+      <p class="lede">You talk; your AI builds. A designed portfolio recruiters stop scrolling for, a résumé that beats the bots, and one shareable link — no coding, no account, nothing leaves your laptop.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="{{ '/demo/' | relative_url }}">See a real one — live demo <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="#how-it-works">How it works</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <figure class="figure">
+        <img src="{{ '/assets/img/portfolio-hero.webp' | relative_url }}" alt="A finished Hope portfolio website shown in its light and dark themes, with a career timeline and project cards" width="1200" height="675" fetchpriority="high" />
+      </figure>
+    </div>
   </div>
 </section>
 
-<div class="how-box">
-  <h2 style="margin-top:0">How to use this</h2>
-  <ol>
-    <li><strong>Open the AI agent you already use</strong> — ChatGPT, Claude, Gemini, Copilot, Perplexity, Cursor… any of them.</li>
-    <li><strong>Point it at this page</strong> (paste the link), or paste a skill below straight into the chat.</li>
-    <li><strong>Say:</strong> <em>“start my job hunt with Hope.”</em></li>
-  </ol>
-  <p class="muted" style="margin-bottom:0">
-    Hand it whatever you have — an old résumé, your LinkedIn, your GitHub, a folder of files,
-    or just talk. Hope does the work and walks you to your live link.
-  </p>
-</div>
-
-<h2>Who this is for</h2>
-<div class="who">
-  <div class="row">
-    <p><strong>Just laid off?</strong> Get a real presence back up <em>today</em> — not after three weeks of fighting a blank page.</p>
+<!-- ░░ Why now / fairness ░░ -->
+<section class="band band--alt" aria-label="Why now">
+  <div class="band__inner">
+    <div class="row2">
+      <div class="row2__copy">
+        <h2>The hiring side already runs on AI. Doing it alone is how you fall behind.</h2>
+        <p>Résumé screeners, ranking, instant auto-rejects — the hiring process is already automated. Doing your whole hunt by hand, alone, while everyone else has help, is how you slip down the pile. Hope hands the same kind of help to <strong>you</strong>.</p>
+        <p class="muted">And it works with whatever AI you already have — no new tool to learn.</p>
+        <div class="agents-line">
+          <span class="agent-pill">ChatGPT</span>
+          <span class="agent-pill">Claude</span>
+          <span class="agent-pill">Gemini</span>
+          <span class="agent-pill">Copilot</span>
+          <span class="agent-pill">Perplexity</span>
+        </div>
+      </div>
+      <div class="row2__media">
+        <figure class="figure figure--plain">
+          <img src="{{ '/assets/img/any-agent.webp' | relative_url }}" alt="Tell your favorite AI agent — Claude, ChatGPT, Gemini, Copilot, or Perplexity — to build your portfolio with Job Hunt with Hope" width="1200" height="675" loading="lazy" />
+        </figure>
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <p><strong>Switching fields?</strong> Tell your story for the job you <em>want</em>, not the one you left. Hope reframes what you’ve done around where you’re going.</p>
+</section>
+
+<!-- ░░ Who this is for ░░ -->
+<section id="who" class="band" aria-label="Who this is for">
+  <div class="band__inner">
+    <div class="band__head">
+      <p class="kicker">Who this is for</p>
+      <h2>Wherever you are right now.</h2>
+    </div>
+    <div class="seg-grid">
+      <div class="seg">
+        <h3>Just laid off</h3>
+        <p>Get a real presence back up <em>today</em> — not after three weeks of fighting a blank page. Your work didn't disappear; let's get it back in front of people.</p>
+      </div>
+      <div class="seg">
+        <h3>Switching fields</h3>
+        <p>Tell your story for the job you <em>want</em>, not the one you left. Hope reframes what you've done around where you're going.</p>
+      </div>
+      <div class="seg">
+        <h3>First job, or fresh out of school</h3>
+        <p>Look like a pro before you've had the title — the projects and work you <em>have</em> done, shown like they count.</p>
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <p><strong>First job, or fresh out of school?</strong> Look like a pro before you’ve had the title — the work you <em>have</em> done, shown like it counts.</p>
+</section>
+
+<!-- ░░ How it works ░░ -->
+<section id="how-it-works" class="band band--alt" aria-label="How it works">
+  <div class="band__inner">
+    <div class="band__head center">
+      <p class="kicker">How it works</p>
+      <h2>You talk. Your AI builds. You get a link.</h2>
+      <p class="lede">No coding. No IDE. No GitHub. If you can chat with an AI, you can do this.</p>
+    </div>
+    <figure class="figure figure--plain">
+      <img src="{{ '/assets/img/how-hope-works.webp' | relative_url }}" alt="Four steps: what you have, Hope reads it, your portfolio is built, and you get your link" width="1200" height="675" loading="lazy" />
+    </figure>
   </div>
-</div>
+</section>
 
-<h2>The three skills</h2>
-<p>Each one is a plain-language set of instructions your AI follows. Open any page to read it,
-or point your agent straight at it.</p>
+<!-- ░░ What you get ░░ -->
+<section class="band" aria-label="What you get">
+  <div class="band__inner">
+    <div class="band__head">
+      <p class="kicker">What you get</p>
+      <h2>Three things, all yours.</h2>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <span class="feat-ico" aria-hidden="true">◆</span>
+        <h3>A portfolio that gets read</h3>
+        <p>A designed page with a living timeline of your career visitors can play, hover, and click. Not a form, not a template — a page that looks like you tried.</p>
+      </div>
+      <div class="feature">
+        <span class="feat-ico" aria-hidden="true">▤</span>
+        <h3>A résumé that beats the bots</h3>
+        <p>Key phrases bolded for the 7-second skim, links clickable, text never too small. The screening software parses it cleanly, and a person actually wants to read it.</p>
+      </div>
+      <div class="feature">
+        <span class="feat-ico" aria-hidden="true">↗</span>
+        <h3>One link you own</h3>
+        <p>Published free to a page in <em>your</em> name. Drop it on LinkedIn and it unfurls with your own preview card. Only you can change it.</p>
+      </div>
+    </div>
+    <figure class="figure" style="margin-top:28px">
+      <img src="{{ '/assets/img/demo.gif' | relative_url }}" alt="A live Hope portfolio in action — switching between people, a playable career timeline, and a feed of real posts" width="1200" height="675" loading="lazy" />
+    </figure>
+  </div>
+</section>
 
-<div class="cards">
-  <a class="card reveal reveal-1" href="{{ '/skills/onboarding/' | relative_url }}">
-    <span class="step">Step 1</span>
-    <h3>Onboarding</h3>
-    <p>Tell Hope your story. It gathers what you already have and builds your career file — on your computer.</p>
-  </a>
-  <a class="card reveal reveal-2" href="{{ '/skills/portfolio/' | relative_url }}">
-    <span class="step">Step 2</span>
-    <h3>Portfolio</h3>
-    <p>Hope’s signature skill — a designed page recruiters stop scrolling for, with a living timeline of your career.</p>
-  </a>
-  <a class="card reveal reveal-3" href="{{ '/skills/publish/' | relative_url }}">
-    <span class="step">Step 3</span>
-    <h3>Publish</h3>
-    <p>Put it on the web — one shareable link you own. Hope carries the whole technical load for you.</p>
-  </a>
-</div>
+<!-- ░░ Data stays yours ░░ -->
+<section class="band band--alt" aria-label="Your data stays yours">
+  <div class="band__inner">
+    <div class="row2 row2--flip">
+      <div class="row2__media">
+        <figure class="figure figure--plain">
+          <img src="{{ '/assets/img/data-stays-home.webp' | relative_url }}" alt="One laptop holding a file labeled career.json, with nothing leaving the machine — no cloud, no arrows out" width="1200" height="675" loading="lazy" />
+        </figure>
+      </div>
+      <div class="row2__copy">
+        <h2>Nothing leaves your laptop — except the page you choose to publish.</h2>
+        <p>Your facts live in one file on your own computer. <strong>No tracking. No accounts.</strong> Nothing is uploaded anywhere except the one portfolio page you decide to publish. It's all open-source under the MIT license — free to use, change, and share, forever.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h2>Your data stays yours</h2>
-<p>
-  Your facts live in one file on your computer. No tracking. No accounts. Nothing leaves your
-  machine except the page you choose to publish. It’s all open-source (MIT) — free to use, change,
-  and share, forever.
-</p>
+<!-- ░░ Proof ░░ -->
+<section class="band" aria-label="Proof">
+  <div class="band__inner">
+    <div class="band__head">
+      <p class="kicker">Does it work?</p>
+      <h2>It's worked for people in your shoes.</h2>
+    </div>
+    <div class="proof-stat">
+      <span class="big">85.5%</span>
+      <span class="cap">of Hope's earlier users landed multiple interviews and secured full-time roles. Built while job-hunting — not in a lab.</span>
+    </div>
+    <figure class="figure">
+      <img src="{{ '/assets/img/proof.webp' | relative_url }}" alt="Real interviews and offers — EY, Amazon, Baker McKenzie, FedEx, Cerebras, Apple, and more" width="1200" height="675" loading="lazy" />
+    </figure>
+  </div>
+</section>
 
-<h2>For AI agents</h2>
-<p>
-  This whole site is plain, pre-rendered HTML — no JavaScript needed to read it. Agents can also
-  fetch clean Markdown for any skill (linked at the top of each skill page), and there’s an
-  <a href="{{ '/llms.txt' | relative_url }}">llms.txt</a> /
-  <a href="{{ '/llms-full.txt' | relative_url }}">llms-full.txt</a> index at the site root.
-</p>
+<!-- ░░ FAQ (visible text matches FAQPage schema below) ░░ -->
+<section class="band band--alt" aria-label="Frequently asked questions">
+  <div class="band__inner">
+    <div class="band__head">
+      <p class="kicker">Wait — is this for real?</p>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary>Is Job Hunt with Hope free?</summary>
+        <p class="faq-a">Yes. Job Hunt with Hope is completely free and open-source under the MIT license. There is no paid tier, no account, and no credit card — you use the AI agent you already have.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my data safe and private?</summary>
+        <p class="faq-a">Yes. Your career facts live in a single file on your own computer. There is no tracking and no account. Nothing leaves your machine except the portfolio page you explicitly choose to publish.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need to know how to code?</summary>
+        <p class="faq-a">No coding is required. You talk to your AI agent in plain language — hand it a résumé, your LinkedIn, or your GitHub, or just describe your work — and it builds the portfolio and résumé for you.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Which AI agents does it work with?</summary>
+        <p class="faq-a">It works with the AI agents most people already use, including ChatGPT, Claude, and Gemini. You can install it as a Claude plugin, or point any capable assistant at the open skills.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What do I get at the end?</summary>
+        <p class="faq-a">Three things: a designed portfolio website with a playable career timeline, a recruiter-ready résumé PDF that survives applicant tracking systems, and one free shareable link in your name that you can paste anywhere.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will it actually get me hired?</summary>
+        <p class="faq-a">No tool can promise that. What Hope does is get your work in front of people, looking sharp, today — and 85.5% of early users landed multiple interviews. It costs you nothing to try.</p>
+      </details>
+    </div>
+  </div>
+</section>
 
-<p class="muted">
-  Built while job-hunting. The source lives on
-  <a href="{{ site.github_repo }}">GitHub</a>. If it helps you, share the link — every share puts a
-  free portfolio within reach of someone who needs work.
-</p>
+<!-- ░░ Roadmap ░░ -->
+<section class="band" aria-label="Roadmap">
+  <div class="band__inner">
+    <div class="row2">
+      <div class="row2__copy">
+        <p class="kicker">Where it's going</p>
+        <h2>This is the start.</h2>
+        <p>Today Hope does presentation — portfolio, résumé, and your link — and does it well. Coming next: weighing roles, tailored cover letters, applying with care, interview prep, negotiation support, and a dashboard across all of it.</p>
+      </div>
+      <div class="row2__media">
+        <figure class="figure figure--plain">
+          <img src="{{ '/assets/img/roadmap.webp' | relative_url }}" alt="A roadmap — NOW: portfolio, résumé, your link; NEXT: cover letters, applying, interview prep, negotiation" width="1200" height="675" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ Final CTA ░░ -->
+<section id="start" class="band band--alt cta-final" aria-label="Get started">
+  <div class="band__inner">
+    <div class="band__head center">
+      <p class="kicker">Start now</p>
+      <h2>You need work. Start where you already are.</h2>
+      <p class="lede">No GitHub, no setup. Copy this, paste it into the AI you already use, and follow along.</p>
+    </div>
+    <div class="starter">
+      <p style="margin:0;color:var(--text-secondary);font-size:0.92rem">Paste into ChatGPT, Claude, or Gemini:</p>
+      <p class="starter__msg" id="starter-msg">Build my portfolio with Job Hunt with Hope — github.com/oneconsciousness/job-hunt-with-hope. Start my job hunt with Hope.</p>
+      <button class="copy-btn" id="copy-btn" type="button">Copy my starter message</button>
+    </div>
+    <details class="install-collapse">
+      <summary>Already use Claude Code? Install in one command</summary>
+      <div class="skill-body">
+        <pre><code>/plugin marketplace add oneconsciousness/job-hunt-with-hope
+/plugin install hope@hope</code></pre>
+        <p class="muted">Then, in a fresh chat in an empty folder, say <strong>start my job hunt with Hope</strong>.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<script>
+// Copy-starter-message
+(function(){
+  var b=document.getElementById('copy-btn'), m=document.getElementById('starter-msg');
+  if(!b||!m)return;
+  b.addEventListener('click',function(){
+    var txt=m.textContent.trim();
+    function done(){var o=b.textContent;b.textContent='Copied ✓';b.classList.add('copied');setTimeout(function(){b.textContent=o;b.classList.remove('copied');},1900);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,done);}
+    else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);done();}
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://agenthope.ai/#software",
+      "name": "Job Hunt with Hope",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (works with ChatGPT, Claude, Gemini and other AI agents)",
+      "description": "A free, open-source pack of AI skills that helps non-technical job seekers build a designed portfolio website, a recruiter-ready résumé, and one shareable link — using the AI agent they already use, with no coding. Career data stays on the user's own machine.",
+      "url": "https://agenthope.ai/",
+      "softwareHelp": "https://agenthope.ai/skills/onboarding/",
+      "license": "https://opensource.org/licenses/MIT",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": [
+        "Designed portfolio website with a playable career timeline",
+        "Recruiter-ready, ATS-friendly résumé PDF",
+        "One free shareable link in your name",
+        "Runs on your existing AI agent (ChatGPT, Claude, Gemini)",
+        "No coding required",
+        "Privacy-first: your data never leaves your machine"
+      ],
+      "publisher": { "@id": "https://agenthope.ai/#org" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://agenthope.ai/#website",
+      "url": "https://agenthope.ai/",
+      "name": "Job Hunt with Hope",
+      "description": "Free, open-source AI skills that build your portfolio, résumé, and one shareable link.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://agenthope.ai/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://agenthope.ai/#org",
+      "name": "Job Hunt with Hope",
+      "url": "https://agenthope.ai/",
+      "logo": "https://agenthope.ai/assets/img/portfolio-hero.png",
+      "description": "An open-source project providing free AI skills for job seekers — laid-off workers, career switchers, and new grads.",
+      "sameAs": ["https://github.com/oneconsciousness/job-hunt-with-hope"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is Job Hunt with Hope free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Job Hunt with Hope is completely free and open-source under the MIT license. There is no paid tier, no account, and no credit card — you use the AI agent you already have." } },
+        { "@type": "Question", "name": "Is my data safe and private?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your career facts live in a single file on your own computer. There is no tracking and no account. Nothing leaves your machine except the portfolio page you explicitly choose to publish." } },
+        { "@type": "Question", "name": "Do I need to know how to code?", "acceptedAnswer": { "@type": "Answer", "text": "No coding is required. You talk to your AI agent in plain language and it builds the portfolio and résumé for you." } },
+        { "@type": "Question", "name": "Which AI agents does it work with?", "acceptedAnswer": { "@type": "Answer", "text": "It works with the AI agents most people already use, including ChatGPT, Claude, and Gemini." } },
+        { "@type": "Question", "name": "What do I get at the end?", "acceptedAnswer": { "@type": "Answer", "text": "A designed portfolio website with a playable career timeline, a recruiter-ready résumé PDF that survives applicant tracking systems, and one free shareable link in your name." } },
+        { "@type": "Question", "name": "Will it actually get me hired?", "acceptedAnswer": { "@type": "Answer", "text": "No tool can promise that. Hope gets your work in front of people, looking sharp, today — and 85.5% of early users landed multiple interviews. It costs nothing to try." } }
+      ]
+    }
+  ]
+}
+</script>

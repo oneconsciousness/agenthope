@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div class="shell">
+  <aside class="sidebar" aria-label="Site navigation">
+    {% include nav.html %}
+  </aside>
+  <main id="main" class="doc-main">
+    {{ content }}
+  </main>
+  <aside class="toc" id="toc" aria-label="On this page">
+    <p class="toc-label">On this page</p>
+    <nav id="toc-list"></nav>
+  </aside>
+</div>

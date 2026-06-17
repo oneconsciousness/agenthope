@@ -1,0 +1,25 @@
+<nav class="nav-tree" aria-label="Site sections">
+  <div class="nav-group">
+    <p class="nav-label">Get started</p>
+    <a class="nav-link{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+    <a class="nav-link" href="{{ '/#how-it-works' | relative_url }}">How it works</a>
+    <a class="nav-link" href="{{ '/#who' | relative_url }}">Who it's for</a>
+  </div>
+  <div class="nav-group">
+    <p class="nav-label">The three skills</p>
+    <a class="nav-link{% if page.url == '/skills/onboarding/' %} active{% endif %}" href="{{ '/skills/onboarding/' | relative_url }}"><span class="nav-num">1</span> Onboarding</a>
+    <a class="nav-link{% if page.url == '/skills/portfolio/' %} active{% endif %}" href="{{ '/skills/portfolio/' | relative_url }}"><span class="nav-num">2</span> Portfolio</a>
+    <a class="nav-link{% if page.url == '/skills/publish/' %} active{% endif %}" href="{{ '/skills/publish/' | relative_url }}"><span class="nav-num">3</span> Publish</a>
+  </div>
+  <div class="nav-group">
+    <p class="nav-label">More</p>
+    <a class="nav-link{% if page.url == '/about/' %} active{% endif %}" href="{{ '/about/' | relative_url }}">About</a>
+    <a class="nav-link" href="{{ '/demo/' | relative_url }}">Live demo&nbsp;↗</a>
+    <a class="nav-link" href="{{ site.github_repo }}">GitHub&nbsp;↗</a>
+  </div>
+  <div class="nav-group">
+    <p class="nav-label">For AI agents</p>
+    <a class="nav-link" href="{{ '/llms.txt' | relative_url }}">llms.txt</a>
+    <a class="nav-link" href="{{ '/llms-full.txt' | relative_url }}">llms-full.txt</a>
+  </div>
+</nav>
