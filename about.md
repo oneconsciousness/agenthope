@@ -56,7 +56,7 @@ The original product was backed by **Microsoft for Startups (Level 4)** — so t
 And I'm here at all because of the people who backed me — pivotal to my growth as a person, an entrepreneur, and a developer; the ones who kept me motivated and stood with me at every turn:
 
 <ul class="credits">
-  <li><a class="cred" href="https://www.linkedin.com/in/venkateshrabconsult/" target="_blank" rel="noopener">{% include li-icon.svg %}Venkatesh Palakkad</a> — for his mentorship.</li>
+  <li><a class="cred" href="https://www.linkedin.com/in/venkateshrabconsult/" target="_blank" rel="noopener">{% include li-icon.svg %}Venkatesh Palakkad</a> and <a class="cred" href="https://www.linkedin.com/in/thompowell/" target="_blank" rel="noopener">{% include li-icon.svg %}Thom Powell</a> — for mentorship, time and connections.</li>
   <li><a class="cred" href="https://www.linkedin.com/in/harikrishnan-s-r-a0720aa8/" target="_blank" rel="noopener">{% include li-icon.svg %}Harikrishnan S R</a> — for extensive development contributions.</li>
   <li><a class="cred" href="https://www.linkedin.com/in/keerthana-balaji-17a44113a/" target="_blank" rel="noopener">{% include li-icon.svg %}Keerthana Balaji</a> — for development contributions.</li>
   <li><a class="cred" href="https://www.linkedin.com/in/rayaansheik/" target="_blank" rel="noopener">{% include li-icon.svg %}Rayaan Sheik</a> — for design contributions.</li>
