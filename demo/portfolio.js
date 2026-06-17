@@ -785,7 +785,7 @@
       // bottom, when its pane is shown. That sequential pop-in is what makes the
       // feed reliably finish: firing all embeds at once stampedes the browser's
       // connection pool and strands some (the "none load" bug).
-      holder.__loadEmbed = function () { holder.__loadEmbed = null; holder.removeAttribute('data-embed-pending'); fill(); };
+      holder.__loadEmbed = function () { holder.__loadEmbed = null; fill(); };
     }
 
     function buildSocialCard(post) {
@@ -816,10 +816,35 @@
         card.innerHTML = head + '<div class="social-embed" data-embed-pending style="min-height:' + embedH + 'px"><div class="embed-loader" aria-hidden="true"><span></span><span></span><span></span><span></span></div></div>' + viewLink;
         var holder = card.querySelector('.social-embed');
         lazyEmbed(holder, function () {
-          // Keep the min-height as a floor so the card never collapses while a
-          // tweet/IG widget is still rendering; the embed grows past it if taller.
-          holder.innerHTML = embedHTML;
+          // Insert the embed BEHIND the absolute loader (.embed-loader) and keep
+          // the loader on top until the iframe/widget actually PAINTS (height >
+          // 40), so the card never flashes blank between "markup inserted" and
+          // "embed rendered". A blocked or dead embed (X-Frame-Options, or a
+          // timeout) falls back to a "View on …" link — never a blank frame.
+          var loader = holder.querySelector('.embed-loader');
+          holder.insertAdjacentHTML('afterbegin', embedHTML);
           if (embedScript) { loadScript(embedScript); if (cfg.process) { needsProcess[key] = cfg; setTimeout(processEmbeds, 120); setTimeout(processEmbeds, 1500); } }
+          var settled = false, mo = null, poll = null;
+          function finish(ok) {
+            if (settled) return; settled = true;
+            if (mo) mo.disconnect();
+            if (poll) clearInterval(poll);
+            holder.removeAttribute('data-embed-pending');
+            if (ok) { if (loader && loader.parentNode) loader.parentNode.removeChild(loader); }
+            else { holder.innerHTML = '<a class="social-embed-static" href="' + esc(url) + '" target="_blank" rel="noopener"><span class="material-symbols-rounded">open_in_new</span>View on ' + esc(name) + '</a>'; }
+          }
+          function check() { var f = holder.querySelector('iframe'); if (f && f.clientHeight > 40) finish(true); }
+          function onload() { setTimeout(check, 250); }
+          // Direct iframe (YouTube / LinkedIn / Spotify…) — present immediately.
+          var fr0 = holder.querySelector('iframe');
+          if (fr0) fr0.addEventListener('load', onload);
+          // Script embeds (X / Instagram / TikTok) — the platform swaps the
+          // blockquote for its own iframe once the widget script runs.
+          mo = new MutationObserver(function () { var f = holder.querySelector('iframe'); if (f) { f.addEventListener('load', onload); check(); } });
+          mo.observe(holder, { childList: true, subtree: true });
+          poll = setInterval(check, 500);
+          // Dead/blocked embed never paints → fall back to a link (never blank).
+          setTimeout(function () { finish(false); }, 6000);
         });
       } else if (embedHTML != null) {
         // file:// — a designed preview card that links out (never a blank frame).
