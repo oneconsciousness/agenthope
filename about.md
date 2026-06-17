@@ -49,7 +49,7 @@ Today Hope handles presentation — portfolio, résumé, and your link. Coming n
 
 JobHunt with Hope was built by <a class="cred" href="https://www.linkedin.com/in/arunganpa24/" target="_blank" rel="noopener">{% include li-icon.svg %}Arun Ganapathy</a> <a class="cred gh" href="https://github.com/oneconsciousness" target="_blank" rel="noopener">{% include gh-icon.svg %}</a> — started while job-hunting, evolving since 2023, rebuilt many times, and grown into a career companion that does the work alongside you.
 
-In **March 2023**, <a class="cred" href="https://www.linkedin.com/in/reubentraneiv/" target="_blank" rel="noopener">{% include li-icon.svg %}Reuben Trane IV</a> and I decided to build together, co-founding **CareerX, Inc.** What followed was every shade of a startup — ups and downs, long odds — and through all of it, neither of us ever backed down or walked away. We believed in failing fast and pushing through, no matter what. That partnership is the bedrock the rest of this stands on.
+In **May 2024**, <a class="cred" href="https://www.linkedin.com/in/reubentraneiv/" target="_blank" rel="noopener">{% include li-icon.svg %}Reuben Trane IV</a> and I decided to build together, co-founding **CareerX, Inc.** What followed was every shade of a startup — ups and downs, long odds — and through all of it, neither of us ever backed down or walked away. We believed in failing fast and pushing through, no matter what. That partnership is the bedrock the rest of this stands on.
 
 The original product was backed by **Microsoft for Startups (Level 4)** — so thank you to Microsoft for betting early on how humans and AI would work together in the future of the job market. That future is exactly what Hope is built for.
 
