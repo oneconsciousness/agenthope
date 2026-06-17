@@ -515,6 +515,9 @@ html:not(.js) .slide-tag { display: none; }
 
 /* About — credit links (name + LinkedIn / GitHub mark) */
 .brand-name { white-space: nowrap; }
+.brand-name .bn-job { font-weight: 400; }
+.brand-name .bn-with { font-weight: 400; font-style: italic; }
+.brand-name .bn-hope { font-weight: 800; }
 .cred { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; white-space: nowrap; }
 .cred .li-ico { color: #0A66C2; flex-shrink: 0; }
 [data-theme="dark"] .cred .li-ico { color: #5AA9EC; }
