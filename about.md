@@ -2,10 +2,10 @@
 layout: doc
 title: About
 permalink: /about/
-description: Job Hunt with Hope is a free, open-source pack of AI skills for laid-off workers, career switchers, and new grads. Built so your career data stays yours.
+description: JobHunt with Hope is a free, open-source pack of AI skills for laid-off workers, career switchers, and new grads. Built so your career data stays yours.
 ---
 
-# About Job Hunt with Hope
+# About JobHunt with Hope
 
 **The hiring side already runs on AI** — résumé screeners, ranking, instant auto-rejects.
 Doing your whole hunt by hand, alone, while everyone else has help, is how you fall behind.

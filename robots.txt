@@ -3,7 +3,7 @@ permalink: /robots.txt
 layout: none
 sitemap: false
 ---
-# Job Hunt with Hope — agenthope.ai
+# JobHunt with Hope — agenthope.ai
 # This site is meant to be read by AI agents. Everything is allowed.
 
 User-agent: GPTBot

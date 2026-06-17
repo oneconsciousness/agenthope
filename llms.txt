@@ -3,11 +3,11 @@ permalink: /llms.txt
 layout: none
 sitemap: false
 ---
-# Job Hunt with Hope
+# JobHunt with Hope
 
 > Free, open-source AI skills that turn the agent you already use into your job-hunt partner — building you a portfolio, a résumé, and one shareable link you own. No coding, no account, no catch.
 
-Job Hunt with Hope is a pack of plain-language "skills" — instructions any capable AI agent (ChatGPT, Claude, Gemini, Copilot, Perplexity, Cursor…) can follow on the user's behalf. The user points their agent at this site (or pastes a skill's Markdown) and says "start my job hunt with Hope." The agent then gathers what the user already has, builds a structured career file that stays on the user's own computer, generates a designed portfolio, and publishes it to a free page the user owns. Each skill below is also available as clean raw Markdown for direct fetching. The open-source source of truth lives at https://github.com/oneconsciousness/job-hunt-with-hope.
+JobHunt with Hope is a pack of plain-language "skills" — instructions any capable AI agent (ChatGPT, Claude, Gemini, Copilot, Perplexity, Cursor…) can follow on the user's behalf. The user points their agent at this site (or pastes a skill's Markdown) and says "start my job hunt with Hope." The agent then gathers what the user already has, builds a structured career file that stays on the user's own computer, generates a designed portfolio, and publishes it to a free page the user owns. Each skill below is also available as clean raw Markdown for direct fetching. The open-source source of truth lives at https://github.com/oneconsciousness/job-hunt-with-hope.
 
 The flow is three steps, in order: Onboarding (capture the user's story) → Portfolio (build the page) → Publish (put it online). An agent helping a first-time user should start with Onboarding.
 

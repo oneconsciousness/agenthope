@@ -3,7 +3,7 @@ permalink: /llms-full.txt
 layout: none
 sitemap: false
 ---
-# Job Hunt with Hope — full skills
+# JobHunt with Hope — full skills
 
 > Free, open-source AI skills that turn the agent you already use into your job-hunt partner. No coding, no account, no catch.
 
