@@ -7,62 +7,38 @@ description: JobHunt with Hope is a free, open-source pack of AI skills for laid
 
 # About JobHunt with Hope
 
-**The hiring side already runs on AI** — résumé screeners, ranking, instant auto-rejects.
-Doing your whole hunt by hand, alone, while everyone else has help, is how you fall behind.
-Hope hands the AI you already use a set of **free skills** so it can actually market you.
+**The hiring side already runs on AI** — résumé screeners, ranking, instant auto-rejects. Doing your whole hunt by hand, alone, while everyone else has help, is how you fall behind. JobHunt with Hope hands the AI you already use a set of **free skills** so it can build your portfolio, your résumé, and one link you own — and market you well.
 
-## What it does for you
-
-You talk; your AI builds your job-hunt presence:
-
-- **A site recruiters stop scrolling for** — a designed portfolio with a living timeline of your
-  career that visitors can play, hover, and click. Not a form, not a template — a page that looks
-  like you tried.
-- **A résumé that beats the bots and still reads human** — pick a style and font; key phrases
-  bolded for the 7-second skim; links clickable. The screening software parses it cleanly, and a
-  person actually wants to read it.
-- **One link that makes you look hireable everywhere you paste it** — published free to a page in
-  *your* name. Drop it on LinkedIn and it unfurls with your own preview card.
+It's for people in the middle of it: **just laid off, switching fields, or starting out**. No coding, no account, and nothing leaves your computer except the page you choose to publish.
 
 ## Your data stays yours
 
-Your facts live in one file on your computer. Hope keeps a small notebook too — how you like to
-work. Both are yours: open them, edit them, delete them. **No tracking. No accounts. Nothing
-leaves your machine** except the page you choose to publish.
-
-## How to use it with any agent
-
-Hope is just plain skills and scripts, so **any capable AI agent can run it** — ChatGPT, Claude,
-Gemini, Copilot, Perplexity, Cursor, and more.
-
-1. Open your AI agent.
-2. Point it at this site, or paste a [skill](/skills/onboarding/) straight into the chat.
-3. Say **“start my job hunt with Hope.”**
-4. Hand it whatever you have — an old résumé, your LinkedIn, your GitHub, a folder of files, or
-   just talk. Hope does the work and walks you to your live link.
-
-If you use **Claude Code** or Claude desktop, Hope also ships as a one-command plugin:
-
-```
-/plugin marketplace add oneconsciousness/job-hunt-with-hope
-/plugin install hope@hope
-```
+Your facts live in one file on your own computer. Hope keeps a small notebook too — how you like to work. Both are yours: open them, edit them, delete them. **No tracking. No accounts. Nothing leaves your machine** except the page you choose to publish. It's all open-source under the MIT license — free to use, change, and share, forever.
 
 ## Who made this, and why
 
-Hope was built by its maker while job-hunting — evolving since 2023, rebuilt many times, and grown
-into a career companion that does the work alongside you. Tools that do good should meet people
-wherever they are — so Hope is free, and it stays that way.
+JobHunt with Hope was built by <a class="cred" href="https://www.linkedin.com/in/arunganpa24/" target="_blank" rel="noopener">{% include li-icon.svg %}Arun Ganapathy</a> <a class="cred gh" href="https://github.com/oneconsciousness" target="_blank" rel="noopener">{% include gh-icon.svg %}</a> — started while job-hunting, evolving since 2023, rebuilt many times, and grown into a career companion that does the work alongside you.
 
-It's open-source under the MIT license. The full source lives on
-[GitHub]({{ site.github_repo }}). Found something broken, or want to build on Hope? The repository
-is the place to start.
+In **March 2023**, **Reuben Trane IV** and I decided to build together, co-founding **CareerX, Inc.** What followed was every shade of a startup — ups and downs, long odds — and through all of it, neither of us ever backed down or walked away. We believed in failing fast and pushing through, no matter what. That partnership is the bedrock the rest of this stands on.
+
+The original product was backed by **Microsoft for Startups (Level 4)** — so thank you to Microsoft for betting early on how humans and AI would work together in the future of the job market. That future is exactly what Hope is built for.
+
+And I'm here at all because of the people who backed me — pivotal to my growth as a person, an entrepreneur, and a developer; the ones who kept me motivated and stood with me at every turn:
+
+<ul class="credits">
+  <li><a class="cred" href="https://www.linkedin.com/in/venkateshrabconsult/" target="_blank" rel="noopener">{% include li-icon.svg %}Venkatesh Palakkad</a> — for his mentorship.</li>
+  <li><a class="cred" href="https://www.linkedin.com/in/harikrishnan-s-r-a0720aa8/" target="_blank" rel="noopener">{% include li-icon.svg %}Harikrishnan S R</a> — for extensive development contributions.</li>
+  <li><a class="cred" href="https://www.linkedin.com/in/keerthana-balaji-17a44113a/" target="_blank" rel="noopener">{% include li-icon.svg %}Keerthana Balaji</a> — for development contributions.</li>
+  <li><a class="cred" href="https://www.linkedin.com/in/rayaansheik/" target="_blank" rel="noopener">{% include li-icon.svg %}Rayaan Sheik</a> — for design contributions.</li>
+</ul>
+
+To all of you: thank you. I value it more than these lines can hold.
+
+The evolution of AI may have ended the original product — but the **spirit of Hope is needed more than ever**, by job seekers everywhere. So everything lives here, in this repo, and is shared for **free**. Knowledge should be.
 
 ## For AI agents
 
-Every page here is plain, pre-rendered HTML — no JavaScript needed to read it. Each skill is also
-available as clean raw Markdown, linked at the top of its page, and there's an
-[llms.txt](/llms.txt) / [llms-full.txt](/llms-full.txt) index at the site root.
+Every page here is plain, pre-rendered HTML — no JavaScript needed to read it. Each skill is also available as clean raw Markdown, linked at the top of its page, and there's an [llms.txt](/llms.txt) / [llms-full.txt](/llms-full.txt) index at the site root.
 
 ---
 

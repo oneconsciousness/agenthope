@@ -17,6 +17,7 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
       <div class="cta-row">
         <a class="btn btn-primary" href="{{ '/demo/' | relative_url }}">See a real one — live demo <span class="arrow">→</span></a>
         <a class="btn btn-ghost" href="#how-it-works">How it works</a>
+        <button class="btn btn-ghost js-copy" type="button">Copy starter message</button>
       </div>
     </div>
     <div class="hero-media">
@@ -72,7 +73,7 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
       </div>
       <div class="row2__media">
         <figure class="figure figure--plain">
-          <img src="{{ '/assets/img/any-agent.webp' | relative_url }}" alt="Tell your favorite AI agent — Claude, ChatGPT, Gemini, Copilot, or Perplexity — to build your portfolio with JobHunt with Hope" width="1200" height="675" loading="lazy" />
+          <img src="{{ '/assets/img/any-agent.webp' | relative_url }}" alt="Tell your favorite AI agent — Claude, ChatGPT, Gemini, Cursor, VS Code, Windsurf, GitHub Copilot, or Perplexity — to build your portfolio with JobHunt with Hope" width="1280" height="788" loading="lazy" />
         </figure>
       </div>
     </div>
@@ -114,6 +115,7 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
     <figure class="figure figure--plain">
       <img src="{{ '/assets/img/how-hope-works.webp' | relative_url }}" alt="Four steps: what you have, Hope reads it, your portfolio is built, and you get your link" width="1200" height="675" loading="lazy" />
     </figure>
+    <p class="hiw-note">Using <strong>Claude Code</strong> specifically? Skip the chat setup — install Hope in one command from the plugin marketplace. <a href="#start">See the command&nbsp;↓</a></p>
   </div>
 </section>
 
@@ -243,7 +245,7 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
     <div class="starter">
       <p style="margin:0;color:var(--text-secondary);font-size:0.92rem">Paste into ChatGPT, Claude, or Gemini:</p>
       <p class="starter__msg" id="starter-msg">Build my portfolio with JobHunt with Hope — github.com/oneconsciousness/job-hunt-with-hope. Start my job hunt with Hope.</p>
-      <button class="copy-btn" id="copy-btn" type="button">Copy my starter message</button>
+      <button class="copy-btn js-copy" id="copy-btn" type="button">Copy my starter message</button>
     </div>
     <details class="install-collapse">
       <summary>Already use Claude Code? Install in one command</summary>
@@ -257,15 +259,17 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
 </section>
 
 <script>
-// Copy-starter-message
+// Copy-starter-message — works for every .js-copy button (hero + final CTA)
 (function(){
-  var b=document.getElementById('copy-btn'), m=document.getElementById('starter-msg');
-  if(!b||!m)return;
-  b.addEventListener('click',function(){
-    var txt=m.textContent.trim();
-    function done(){var o=b.textContent;b.textContent='Copied ✓';b.classList.add('copied');setTimeout(function(){b.textContent=o;b.classList.remove('copied');},1900);}
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,done);}
-    else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);done();}
+  var m=document.getElementById('starter-msg'); if(!m)return;
+  var txt=m.textContent.trim();
+  document.querySelectorAll('.js-copy').forEach(function(b){
+    var orig=b.textContent;
+    b.addEventListener('click',function(){
+      function done(){b.textContent='Copied ✓';b.classList.add('copied');setTimeout(function(){b.textContent=orig;b.classList.remove('copied');},1900);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,done);}
+      else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);done();}
+    });
   });
 })();
 // Hero slideshow — autoplay (reduced-motion safe), pause on hover/focus/hidden, dots/arrows/keys/swipe
