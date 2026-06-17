@@ -358,6 +358,7 @@ body.home .doc-main > * { max-width: none; }
 .band { padding: var(--band-y) 0; border-bottom: 1px solid var(--border-subtle); }
 .band--alt { background: var(--surface); }
 .band__inner { max-width: 1020px; margin: 0 auto; padding: 0 var(--gutter); }
+.band__inner--wide { max-width: 1180px; }   /* roomier band so its media scales bigger on large screens */
 .band__head { max-width: 640px; margin-bottom: 28px; }
 .band__head.center { margin-left: auto; margin-right: auto; text-align: center; }
 .band h2 { font-size: var(--step-h2); margin: 0 0 0.4em; }
@@ -403,6 +404,7 @@ html:not(.js) .slide-dots, html:not(.js) .slide-arrow { display: none; }
 /* two-column content rows */
 .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(26px, 4vw, 46px); align-items: center; }
 .row2--flip .row2__media { order: 2; }
+.row2--media { grid-template-columns: 0.78fr 1.22fr; }   /* give the image the bigger share */
 .row2__copy h2 { font-size: var(--step-h2); }
 .row2__copy p:last-child { margin-bottom: 0; }
 
@@ -417,6 +419,7 @@ html:not(.js) .slide-dots, html:not(.js) .slide-arrow { display: none; }
 .seg { background: var(--card-bg); border: 1px solid var(--border); border-top: 3px solid var(--accent); border-radius: var(--radius-card); padding: 20px 22px; box-shadow: var(--shadow-sm); }
 .seg h3 { margin: 0 0 8px; font-size: 1.08rem; color: var(--accent-text); }
 .seg p { margin: 0; color: var(--text-secondary); font-size: 0.96rem; }
+.seg-ico { width: 52px; height: 52px; display: block; margin-bottom: 12px; object-fit: contain; }
 .seg-foot { margin: 22px auto 0; max-width: 70ch; text-align: center; color: var(--text-secondary); font-size: 1.02rem; line-height: 1.6; }
 .seg-foot a { font-weight: 650; white-space: nowrap; }
 
