@@ -72,10 +72,10 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
       <!-- Claude — recommended -->
       <article class="engine engine--rec">
         <header class="engine__head">
-          <span class="engine__name">Claude <span class="engine__badge">Recommended</span></span>
+          <span class="engine__name"><span class="ai">{% include ai-claude.svg %}Claude</span> <span class="engine__badge">Recommended</span></span>
           <span class="engine__plats">Mobile · Web · Desktop</span>
         </header>
-        <p class="engine__why">The smoothest path. Claude installs the Hope skills, so it needs only a short nudge and does the rest.</p>
+        <p class="engine__why">The smoothest path. <span class="ai">{% include ai-claude.svg %}Claude</span> installs the Hope skills, so it needs only a short nudge and does the rest.</p>
         <pre class="engine__prompt" data-prompt="claude"><code>I'd like to build my portfolio with JobHunt with Hope (free, open-source).
 
 First: make sure you can write to my GitHub Pages repo — that's where my site goes live. Confirm that before we publish anything; if you're not connected to my GitHub, tell me how to connect you and wait.
@@ -89,15 +89,15 @@ Then walk me through it like I'm not technical:
 Keep a short note of what you used and made. Start with onboarding — don't jump ahead.</code></pre>
         <div class="engine__actions">
           <button class="copy-btn js-copy" data-copy-target="claude" type="button">Copy instructions</button>
-          <a class="open-btn" data-open="claude" href="#" target="_blank" rel="noopener">Open in Claude <span class="arrow">→</span></a>
+          <a class="open-btn" data-open="claude" href="#" target="_blank" rel="noopener"><span class="ai">Open in {% include ai-claude.svg %}Claude</span> <span class="arrow">→</span></a>
         </div>
-        <p class="engine__note">“Open in Claude” prefills a fresh chat (the desktop app is most reliable). If nothing loads, just use <strong>Copy</strong> — it always works.</p>
+        <p class="engine__note">“Open in <span class="ai">{% include ai-claude.svg %}Claude</span>” prefills a fresh chat (the desktop app is most reliable). If nothing loads, just use <strong>Copy</strong> — it always works.</p>
       </article>
 
       <!-- ChatGPT -->
       <article class="engine">
         <header class="engine__head">
-          <span class="engine__name">ChatGPT</span>
+          <span class="engine__name"><span class="ai">{% include ai-chatgpt.svg %}ChatGPT</span></span>
           <span class="engine__plats">Mobile · Web · Desktop</span>
         </header>
         <p class="engine__why">Works well too. The instructions tell it to trust our design and only fill in your content — so you get a real Hope page, not a hand-built one.</p>
@@ -124,14 +124,14 @@ BUILD: 1) read my PDF for roles/wins/skills/projects, 2) fill data.js with my re
 PUBLISH (ask first): show me the folder and ask “Publish this to &lt;my repo&gt;?” After I say yes, push ALL files together in one go (so the page never breaks on a missing file). Give me the live URL and tell me to open it. Keep a short audit trail. Start with onboarding — don't skip ahead.</code></pre>
         <div class="engine__actions">
           <button class="copy-btn js-copy" data-copy-target="chatgpt" type="button">Copy instructions</button>
-          <a class="open-btn" data-open="chatgpt" href="#" target="_blank" rel="noopener">Open in ChatGPT <span class="arrow">→</span></a>
+          <a class="open-btn" data-open="chatgpt" href="#" target="_blank" rel="noopener"><span class="ai">Open in {% include ai-chatgpt.svg %}ChatGPT</span> <span class="arrow">→</span></a>
         </div>
-        <p class="engine__note">Use <strong>standard ChatGPT</strong> — Agent mode and Codex are different surfaces and won't follow this. “Open in ChatGPT” may truncate this long prompt; if it looks cut off, use <strong>Copy</strong>.</p>
+        <p class="engine__note">Use <strong>standard <span class="ai">{% include ai-chatgpt.svg %}ChatGPT</span></strong> — Agent mode and Codex are different surfaces and won't follow this. “Open in ChatGPT” may truncate this long prompt; if it looks cut off, use <strong>Copy</strong>.</p>
       </article>
 
     </div>
     <details class="install-collapse">
-      <summary>Already use Claude Code? Install in one command</summary>
+      <summary>Already use <span class="ai">{% include ai-claude.svg %}Claude Code</span>? Install in one command</summary>
       <div class="skill-body">
         <pre><code>/plugin marketplace add oneconsciousness/job-hunt-with-hope
 /plugin install hope@hope</code></pre>
@@ -157,11 +157,11 @@ PUBLISH (ask first): show me the folder and ask “Publish this to &lt;my repo&g
     </figure>
     <p class="trust-strip"><strong>Free &amp; open-source (MIT).</strong> No account, no tracking. Nothing leaves your laptop except the page you choose to publish.</p>
     <div class="agents-line agents-line--center">
-      <span class="agent-pill">ChatGPT</span>
-      <span class="agent-pill">Claude</span>
-      <span class="agent-pill">Gemini</span>
-      <span class="agent-pill">Copilot</span>
-      <span class="agent-pill">Perplexity</span>
+      <span class="agent-pill">{% include ai-chatgpt.svg %}ChatGPT</span>
+      <span class="agent-pill">{% include ai-claude.svg %}Claude</span>
+      <span class="agent-pill">{% include ai-gemini.svg %}Gemini</span>
+      <span class="agent-pill">{% include ai-copilot.svg %}Copilot</span>
+      <span class="agent-pill">{% include ai-perplexity.svg %}Perplexity</span>
     </div>
   </div>
 </section>

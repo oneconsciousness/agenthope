@@ -20,7 +20,7 @@ description: "How JobHunt with Hope works — you talk, your AI reads what you h
 3. **Your portfolio and résumé get built.** A designed page with a playable career timeline, plus a recruiter-ready résumé the screeners parse cleanly. Same Hope template every time, so it always looks like you tried.
 4. **You get one link you own.** Published free to a page in your name. Drop it on LinkedIn and it unfurls with your own preview card. Only you can change it.
 
-## Already use Claude Code?
+## Already use <span class="ai">{% include ai-claude.svg %}Claude Code</span>?
 
 Skip the chat setup — install Hope in one command from the plugin marketplace:
 

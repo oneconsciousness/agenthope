@@ -33,18 +33,18 @@ How you publish depends on whether your AI has a built-in **terminal** (a place 
 
 | If you use… | Can it publish for you? | Your path |
 |---|---|---|
-| **Claude Code**, **Cursor**, **VS Code + Copilot**, **Windsurf** | ✅ Yes, end-to-end | **The easy way** below — your AI does it; you click "Authorize" once. |
-| **ChatGPT**, **Gemini**, **Perplexity** (web chatbots) | ❌ Not directly | **The no-code way** below — you drag-and-drop. It can guide you, but it can't upload for you (that's just how web chatbots work). |
+| {% include ai-claude.svg %}**Claude Code**, **Cursor**, **VS Code + {% include ai-copilot.svg %}Copilot**, **Windsurf** | ✅ Yes, end-to-end | **The easy way** below — your AI does it; you click "Authorize" once. |
+| {% include ai-chatgpt.svg %}**ChatGPT**, {% include ai-gemini.svg %}**Gemini**, {% include ai-perplexity.svg %}**Perplexity** (web chatbots) | ❌ Not directly | **The no-code way** below — you drag-and-drop. It can guide you, but it can't upload for you (that's just how web chatbots work). |
 
 Both paths end with the same thing: your free `https://yourname.github.io/portfolio/` link.
 
 ## The easy way — let your AI publish it
 
-If your AI has a terminal (Claude Code, Cursor, VS Code, Windsurf), just say:
+If your AI has a terminal (<span class="ai">{% include ai-claude.svg %}Claude Code</span>, Cursor, VS Code, Windsurf), just say:
 
 > **"Publish my portfolio to GitHub Pages and give me the link."**
 
-The only thing **you** do is approve it once: your AI runs `gh auth login`, a browser opens, you click the green **Authorize** button — done. Your AI creates the repository, uploads the files, switches on GitHub Pages, and hands you the live link. With Claude Code this is the smoothest, since Hope is built for it.
+The only thing **you** do is approve it once: your AI runs `gh auth login`, a browser opens, you click the green **Authorize** button — done. Your AI creates the repository, uploads the files, switches on GitHub Pages, and hands you the live link. With <span class="ai">{% include ai-claude.svg %}Claude Code</span> this is the smoothest, since Hope is built for it.
 
 ## The no-code way — drag-and-drop (works for everyone)
 

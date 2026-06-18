@@ -22,7 +22,7 @@ description: "Answers about JobHunt with Hope — is it free, is my data private
   </details>
   <details class="faq-item">
     <summary>Which AI agents does it work with?</summary>
-    <p class="faq-a">It works with the AI agents most people already use, including ChatGPT, Claude, and Gemini. You can install it as a Claude plugin, or point any capable assistant at the open skills.</p>
+    <p class="faq-a">It works with the AI agents most people already use, including <span class="ai">{% include ai-chatgpt.svg %}ChatGPT</span>, <span class="ai">{% include ai-claude.svg %}Claude</span>, and <span class="ai">{% include ai-gemini.svg %}Gemini</span>. You can install it as a <span class="ai">{% include ai-claude.svg %}Claude</span> plugin, or point any capable assistant at the open skills.</p>
   </details>
   <details class="faq-item">
     <summary>What do I get at the end?</summary>
