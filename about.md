@@ -53,6 +53,8 @@ In **May 2024**, <a class="cred" href="https://www.linkedin.com/in/reubentraneiv
 
 The original product was backed by **Microsoft for Startups (Level 4)** — so thank you to Microsoft for betting early on how humans and AI would work together in the future of the job market. That future is exactly what Hope is built for.
 
+At Iowa, CareerX was supported by the [Venture Mentoring Service](https://iowajpec.org/community-programs-and-resources/venture-mentoring-service) at the University of Iowa's John Pappajohn Entrepreneurial Center — thank you to the **VMS** mentors for the guidance when the venture was finding its feet.
+
 And I'm here at all because of the people who backed me — pivotal to my growth as a person, an entrepreneur, and a developer; the ones who kept me motivated and stood with me at every turn:
 
 <ul class="credits">
