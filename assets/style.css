@@ -446,6 +446,17 @@ html:not(.js) .slide-dots, html:not(.js) .slide-arrow { display: none; }
 .ai-ico { width: 1em; height: 1em; vertical-align: -0.14em; margin-right: 0.2em; flex-shrink: 0; }
 .agent-pill .ai-ico { margin-right: 0.34em; }
 
+/* "What's new" changelog — skimmable, benefit-first, non-technical */
+.changelog { margin-top: 3em; }
+.cl-list { list-style: none; padding: 0; margin: 1.3em 0 0; }
+.cl-item { display: flex; gap: 18px; padding: 18px 0; border-top: 1px solid var(--border); }
+.cl-date { flex-shrink: 0; width: 70px; font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.02em; color: var(--text-muted); padding-top: 3px; text-transform: uppercase; }
+.cl-body { min-width: 0; }
+.cl-head { font-weight: 700; font-size: 1.05rem; color: var(--text-primary); margin: 0 0 4px; line-height: 1.35; }
+.cl-body p:not(.cl-head) { margin: 0; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.55; }
+.cl-foot { margin-top: 1.5em; }
+@media (max-width: 600px) { .cl-item { flex-direction: column; gap: 4px; } .cl-date { padding-top: 0; } }
+
 /* proof */
 .proof-stat { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
 .proof-stat .big { font-size: var(--step-big); font-weight: 800; letter-spacing: -0.02em; color: var(--accent-text); line-height: 1; }
