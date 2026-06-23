@@ -1,0 +1,28 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Hope user-facing changelog — rendered on /skills/. NEWEST FIRST.
+#
+# THE RULE (CLAUDE.md §14 / CONTRIBUTING.md): every shipped skill change — every
+# current skill, every roadmap skill published from here on — adds an entry here.
+# Shipping a skill without a changelog entry is incomplete. This is inevitable.
+#
+# VOICE (non-negotiable): write for a non-technical job seeker, benefit-first.
+#   - headline  = the ONE thing they GAIN, in plain words. This is the skim target.
+#   - body      = one or two plain sentences on what it means for them. No jargon
+#                 ("graph", "node", "schema", "skill-gap.json"), no version numbers,
+#                 no internal mechanics. What matters to THEM is what matters.
+#   - date      = display string, e.g. "Jun 2026".
+# Good:  "Hope now learns your goal and your timeline."
+# Bad:   "Added a Goal node to the career graph schema (v1.1)."
+# ─────────────────────────────────────────────────────────────────────────────
+
+- date: "Jun 2026"
+  headline: "Hope now learns your goal and your timeline."
+  body: "When you start, it asks what role you're aiming for, how much time you can give the hunt, and how much runway you have. A few months and a few weeks call for very different plans — now yours actually fits your life, not a generic template."
+
+- date: "Jun 2026"
+  headline: "Your wins finally stand out on your portfolio."
+  body: "Scholarships, honors, and standout achievements now show up as highlights on your education — not just a degree and a date. The things you're proud of get the spotlight they earned."
+
+- date: "Jun 2026"
+  headline: "Ready-to-paste instructions for the AI you already use."
+  body: "Copy a tuned set of instructions for Claude or ChatGPT straight from the home page and go — no guesswork about what to say."
