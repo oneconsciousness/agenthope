@@ -248,7 +248,7 @@ PUBLISH (ask first): show me the folder and ask “Publish this to &lt;my repo&g
   document.querySelectorAll('[data-open]').forEach(function(a){
     var key=a.getAttribute('data-open');
     var p=prompts[key]; if(!p)return;
-    var base=key==='chatgpt'?'https://chatgpt.com/?q=':'https://claude.ai/new?q=';
+    var base=key==='chatgpt'?'https://chatgpt.com/?hints=agent&q=':'https://claude.ai/new?q=';
     a.setAttribute('href',base+encodeURIComponent(p));
     a.addEventListener('click',function(){writeClip(p,function(){});});
   });
