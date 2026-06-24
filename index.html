@@ -75,7 +75,7 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
           <span class="engine__name"><span class="ai">{% include ai-claude.svg %}Claude</span> <span class="engine__badge">Recommended</span></span>
           <span class="engine__plats">Mobile · Web · Desktop</span>
         </header>
-        <p class="engine__why">The smoothest path. <span class="ai">{% include ai-claude.svg %}Claude</span> installs the Hope skills, so it needs only a short nudge and does the rest.</p>
+        <p class="engine__why">The smoothest path. <span class="ai">{% include ai-claude.svg %}Claude</span> can pull in the Hope skills with almost no setup, so it needs only a short nudge and does the rest.</p>
         <pre class="engine__prompt" data-prompt="claude"><code>I'd like to build my portfolio with JobHunt with Hope (free, open-source).
 
 First: make sure you can write to my GitHub Pages repo — that's where my site goes live. Confirm that before we publish anything; if you're not connected to my GitHub, tell me how to connect you and wait.
@@ -101,32 +101,22 @@ Keep a short note of what you used and made. Start with onboarding — don't jum
           <span class="engine__plats">Mobile · Web · Desktop</span>
         </header>
         <p class="engine__why">Works well too. The instructions tell it to trust our design and only fill in your content — so you get a real Hope page, not a hand-built one.</p>
-        <pre class="engine__prompt" data-prompt="chatgpt"><code>I want to build my portfolio with JobHunt with Hope — a free, open-source flow. Treat me as non-technical: explain each step simply, don't assume I know GitHub.
+        <pre class="engine__prompt" data-prompt="chatgpt"><code>I'd like to build my portfolio with JobHunt with Hope (free, open-source). Treat me as non-technical — explain each step simply and don't assume I know anything technical.
 
-The Hope template lives at github.com/oneconsciousness/job-hunt-with-hope — this is the DESIGN SOURCE you copy from, NOT where you publish.
+Walk me through it like this:
+1. Follow the Hope skills at github.com/oneconsciousness/job-hunt-with-hope. Read them and do exactly what they say — start with the onboarding skill, then build my portfolio. Use Hope's own template and design; only fill in MY content.
+2. Ask me ONCE for everything — I'll upload my resume PDF and a headshot photo, and tell you my target role. Don't re-ask in circles; if I skip something, pick a sensible default and tell me.
+3. Build the finished portfolio folder from my resume and photo, keeping Hope's styling and layout exactly as provided.
+4. Show me the result and ask in plain English before we go live.
 
-BEFORE ANYTHING — GitHub access:
-Confirm you can read GitHub and write to MY GitHub Pages repo (where my site goes live). If you're not connected to my GitHub, tell me exactly how to connect you and wait. Don't start building until publishing is actually possible.
+To publish (get my shareable link): if you're in Agent mode with a computer, do as much of the publishing as you can for me. Otherwise, hand me the finished folder and one dead-simple step to put it online — a single guided upload, explained for someone who's never done it. Either way, end by giving me my live link to open.
 
-GET THE TEMPLATE (avoids a known trap):
-Don't read the template through the GitHub connector — it silently cuts off large files. Instead, on your computer (you're in Agent mode) run:
-  git clone --depth 1 https://github.com/oneconsciousness/job-hunt-with-hope.git
-Then read skills/*/SKILL.md and the template in assets/templates/portfolio/ from the cloned files on disk.
-
-TRUST THE TEMPLATE — only do the content:
-The design (index.html, portfolio.css, portfolio.js) is already done. Copy those files EXACTLY. The ONLY file you create is data.js, filled with MY information. Never hand-build your own layout or “Hope-style” CSS — that isn't Hope.
-
-ASK ME ONCE, then proceed:
-I'll upload my resume PDF and a headshot photo. You cannot log into my LinkedIn, so never try to pull my photo from it — I'm uploading it. In the same step ask for: my GitHub Pages repo (or help me make one), the page/route to publish under, and my target role if I have one. If I skip something, choose a sensible default and note it — don't stall or loop.
-
-BUILD: 1) read my PDF for roles/wins/skills/projects, 2) fill data.js with my real content, keep template files unchanged, add my headshot, 3) assemble the full folder.
-
-PUBLISH (ask first): show me the folder and ask “Publish this to &lt;my repo&gt;?” After I say yes, push ALL files together in one go (so the page never breaks on a missing file). Give me the live URL and tell me to open it. Keep a short audit trail. Start with onboarding — don't skip ahead.</code></pre>
+Keep a short note of what you used and made. Start with onboarding — don't jump ahead.</code></pre>
         <div class="engine__actions">
           <button class="copy-btn js-copy" data-copy-target="chatgpt" type="button">Copy instructions</button>
           <a class="open-btn" data-open="chatgpt" href="#" target="_blank" rel="noopener"><span class="ai">Open in {% include ai-chatgpt.svg %}ChatGPT</span> <span class="arrow">→</span></a>
         </div>
-        <p class="engine__note">Best in <strong><span class="ai">{% include ai-chatgpt.svg %}ChatGPT</span> Agent mode</strong> — that's where it can clone, build, and publish for you. <a href="#chatgpt-setup">Set it up once (Agent mode + GitHub) ↓</a>. “Open in ChatGPT” may truncate this long prompt; if it looks cut off, use <strong>Copy</strong>.</p>
+        <p class="engine__note">Best in <strong><span class="ai">{% include ai-chatgpt.svg %}ChatGPT</span> Agent mode</strong> — it builds your portfolio, and the last step to go live is quick and guided. <a href="#chatgpt-setup">Set it up once (Agent mode + GitHub) ↓</a>. “Open in ChatGPT” may truncate this prompt; if it looks cut off, use <strong>Copy</strong>.</p>
       </article>
 
     </div>
@@ -142,8 +132,8 @@ PUBLISH (ask first): show me the folder and ask “Publish this to &lt;my repo&g
       <summary>Using <span class="ai">{% include ai-chatgpt.svg %}ChatGPT</span>? Set it up once — Agent mode + GitHub</summary>
       <div class="skill-body">
         <ol>
-          <li><strong>Turn on Agent mode.</strong> Start a new chat and switch ChatGPT to <strong>Agent mode</strong> — the one with a real computer that can clone, build, and publish your site end to end. (On Plus/Pro plans.)</li>
-          <li><strong>Connect GitHub.</strong> Open <strong>Settings → Apps</strong>, connect <strong>GitHub</strong>, then use its <strong>“⋯” → Settings</strong> to give it access to the repository where your site will live. That's what lets ChatGPT publish for you.</li>
+          <li><strong>Turn on Agent mode.</strong> Start a new chat and switch ChatGPT to <strong>Agent mode</strong> — the one with a real computer, so it can build your portfolio and help with the steps to go live. (On Plus/Pro plans.)</li>
+          <li><strong>Connect GitHub.</strong> Open <strong>Settings → Apps</strong>, connect <strong>GitHub</strong>, then use its <strong>“⋯” → Settings</strong> to give it access to the repository where your site will live. That's what lets ChatGPT help put your page online.</li>
           <li><strong>Attach GitHub in the chat.</strong> In the message box, tap <strong>＋ → GitHub</strong> so the agent can read and write your repo — then paste the instructions above and follow along.</li>
         </ol>
         <figure class="figure figure--plain">

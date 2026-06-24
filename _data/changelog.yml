@@ -16,8 +16,16 @@
 # ─────────────────────────────────────────────────────────────────────────────
 
 - date: "Jun 2026"
-  headline: "ChatGPT now builds and publishes for you, start to finish."
-  body: "Switch ChatGPT to Agent mode and connect it to GitHub once — we show you how, with a picture — and it clones, builds, and puts your portfolio online for you. No copy-paste gymnastics."
+  headline: "See real portfolios from every kind of career."
+  body: "We've opened a gallery of real example portfolios you can explore — a chef, an AI scientist, an advocate, designers, engineers, founders, and more. Whatever your line of work, you can see what yours could look like before you start. Have a browse: agenthope.ai/demo/"
+
+- date: "Jun 2026"
+  headline: "Your portfolio comes together more smoothly now."
+  body: "We've smoothed out the building so it works more reliably whether you use Claude, ChatGPT, or another AI you already have. Fewer hiccups, a cleaner result, less back-and-forth to get there."
+
+- date: "Jun 2026"
+  headline: "Building your portfolio with ChatGPT just got easier."
+  body: "ChatGPT can now put your whole portfolio together too — not just Claude. When it's ready, one short guided step that you do puts it online and gives you your link. We walk you through it with a picture, so the last step stays simple."
 
 - date: "Jun 2026"
   headline: "Hope now learns your goal and your timeline."

@@ -16,7 +16,7 @@ description: "How JobHunt with Hope works — you talk, your AI reads what you h
 ## The four steps
 
 1. **Tell it what you have.** A résumé, a LinkedIn export, a headshot, a few notes — whatever you've got. The AI asks for the minimum it needs and fills the gaps by talking to you. Nothing is assumed; nothing is scraped.
-2. **It reads and structures your story.** Your roles, wins, skills, and projects get pulled into one tidy file on your own computer — `career.json`. That file is yours, readable, and never leaves your machine unless you publish.
+2. **It reads and structures your story.** Your roles, wins, skills, and projects get pulled into one tidy file on your own computer. That file is yours, readable, and never leaves your machine unless you publish.
 3. **Your portfolio and résumé get built.** A designed page with a playable career timeline, plus a recruiter-ready résumé the screeners parse cleanly. Same Hope template every time, so it always looks like you tried.
 4. **You get one link you own.** Published free to a page in your name. Drop it on LinkedIn and it unfurls with your own preview card. Only you can change it.
 
