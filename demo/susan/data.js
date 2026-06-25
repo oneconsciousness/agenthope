@@ -261,6 +261,14 @@ window.HOPE_DATA = {
 
   skills: {
     order: ["Domain", "Tools", "Creative", "Methods", "Interpersonal"],
+    radar: [
+      { axis: "Iconography", score: 4, source: "UX Competencies", inDemand: false },
+      { axis: "Typography", score: 4, source: "UX Competencies", inDemand: false },
+      { axis: "Visual Systems", score: 4, source: "UX Competencies", inDemand: false },
+      { axis: "Creative Direction", score: 4, source: "NN/g", inDemand: false },
+      { axis: "Interaction Design", score: 3, source: "NN/g", inDemand: true },
+      { axis: "Brand Identity", score: 3, source: "UX Competencies", inDemand: false }
+    ],
     categories: {
       "Domain": {
         category: "domain",

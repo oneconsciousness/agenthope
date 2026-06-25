@@ -259,6 +259,14 @@ window.HOPE_DATA = {
 
   skills: {
     order: ["AI & Safety", "Programming", "Research", "Analytical", "Leadership"],
+    radar: [
+      { axis: "Machine Learning", score: 4, source: "SFIA 9", inDemand: true },
+      { axis: "AI Safety & Ethics", score: 4, source: "SFIA 9", inDemand: true },
+      { axis: "Formal Research", score: 4, source: "SFIA 9", inDemand: false },
+      { axis: "Tech Foresight", score: 3, source: "SFIA 9", inDemand: false },
+      { axis: "Strategic Planning", score: 3, source: "SFIA 9", inDemand: false },
+      { axis: "Org Building", score: 3, source: "SFIA 9", inDemand: false }
+    ],
     categories: {
       "AI & Safety": {
         category: "domain",

@@ -290,6 +290,15 @@ window.HOPE_DATA = {
 
   skills: {
     order: ["Domain", "Programming", "Methods", "Interpersonal", "Analytical"],
+    radar: [
+      { axis: "Machine Learning", score: 4, source: "SFIA 9", inDemand: true },
+      { axis: "AI Research", score: 4, source: "SFIA 9", inDemand: true },
+      { axis: "Software Development", score: 4, source: "SFIA 9", inDemand: false },
+      { axis: "Data Science", score: 3, source: "SFIA 9", inDemand: false },
+      { axis: "Data Engineering", score: 3, source: "SFIA 9", inDemand: false },
+      { axis: "Learning Design", score: 3, source: "SFIA 9", inDemand: false },
+      { axis: "Technical Communication", score: 3, source: "SFIA 9", inDemand: false }
+    ],
     categories: {
       "Domain": {
         category: "domain",

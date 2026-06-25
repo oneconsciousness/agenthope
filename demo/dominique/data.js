@@ -258,6 +258,14 @@ window.HOPE_DATA = {
 
   skills: {
     order: ["Domain", "Methods", "Interpersonal", "Creative"],
+    radar: [
+      { axis: "Modernist Cuisine", score: 4, source: "ACF", inDemand: false },
+      { axis: "Plant-Based & Garde Manger", score: 4, source: "ACF", inDemand: true },
+      { axis: "Menu Development", score: 4, source: "ACF", inDemand: false },
+      { axis: "Kitchen Leadership", score: 3, source: "ACF", inDemand: false },
+      { axis: "Cost Control & Operations", score: 3, source: "ACF", inDemand: false },
+      { axis: "Hospitality & Service", score: 3, source: "ACF", inDemand: false }
+    ],
     categories: {
       "Domain": {
         category: "domain",

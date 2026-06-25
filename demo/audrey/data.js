@@ -265,6 +265,14 @@ window.HOPE_DATA = {
 
   skills: {
     order: ["Domain", "Programming", "Methods", "Interpersonal", "Languages"],
+    radar: [
+      { axis: "Open Government", score: 4, source: "OECD DGPF", inDemand: true },
+      { axis: "Participatory Governance", score: 4, source: "OECD", inDemand: false },
+      { axis: "Civic-Tech Engineering", score: 4, source: "UK DDaT", inDemand: false },
+      { axis: "Digital Public Service", score: 3, source: "OECD", inDemand: false },
+      { axis: "Cyber Resilience", score: 3, source: "UK DDaT", inDemand: true },
+      { axis: "Public Communication", score: 3, source: "UK DDaT", inDemand: false }
+    ],
     categories: {
       "Domain": {
         category: "domain",

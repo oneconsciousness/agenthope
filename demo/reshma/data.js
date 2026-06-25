@@ -230,6 +230,14 @@ window.HOPE_DATA = {
 
   skills: {
     order: ["Leadership & Mission", "Programs & Fundraising", "Communication", "Law & Policy"],
+    radar: [
+      { axis: "Advocacy & Leadership", score: 4, source: "CNP", inDemand: false },
+      { axis: "Movement Building", score: 4, source: "CFRE", inDemand: false },
+      { axis: "Communications & PR", score: 4, source: "CNP", inDemand: false },
+      { axis: "Fundraising", score: 3, source: "CNP", inDemand: false },
+      { axis: "Program Development", score: 3, source: "CNP", inDemand: false },
+      { axis: "Legal & Ethics", score: 3, source: "CNP", inDemand: false }
+    ],
     categories: {
       "Leadership & Mission": {
         category: "interpersonal",

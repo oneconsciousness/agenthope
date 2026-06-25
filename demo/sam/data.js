@@ -215,6 +215,14 @@ window.HOPE_DATA = {
 
   skills: {
     order: ["Domain", "Methods", "Interpersonal", "Analytical"],
+    radar: [
+      { axis: "Product Vision", score: 4, source: "SVPG", inDemand: false },
+      { axis: "Zero-to-One Building", score: 4, source: "BIP", inDemand: false },
+      { axis: "Fundraising", score: 4, source: "VC", inDemand: false },
+      { axis: "Founder Leadership", score: 3, source: "BIP", inDemand: false },
+      { axis: "Ecosystem Building", score: 3, source: "VC", inDemand: false },
+      { axis: "Public Influence", score: 3, source: "VC", inDemand: false }
+    ],
     categories: {
       "Domain": {
         category: "domain",

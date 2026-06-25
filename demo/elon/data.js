@@ -321,6 +321,15 @@ window.HOPE_DATA = {
 
   skills: {
     order: ["Domain", "Programming", "Methods", "Interpersonal", "Analytical"],
+    radar: [
+      { axis: "Technical Depth", score: 4, source: "NVCA", inDemand: false },
+      { axis: "Zero-to-One Building", score: 4, source: "NVCA", inDemand: false },
+      { axis: "Market Foresight", score: 4, source: "NVCA", inDemand: false },
+      { axis: "Operational Scaling", score: 3, source: "NVCA", inDemand: false },
+      { axis: "Org Building", score: 3, source: "CCL", inDemand: false },
+      { axis: "Public Influence", score: 4, source: "CCL", inDemand: false },
+      { axis: "Learning Agility", score: 3, source: "CCL", inDemand: false }
+    ],
     categories: {
       "Domain": {
         category: "domain",
