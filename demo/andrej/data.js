@@ -16,7 +16,7 @@ window.HOPE_DATA = {
 
   meta: {
     name: "Andrej Karpathy",
-    headline: "AI Engineer & Educator · Anthropic (ex-Tesla, OpenAI)",
+    headline: "AI Engineer & Educator · Anthropic (ex-Eureka Labs, Tesla, OpenAI)",
     og_description: "One of the most recognized AI engineers and educators — founding member of OpenAI, former Senior Director of AI at Tesla (Autopilot vision), now on Anthropic's pre-training team. From nanoGPT to teaching the world to build neural nets.",
     summary_short: "I build and teach the AI everyone is learning from. Founding member of OpenAI, led the Autopilot vision team at Tesla, and taught hundreds of thousands through Zero-to-Hero and CS231n.",
     site_url: "",

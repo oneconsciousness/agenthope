@@ -24,8 +24,8 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
         <div class="demo-card__body">
           <h3 class="demo-card__name">Dominique Crenn</h3>
           <p class="demo-card__headline">Chef &amp; Owner · Atelier Crenn (3 Michelin stars)</p>
-          <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
         </div>
+        <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
       </a>
 
       <a class="demo-card" href="{{ '/demo/susan/' | relative_url }}">
@@ -33,8 +33,8 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
         <div class="demo-card__body">
           <h3 class="demo-card__name">Susan Kare</h3>
           <p class="demo-card__headline">Designer · Iconography &amp; UI</p>
-          <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
         </div>
+        <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
       </a>
 
       <a class="demo-card" href="{{ '/demo/feifei/' | relative_url }}">
@@ -42,8 +42,8 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
         <div class="demo-card__body">
           <h3 class="demo-card__name">Fei-Fei Li</h3>
           <p class="demo-card__headline">AI Scientist · Co-founder &amp; CEO, World Labs</p>
-          <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
         </div>
+        <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
       </a>
 
       <a class="demo-card" href="{{ '/demo/audrey/' | relative_url }}">
@@ -51,8 +51,8 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
         <div class="demo-card__body">
           <h3 class="demo-card__name">Audrey Tang</h3>
           <p class="demo-card__headline">Civic Technologist · ex-Digital Minister, Taiwan</p>
-          <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
         </div>
+        <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
       </a>
 
       <a class="demo-card" href="{{ '/demo/reshma/' | relative_url }}">
@@ -60,8 +60,8 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
         <div class="demo-card__body">
           <h3 class="demo-card__name">Reshma Saujani</h3>
           <p class="demo-card__headline">Founder &amp; CEO, Girls Who Code · Founder, Moms First</p>
-          <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
         </div>
+        <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
       </a>
 
       <a class="demo-card" href="{{ '/demo/andrej/' | relative_url }}">
@@ -69,8 +69,8 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
         <div class="demo-card__body">
           <h3 class="demo-card__name">Andrej Karpathy</h3>
           <p class="demo-card__headline">AI Engineer &amp; Educator · Anthropic (ex-Tesla, OpenAI)</p>
-          <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
         </div>
+        <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
       </a>
 
       <a class="demo-card" href="{{ '/demo/dario/' | relative_url }}">
@@ -78,8 +78,8 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
         <div class="demo-card__body">
           <h3 class="demo-card__name">Dario Amodei</h3>
           <p class="demo-card__headline">Co-founder &amp; CEO, Anthropic · AI safety</p>
-          <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
         </div>
+        <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
       </a>
 
       <a class="demo-card" href="{{ '/demo/sam/' | relative_url }}">
@@ -87,8 +87,8 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
         <div class="demo-card__body">
           <h3 class="demo-card__name">Sam Altman</h3>
           <p class="demo-card__headline">Co-founder &amp; CEO, OpenAI</p>
-          <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
         </div>
+        <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
       </a>
 
       <a class="demo-card" href="{{ '/demo/elon/' | relative_url }}">
@@ -96,8 +96,8 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
         <div class="demo-card__body">
           <h3 class="demo-card__name">Elon Musk</h3>
           <p class="demo-card__headline">Founder &amp; CEO · SpaceX, Tesla, xAI</p>
-          <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
         </div>
+        <span class="demo-card__link">View portfolio <span class="arrow">→</span></span>
       </a>
     </div>
 
@@ -111,10 +111,11 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
 </section>
 
 <style>
-/* Demo gallery — coherent with site cards, but photo-led for the persona grid. */
+/* Demo gallery — photo-led persona cards, coherent with the site .card aesthetic:
+   top accent ledge, vertical rhythm, mono footer affordance, equal-height tiles. */
 .demo-gallery {
   display: grid;
-  gap: 16px;
+  gap: 18px;
   margin: 0 auto 2rem;
   grid-template-columns: 1fr;
 }
@@ -124,9 +125,8 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
 .demo-card {
   position: relative;
   display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 18px;
+  flex-direction: column;
+  padding: 22px 22px 18px;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
@@ -162,26 +162,42 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
 
 .demo-card__photo {
   flex: 0 0 auto;
-  width: 72px;
-  height: 72px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid color-mix(in srgb, var(--card-accent) 40%, var(--border));
+  border: 2px solid color-mix(in srgb, var(--card-accent) 50%, var(--border));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--card-accent) 7%, transparent), var(--shadow-sm);
+  margin-bottom: 18px;
 }
-.demo-card__body { min-width: 0; }
-.demo-card__name { margin: 0 0 3px; font-size: 1.08rem; line-height: 1.25; }
+.demo-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.demo-card__name {
+  margin: 0 0 6px;
+  font-size: 1.14rem;
+  line-height: 1.22;
+  font-weight: 650;
+  letter-spacing: -0.012em;
+}
 .demo-card__headline {
-  margin: 0 0 8px;
+  margin: 0;
   color: var(--text-secondary);
   font-size: 0.9rem;
-  line-height: 1.45;
+  line-height: 1.46;
 }
 .demo-card__link {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--card-accent);
