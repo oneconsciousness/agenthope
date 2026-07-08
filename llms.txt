@@ -19,6 +19,7 @@ The flow is three steps, in order: Onboarding (capture the user's story) → Por
 
 ## Optional
 
+- [Portfolio styles](https://agenthope.ai/styles/): Browse the six portfolio designs and pick a style.
 - [About](https://agenthope.ai/about/): What Hope is, who made it, and why it's free.
 - [llms-full.txt](https://agenthope.ai/llms-full.txt): Every skill's full Markdown inlined in one file.
 - [GitHub source](https://github.com/oneconsciousness/job-hunt-with-hope): The open-source repository (MIT).
