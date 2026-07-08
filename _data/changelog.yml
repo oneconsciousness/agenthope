@@ -15,6 +15,10 @@
 # Bad:   "Added a Goal node to the career graph schema (v1.1)."
 # ─────────────────────────────────────────────────────────────────────────────
 
+- date: "Jul 2026"
+  headline: "Try your portfolio in six looks, and in the dark."
+  body: "Every example portfolio now has a floating style dock in the corner — flip between six distinct looks and switch light or dark, all without leaving the page. A quick way to see which style fits you before you build your own."
+
 - date: "Jun 2026"
   headline: "See your strengths as one striking picture."
   body: "Your portfolio's skills now open with a clean visual map of your top strengths — shaped to your own line of work, whether you're a chef, a nurse, an electrician, or an engineer. A recruiter takes in what you're great at in a single glance, before reading a word."
