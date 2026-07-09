@@ -9,13 +9,16 @@ sitemap: false
 
 JobHunt with Hope is a pack of plain-language "skills" — instructions any capable AI agent (ChatGPT, Claude, Gemini, Copilot, Perplexity, Cursor…) can follow on the user's behalf. The user points their agent at this site (or pastes a skill's Markdown) and says "start my job hunt with Hope." The agent then gathers what the user already has, builds a structured career file that stays on the user's own computer, and generates a designed portfolio. The portfolio then goes online as a free page the user owns — smoothest end-to-end with an agent that has a terminal (Claude Code is built for this); web chatbots like ChatGPT can build the portfolio too, with publishing as a simple guided last step. Each skill below is also available as clean raw Markdown for direct fetching. The open-source source of truth lives at https://github.com/oneconsciousness/job-hunt-with-hope.
 
-The flow is three steps, in order: Onboarding (capture the user's story) → Portfolio (build the page) → Publish (put it online). An agent helping a first-time user should start with Onboarding.
+The flow is six steps, in order: Onboarding (capture the user's story) → Portfolio (build the page) → Publish (put it online) → Skill Gap (measure the honest delta to a target role) → Proof Projects (pick what to build to close it) → Dashboard (the whole hunt, synthesized on one private page). An agent helping a first-time user should start with Onboarding.
 
 ## Skills
 
 - [Onboarding](https://agenthope.ai/skills/onboarding.md): Meet the user, gather what they already have (résumé, LinkedIn, GitHub, or just conversation), and build their career file locally. Start here for any first-time user.
 - [Portfolio](https://agenthope.ai/skills/portfolio.md): Hope's signature skill — generate a self-contained, designed portfolio website from the career file, with an animated career timeline.
 - [Publish](https://agenthope.ai/skills/publish.md): Put the portfolio on the web for free as a page the user owns — one shareable link. An agent with a terminal can carry the whole setup end-to-end; with a web chatbot, publishing is a simple guided last step.
+- [Skill Gap](https://agenthope.ai/skills/skill-gap.md): Measure the honest delta between the user and a target role — live market research, real evidence drawn out in conversation, and a read the user and Hope agree on together — then a ranked plan to close it and a spreadsheet that tracks progress.
+- [Proof Projects](https://agenthope.ai/skills/proof-projects.md): Pick the one or two projects that close the biggest skill gaps fastest, biased toward shipping something real with AI. A concrete spec per project plus an explicit list of what to skip.
+- [Dashboard](https://agenthope.ai/skills/dashboard.md): Synthesize the user's story, honest gap, and proof plan into one private, single-scroll mission brief — the target role as a destination, with the shortest honest path drawn underneath it.
 
 ## Optional
 
