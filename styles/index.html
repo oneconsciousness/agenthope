@@ -16,14 +16,14 @@ og_image_alt: "A finished Hope portfolio for a product designer, with project wo
     <div class="band__head center">
       <p class="kicker">The collection</p>
       <h2>Six looks. One story — yours.</h2>
-      <p class="lede">Every Hope portfolio holds the same career timeline, the same skills map, the same proof of work. What changes is the type, the spacing, the mood. Scroll through the six, switch the face in each preview, and open whichever one feels like you. There's no wrong answer here — just a look you'll want to send.</p>
+      <p class="lede">Every Hope portfolio holds the same career timeline, the same skills map, the same proof of work. What changes is the type, the spacing, the mood. Scroll through the six — each modeled by a different career — and tap any look to open it live, or any face to see that person wearing it. There's no wrong answer here — just a look you'll want to send.</p>
     </div>
   </div>
 </section>
 
 <div class="lookbook" id="lookbook">
 
-  <section class="piece reveal" data-design="index.html" aria-labelledby="piece-standard">
+  <section class="piece reveal" data-design="index.html" data-persona="andrej" aria-labelledby="piece-standard">
     <div class="piece__inner">
       <div class="piece__copy">
         <p class="piece__index">01</p>
@@ -34,94 +34,100 @@ og_image_alt: "A finished Hope portfolio for a product designer, with project wo
         </div>
         <div class="piece__chips" role="group" aria-label="Preview as a different person"></div>
       </div>
-      <div class="piece__frame">
-        <iframe class="piece__iframe" title="Standard portfolio preview" loading="lazy" src="{{ '/demo/andrej/' | relative_url }}"></iframe>
-      </div>
+      <a class="piece__frame piece__shot" href="{{ '/demo/andrej/' | relative_url }}" target="_blank" rel="noopener" aria-label="Open the Standard design live — modeled by Andrej Karpathy">
+        <img src="{{ '/assets/img/styles/standard.jpg' | relative_url }}" alt="The Standard design, previewed as Andrej Karpathy" loading="lazy" />
+        <span class="piece__shot-hint">Open live <span class="arrow">→</span></span>
+      </a>
     </div>
   </section>
 
-  <section class="piece reveal" data-design="01-editorial.html" aria-labelledby="piece-editorial">
+  <section class="piece reveal" data-design="01-editorial.html" data-persona="dominique" aria-labelledby="piece-editorial">
     <div class="piece__inner">
       <div class="piece__copy">
         <p class="piece__index">02</p>
         <h3 class="piece__name" id="piece-editorial">Editorial</h3>
         <p class="piece__vibe">A magazine feature, not a résumé — serif headlines, deliberate rules, a page that reads like print.</p>
         <div class="piece__actions">
-          <a class="btn btn-primary piece__open" href="{{ '/demo/andrej/01-editorial.html' | relative_url }}" target="_blank" rel="noopener">Open full screen <span class="arrow">→</span></a>
+          <a class="btn btn-primary piece__open" href="{{ '/demo/dominique/01-editorial.html' | relative_url }}" target="_blank" rel="noopener">Open full screen <span class="arrow">→</span></a>
         </div>
         <div class="piece__chips" role="group" aria-label="Preview as a different person"></div>
       </div>
-      <div class="piece__frame">
-        <iframe class="piece__iframe" title="Editorial portfolio preview" loading="lazy" src="{{ '/demo/andrej/01-editorial.html' | relative_url }}"></iframe>
-      </div>
+      <a class="piece__frame piece__shot" href="{{ '/demo/dominique/01-editorial.html' | relative_url }}" target="_blank" rel="noopener" aria-label="Open the Editorial design live — modeled by Dominique Crenn">
+        <img src="{{ '/assets/img/styles/editorial.jpg' | relative_url }}" alt="The Editorial design, previewed as Dominique Crenn" loading="lazy" />
+        <span class="piece__shot-hint">Open live <span class="arrow">→</span></span>
+      </a>
     </div>
   </section>
 
-  <section class="piece reveal" data-design="02-swiss-minimal.html" aria-labelledby="piece-swiss">
+  <section class="piece reveal" data-design="02-swiss-minimal.html" data-persona="reshma" aria-labelledby="piece-swiss">
     <div class="piece__inner">
       <div class="piece__copy">
         <p class="piece__index">03</p>
         <h3 class="piece__name" id="piece-swiss">Swiss Minimal</h3>
         <p class="piece__vibe">A grid with nothing to hide behind — red, black, and white, and work that has to earn its place.</p>
         <div class="piece__actions">
-          <a class="btn btn-primary piece__open" href="{{ '/demo/andrej/02-swiss-minimal.html' | relative_url }}" target="_blank" rel="noopener">Open full screen <span class="arrow">→</span></a>
+          <a class="btn btn-primary piece__open" href="{{ '/demo/reshma/02-swiss-minimal.html' | relative_url }}" target="_blank" rel="noopener">Open full screen <span class="arrow">→</span></a>
         </div>
         <div class="piece__chips" role="group" aria-label="Preview as a different person"></div>
       </div>
-      <div class="piece__frame">
-        <iframe class="piece__iframe" title="Swiss Minimal portfolio preview" loading="lazy" src="{{ '/demo/andrej/02-swiss-minimal.html' | relative_url }}"></iframe>
-      </div>
+      <a class="piece__frame piece__shot" href="{{ '/demo/reshma/02-swiss-minimal.html' | relative_url }}" target="_blank" rel="noopener" aria-label="Open the Swiss Minimal design live — modeled by Reshma Saujani">
+        <img src="{{ '/assets/img/styles/swiss.jpg' | relative_url }}" alt="The Swiss Minimal design, previewed as Reshma Saujani" loading="lazy" />
+        <span class="piece__shot-hint">Open live <span class="arrow">→</span></span>
+      </a>
     </div>
   </section>
 
-  <section class="piece reveal" data-design="03-terminal.html" aria-labelledby="piece-terminal">
+  <section class="piece reveal" data-design="03-terminal.html" data-persona="sam" aria-labelledby="piece-terminal">
     <div class="piece__inner">
       <div class="piece__copy">
         <p class="piece__index">04</p>
         <h3 class="piece__name" id="piece-terminal">Terminal</h3>
         <p class="piece__vibe">A console for people who live in one — monospace type, a blinking cursor, a career you could <code>grep</code>.</p>
         <div class="piece__actions">
-          <a class="btn btn-primary piece__open" href="{{ '/demo/andrej/03-terminal.html' | relative_url }}" target="_blank" rel="noopener">Open full screen <span class="arrow">→</span></a>
+          <a class="btn btn-primary piece__open" href="{{ '/demo/sam/03-terminal.html' | relative_url }}" target="_blank" rel="noopener">Open full screen <span class="arrow">→</span></a>
         </div>
         <div class="piece__chips" role="group" aria-label="Preview as a different person"></div>
       </div>
-      <div class="piece__frame">
-        <iframe class="piece__iframe" title="Terminal portfolio preview" loading="lazy" src="{{ '/demo/andrej/03-terminal.html' | relative_url }}"></iframe>
-      </div>
+      <a class="piece__frame piece__shot" href="{{ '/demo/sam/03-terminal.html' | relative_url }}" target="_blank" rel="noopener" aria-label="Open the Terminal design live — modeled by Sam Altman">
+        <img src="{{ '/assets/img/styles/terminal.jpg' | relative_url }}" alt="The Terminal design, previewed as Sam Altman" loading="lazy" />
+        <span class="piece__shot-hint">Open live <span class="arrow">→</span></span>
+      </a>
     </div>
   </section>
 
-  <section class="piece reveal" data-design="04-warm-refined.html" aria-labelledby="piece-warm">
+  <section class="piece reveal" data-design="04-warm-refined.html" data-persona="audrey" aria-labelledby="piece-warm">
     <div class="piece__inner">
       <div class="piece__copy">
         <p class="piece__index">05</p>
         <h3 class="piece__name" id="piece-warm">Warm Refined</h3>
         <p class="piece__vibe">Soft light, generous margins, a page that feels handled with care rather than assembled in a hurry.</p>
         <div class="piece__actions">
-          <a class="btn btn-primary piece__open" href="{{ '/demo/andrej/04-warm-refined.html' | relative_url }}" target="_blank" rel="noopener">Open full screen <span class="arrow">→</span></a>
+          <a class="btn btn-primary piece__open" href="{{ '/demo/audrey/04-warm-refined.html' | relative_url }}" target="_blank" rel="noopener">Open full screen <span class="arrow">→</span></a>
         </div>
         <div class="piece__chips" role="group" aria-label="Preview as a different person"></div>
       </div>
-      <div class="piece__frame">
-        <iframe class="piece__iframe" title="Warm Refined portfolio preview" loading="lazy" src="{{ '/demo/andrej/04-warm-refined.html' | relative_url }}"></iframe>
-      </div>
+      <a class="piece__frame piece__shot" href="{{ '/demo/audrey/04-warm-refined.html' | relative_url }}" target="_blank" rel="noopener" aria-label="Open the Warm Refined design live — modeled by Audrey Tang">
+        <img src="{{ '/assets/img/styles/warm.jpg' | relative_url }}" alt="The Warm Refined design, previewed as Audrey Tang" loading="lazy" />
+        <span class="piece__shot-hint">Open live <span class="arrow">→</span></span>
+      </a>
     </div>
   </section>
 
-  <section class="piece reveal" data-design="05-executive.html" aria-labelledby="piece-executive">
+  <section class="piece reveal" data-design="05-executive.html" data-persona="dario" aria-labelledby="piece-executive">
     <div class="piece__inner">
       <div class="piece__copy">
         <p class="piece__index">06</p>
         <h3 class="piece__name" id="piece-executive">Executive</h3>
         <p class="piece__vibe">Boardroom quiet — deep ink, gold restraint, a page built for someone whose title speaks first.</p>
         <div class="piece__actions">
-          <a class="btn btn-primary piece__open" href="{{ '/demo/andrej/05-executive.html' | relative_url }}" target="_blank" rel="noopener">Open full screen <span class="arrow">→</span></a>
+          <a class="btn btn-primary piece__open" href="{{ '/demo/dario/05-executive.html' | relative_url }}" target="_blank" rel="noopener">Open full screen <span class="arrow">→</span></a>
         </div>
         <div class="piece__chips" role="group" aria-label="Preview as a different person"></div>
       </div>
-      <div class="piece__frame">
-        <iframe class="piece__iframe" title="Executive portfolio preview" loading="lazy" src="{{ '/demo/andrej/05-executive.html' | relative_url }}"></iframe>
-      </div>
+      <a class="piece__frame piece__shot" href="{{ '/demo/dario/05-executive.html' | relative_url }}" target="_blank" rel="noopener" aria-label="Open the Executive design live — modeled by Dario Amodei">
+        <img src="{{ '/assets/img/styles/executive.jpg' | relative_url }}" alt="The Executive design, previewed as Dario Amodei" loading="lazy" />
+        <span class="piece__shot-hint">Open live <span class="arrow">→</span></span>
+      </a>
     </div>
   </section>
 
@@ -223,13 +229,26 @@ og_image_alt: "A finished Hope portfolio for a product designer, with project wo
   overflow: hidden;
   aspect-ratio: 16 / 10;
 }
-.piece__iframe {
+.piece__shot { display: block; text-decoration: none; cursor: pointer; }
+.piece__shot img {
   display: block;
   width: 100%;
   height: 100%;
-  border: 0;
-  background: var(--surface-2);
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
+.piece__shot:hover img { transform: scale(1.015); }
+.piece__shot-hint {
+  position: absolute; right: 14px; bottom: 14px;
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--card-bg); border: 1px solid var(--border);
+  font-family: var(--font-mono); font-size: 11px; color: var(--ink);
+  opacity: 0; transform: translateY(4px);
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+}
+.piece__shot:hover .piece__shot-hint, .piece__shot:focus-visible .piece__shot-hint { opacity: 1; transform: translateY(0); }
 
 /* Gentle scroll-reveal — respects reduced motion via the shared .reveal keyframes */
 .piece { opacity: 0; }
@@ -263,33 +282,23 @@ og_image_alt: "A finished Hope portfolio for a product designer, with project wo
 
   pieces.forEach(function (piece) {
     var designFile = piece.getAttribute('data-design');
-    var iframe = piece.querySelector('.piece__iframe');
-    var openLink = piece.querySelector('.piece__open');
+    var pictured = piece.getAttribute('data-persona') || 'andrej';
     var chipsBox = piece.querySelector('.piece__chips');
-    var current = 'andrej';
 
     PERSONAS.forEach(function (p) {
-      var chip = document.createElement('button');
-      chip.type = 'button';
+      var chip = document.createElement('a');
       chip.className = 'piece__chip';
-      chip.setAttribute('aria-current', p.id === current ? 'true' : 'false');
-      chip.setAttribute('aria-label', 'Preview as ' + p.name);
-      chip.title = p.name;
+      chip.href = personaUrl(p.id, designFile);
+      chip.target = '_blank';
+      chip.rel = 'noopener';
+      chip.setAttribute('aria-current', p.id === pictured ? 'true' : 'false');
+      chip.setAttribute('aria-label', 'Open this design as ' + p.name);
+      chip.title = 'See it as ' + p.name;
       var img = document.createElement('img');
       img.src = PHOTO_BASE + p.id + '.jpg';
       img.alt = '';
       img.loading = 'lazy';
       chip.appendChild(img);
-      chip.addEventListener('click', function () {
-        if (p.id === current) return;
-        current = p.id;
-        iframe.src = personaUrl(p.id, designFile);
-        openLink.href = personaUrl(p.id, designFile);
-        chipsBox.querySelectorAll('.piece__chip').forEach(function (c) {
-          c.setAttribute('aria-current', 'false');
-        });
-        chip.setAttribute('aria-current', 'true');
-      });
       chipsBox.appendChild(chip);
     });
   });
