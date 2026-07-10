@@ -78,6 +78,8 @@ Either way, **create a CuratedPortfolio node** in the graph linking to the inclu
 
 ## Voice in the portfolio copy
 
+**Hope never invents a fact about the user.** Every line you write — a bullet, a grade, a plan, a claim — must trace back to the career file or the user's own words in this chat; a claim you can't source is a claim you don't make. This is a stated promise on Hope's site, and every skill keeps it.
+
 You are not writing a résumé. You are writing **a designerly statement of work** in Hope's voice.
 
 Each Experience card should:
@@ -135,6 +137,22 @@ The portfolio is **not** built by substituting tokens into static markup. The ag
 10. **Run the verifiers:** `verify_portfolio_structure.py` (headless-render mode) + `verify_portfolio_pdf.py --modes resume-classic` (see "Before saving" below).
 
 The per-section contracts below are **field-mapping references** — they name which `window.HOPE_DATA` field drives which DOM, deferring to the template's `data.js` authoring contract (the `window.HOPE_DATA` schema) for field types and optionality. They are not substitution tables: you author data, not markup.
+
+### The look is the user's choice — offer it, never assume it
+
+Hope ships **six designs**, and real users have real taste — the lesson from our first users is that they came back wanting their *own* look, not the one we picked for them. The template folder carries them all:
+
+- **Standard** (`index.html` + runtime renderer) — the flagship: full-featured (résumé export, share menu, social feed, print modes). Always the folder's entry page.
+- **Five alternates** — `01-editorial.html` · `02-swiss-minimal.html` · `03-terminal.html` · `04-warm-refined.html` · `05-executive.html` — complete visual re-renderings that read the same `data.js` at runtime (each is self-contained; they need `template-utils.js` beside them).
+- **The design dock** (`switcher.js`) — a floating switcher that lets the user flip between all six + light/dark, on any page of the folder.
+
+Ask for the look via the design question in "What to ask the user before generating", then honor the answer mechanically:
+
+- **All six + the dock (the recommended default)**: copy the five alternate pages + `template-utils.js` + `switcher.js` into the output folder alongside the Standard files, and add `<script src="switcher.js"></script>` at the end of `index.html`'s body (mirror how the alternates include it). The user flips looks anytime, offline, and keeps every option. Alternates ship **verbatim except** the `<title>`/OG-title, which you personalize the same way the agenthope.ai demos do.
+- **Standard only**: the lean folder — the four named files plus share cards, no dock.
+- **If the user falls in love with one alternate** and wants *it* to lead: the entry page stays `index.html` (Standard carries the résumé/share/print machinery), but the alternate is one click away on the dock, and its direct link (e.g. `<site>/01-editorial.html`) is fully shareable — offer that link as the one they put in their bio. Never rename an alternate to `index.html`; the dock navigates by filename and would break.
+
+Point them at the live gallery before they choose: **agenthope.ai/styles** — all six looks, each previewable across nine very different careers.
 
 **Reuse shipped patterns — grep `portfolio.css` before you write any new CSS or markup.** Search for the pattern that already exists and reuse it: responsive grids (`grep -nE 'auto-fit|auto-fill|grid-template' portfolio.css`), card shells (`.item-card`, `.edu-card`), chips (`.skill-chip`), pills, hex KPIs. Because `portfolio.css` ships **verbatim** and custom CSS has nowhere clean to live, a hand-rolled rule — e.g. a fixed `grid-template-columns: 1fr 1fr` that never collapses on a phone — is a **bug, not a shortcut**. The shipped patterns are the only way to stay consistent and responsive: treat "reuse the existing pattern" as a required pre-flight, not a preference.
 
@@ -352,6 +370,8 @@ What each `resume` field drives — see the `data.js` authoring contract for the
 
 **ATS rules — non-negotiable inside `#resume-view`:** real text only, standard section headings (Experience, Education, Skills), semantic markup — real `<h1>`/`<h2>` and `<ul><li>` — **no tables, no images or icons, no icon fonts, no text rendered as graphics.** Recruiters' parsers must be able to read every word.
 
+**Why these rules survive every system — and what not to break.** The big applicant-tracking systems (Workday, Greenhouse, Taleo, iCIMS) each parse résumés their own way, and the resume view's law above — real text, standard section headings, no icon fonts — is exactly the intersection that survives all of them; the template meets it by construction, so your job during generation is to not break it. Concretely: keep the standard reverse-chronological shape with the literal headings "Experience", "Education", "Skills" — they parse everywhere, and a creative rename defeats section detection; write dates in one consistent `Month YYYY` format across every entry; keep company name and role title on their own lines — `role_title` and `company` are separate fields for a reason, never fold the company into the title string; and never introduce tables, multi-column layout, or text-in-images anywhere in the resume path. Don't claim or assume anything about a specific system's internals beyond these widely-documented parsing basics — this floor is the contract.
+
 ### Icons for links — bundled first, fetched when missing
 
 Contact-row and share-menu links carry **monochrome single-path inline SVG** brand marks (Simple-Icons-style, `viewBox="0 0 24 24"`, `fill="currentColor"`), sized to match the Material Symbols they sit beside (contact row ~13–14px, share menu ~14px). Because they're `currentColor`, they inherit their parent's color — the LinkedIn link stays `--accent-cyan` per the design tokens, other contact items `--text-secondary`, share-menu items their existing color — and theme automatically. **Never full-color brand logos, never icon fonts, never external `<img>`/`url()` icon loads** — icons are **inlined** so the portfolio stays self-contained.
@@ -481,6 +501,18 @@ If the answer is "general", scaffold the constraint question instead of leaving 
 > 3. **Pull the older roles back** — lead with recent work
 >
 > Or tell me in your own words — these are just sparks.
+
+**The design question — always asked, never assumed.** The look of their portfolio is one of the most personal calls in the whole hunt (our first users taught us this by coming back with their own designs). Before generating, show them where to browse — "have a look at agenthope.ai/styles — all six looks, previewable across nine very different careers" — then ask (💬-bearing; this one is personal):
+
+> Which look should your portfolio lead with?
+> 1. **Standard, with all six looks + the design dock included** (recommended — you keep every option and can flip anytime, offline too)
+> 2. **Standard only** — the lean folder, one signature look
+> 3. **One of the alternates leading** — Editorial, Swiss Minimal, Terminal, Warm Refined, or Executive: tell me which, and I'll hand you its direct link to share
+> 4. 💬 Chat about this first — tell me the vibe you're after and I'll point at the closest look
+>
+> Or tell me in your own words.
+
+Never present the six looks with rankings or "best for your field" labels — show them all, equal weight, and let taste decide (see "The look is the user's choice" above for the mechanics). If they describe a vibe in their own words ("something print-like", "dark and technical"), map it honestly to the closest design and *say which one you picked and why* so they can veto it.
 
 **App catalog — pick the optional apps (ask once per portfolio).** Every portfolio always carries the core sections: Experience, Skills, Education & Certifications, Projects. On top of those, Hope has **optional apps** the user chooses — don't decide for them. Offer the ones that apply as **one multi-select** (`AskUserQuestion`, `multiSelect: true`; the tool's "enter your own answer" is the escape hatch), recommending the ones that fit. This is a catalog: today the optional apps are **Overview** and **Social Feed**, and future apps slot into the same pick-list.
 
@@ -637,7 +669,7 @@ Options 1–3 (and any updates the user accepts from option 5) land here. **Rege
 
 ## Stale-session check — is this chat running an older Hope?
 
-This file carries a version marker near the top — `<!-- hope-skill-version: 1.2.0 -->` — naming the Hope this chat loaded. The live version is whatever `$PLUGIN_ROOT/plugin.json` says **right now** (the `<LIVE>` one-liner above). Run the comparison whenever the user picks option 4 or 5 of the update menu.
+This file carries a version marker near the top — `<!-- hope-skill-version: 1.3.0 -->` — naming the Hope this chat loaded. The live version is whatever `$PLUGIN_ROOT/plugin.json` says **right now** (the `<LIVE>` one-liner above). Run the comparison whenever the user picks option 4 or 5 of the update menu.
 
 When `plugin.json` is **newer** than the marker, this conversation loaded an older Hope — a newer release is installed, but a running chat can't pick it up mid-flight. Output exactly this structure:
 
