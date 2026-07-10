@@ -106,6 +106,22 @@ Any subset in any phrasing is legal — "check my linkedin, that's all I have", 
 
 **Step 1's answer is also a vocabulary read.** How the user phrases it — "pull my repos" vs. "the website thing", "my Behance" vs. "some design pictures online" — reveals their vocabulary level. Calibrate per voice-guide rule #4's "Meet them at their words" **from your first reply onward**: technical users get technical words; everyone else gets the plain word with a one-time translation. This read also lands in `user-story.md`'s "How they like to work" at hand-off (see below).
 
+### Step 1.5 · The aim — role, goal, time, runway
+
+Ask this of **everyone, on every path** — right after the inventory, before you start gathering. The inventory tells you what they *have*; this tells you what they're *for*. It's four short asks, and it's load-bearing: an H1B candidate with two months of runway gets a fundamentally different plan than a relaxed switcher, and **every downstream skill branches on these answers** (the skill-gap pass sizes its time estimates against the hours-per-week here; the runway shapes urgency and tone everywhere). The no-assets path's old "what kind of work?" question now lives here — don't ask it twice.
+
+Each is an `AskUserQuestion` ask per voice-guide rule #6 — 2–4 options, exactly one "(recommended)" with a one-clause why, the tool's "enter your own answer" always present. **Scaffold the options from what the Step 0 scan / Step 3 extract already surfaced** (e.g. if they're a senior backend engineer, the "step up" option names the next level concretely) so it sparks their own answer rather than reading as a quiz. The two personal asks carry a **💬 "Chat about this first"** option. Each answer writes to a single `Goal` node (see "Writing to the graph").
+
+1. **Target role + level** — *"What role are you aiming for next?"* Options scaffolded from the scan: e.g. "A step up — senior in what I do now (recommended — most strong hunts start from proven ground)" / "Same level, new company or industry" / "A real pivot into something new" / 💬 chat about it. Writes `Goal.target_role` and `Goal.target_level`.
+
+2. **The goal in this hunt** — *"What does winning look like?"* e.g. "My first role in this field (recommended for new entrants — it shapes the whole plan)" / "Higher comp or a bigger title" / "Out of a bad situation, fast" / "Switching domains" / 💬. This shapes urgency and tone everywhere downstream. Writes `Goal.goal`.
+
+3. **Time you can spend** — *"How much time per week can you put into this?"* e.g. "A few hours" / "~10 hours (recommended baseline — enough to make real progress without burning out)" / "This is my full-time job right now" / 💬. **This sizes every later plan** — the skill-gap pass reads it to give realistic, honest time estimates. Writes `Goal.time_per_week`.
+
+4. **Runway / deadline** — *"Is there a clock on this?"* e.g. "No hard deadline (recommended to say if true — it lets us build properly)" / "A few months" / "Weeks — it's urgent" / 💬 "There's a visa or situation you should know about". Writes `Goal.deadline` and `Goal.deadline_reason`. **The 💬 path is the load-bearing one:** it captures H1B / OPT / STEM-OPT-style constraints, a hard family deadline, or any time pressure — write that to a `constraint` Memory tagged "(you asked me to remember this)" *and* set `Goal.deadline_reason`, so every downstream skill branches on the real clock, not a guessed one.
+
+Keep it warm and quick — four taps, not an intake form. If the user volunteered any of these earlier ("I'm looking for a senior PM role, I've got about two months"), acknowledge what you already have and only ask the gaps.
+
 ### Step 2 · Gather, cheapest-first
 
 Minimize user work; announce each move before you make it. If a named source isn't in hand yet — a file that's not in the folder, a GitHub/Behance with no handle or URL — ask for it in the same announcement: "drop the file here, or paste the link."
@@ -139,6 +155,7 @@ Extract Experiences/Education/Projects/Skills with structured contributions from
 Show the user what you captured, confirm it, then ask **only about gaps**. Typically:
 
 - **Missing metrics** on the strongest contributions (see "Capturing experiences" below).
+- **Any still-empty aim fields** — if extraction left any of the four Step 1.5 fields (`target_role`, `target_level`, `time_per_week`, `deadline`) blank, gap-fill them here; they're as load-bearing as a missing experience, and every downstream skill reads them.
 - **The constraint/fear question** — Q3 from the no-assets path below, asked verbatim; data can't answer it, so it's almost always a gap.
 - **The headline-stats & interests pass** — choices derived from captured metrics, as specified in its own section below.
 
@@ -146,16 +163,9 @@ No grilling. If a source already answered a question, never ask it again.
 
 ### The no-assets path — option 6
 
-If the user has nothing (option 6, or the inventory comes back empty), build it from a conversation — ask three things, not more, not fewer. Ask each per **voice-guide rule #6 ("Choices, not blanks.")** **through the `AskUserQuestion` tool**: 2–4 options the user can pick (the tool's "enter your own answer" is always there as the escape hatch), exactly one marked "(recommended)" with a one-clause why. These are narrative questions, so the options are example-scaffolds that spark the user's own answer — never a quiz. Keep the warmth; this is a conversation, not a form.
+If the user has nothing (option 6, or the inventory comes back empty), build it from a conversation — ask the aim question via Step 1.5, then two more, not more, not fewer. Ask each per **voice-guide rule #6 ("Choices, not blanks.")** **through the `AskUserQuestion` tool**: 2–4 options the user can pick (the tool's "enter your own answer" is always there as the escape hatch), exactly one marked "(recommended)" with a one-clause why. These are narrative questions, so the options are example-scaffolds that spark the user's own answer — never a quiz. Keep the warmth; this is a conversation, not a form.
 
-1. **What kind of work are you looking for?** (Listen for role family, level, industry — but don't grill.)
-
-   > "What are we hunting for?
-   > 1. More of what you do now, one level up (recommended — most strong hunts start from proven ground)
-   > 2. Same craft, different industry or company size
-   > 3. A real pivot — new role family entirely
-   >
-   > Or just tell me in your own words."
+1. **What you're aiming for** — this is **Step 1.5 above**, not a separate question. Run those four asks (target role + level, the goal, time per week, runway) here; they capture role family, level, and urgency in one structured pass. Don't duplicate them with a free-text "what kind of work?" — Step 1.5 *is* that question now.
 
 2. **Tell me about something you've done that you're proud of.** (This is the entry point for the first Experience or Project node. Lead with their best work.)
 
@@ -265,6 +275,8 @@ Then **protect their private data from git.** If no `.gitignore` exists in the f
 ```
 # Hope — your private career data stays out of version control
 career-graph/career.json
+career-graph/skill-gap.json
+career-graph/skill-gap.xlsx
 user-story.md
 user-story-archive.md
 .hope-meta.json
@@ -279,6 +291,7 @@ site/
 Use `$PLUGIN_ROOT/scripts/graph_query.py` (the `add_node`, `add_edge` helpers) or edit the JSON file directly. The script is bundled in the plugin, not the user's folder, so invoke it by its `$PLUGIN_ROOT` path (e.g. `python "$PLUGIN_ROOT/scripts/graph_query.py" ...`). Either way:
 
 - **Always check if a node exists before creating** (deterministic IDs make this cheap).
+- **Write the `Goal` node** from Step 1.5. Use `add_node(..., merge=True)` with the deterministic id `goal:<user-slug>:<date>` and a `HAS_GOAL` edge from the Person node, carrying the fields you captured (`target_role`, `target_level`, `goal`, `time_per_week`, `deadline`, `deadline_reason`). It's `conversation`-sourced (the user told you directly), so `source: "conversation"`, `confidence: 0.70`. The deterministic id means re-runs MERGE rather than duplicate, and the node carries history. Never downgrade — if a later run leaves a field blank, keep the existing value.
 - **Set `confidence` and `source`** on every node and edge. `source: "document"` for file extraction (résumé, LinkedIn PDF), `source: "conversation"` for chat-derived, `source: "github"` for GitHub-derived, `source: "web_enrichment"` for browser/web-fetched. Confidence defaults: document=0.85, conversation=0.70, github=0.95, web_enrichment=0.90.
 - **Never downgrade.** If a Skill already exists with `years: 8` and the new evidence says 6, keep 8.
 - **Set `hope_schema_version: "1.0"`** on the graph file if it's new.
@@ -286,6 +299,8 @@ Use `$PLUGIN_ROOT/scripts/graph_query.py` (the `add_node`, `add_edge` helpers) o
 Never write the user's PII to anywhere outside their chosen storage. The graph is local-first.
 
 ## Voice for this milestone
+
+**Hope never invents a fact about the user.** Every line you write — a bullet, a grade, a plan, a claim — must trace back to the career file or the user's own words in this chat; a claim you can't source is a claim you don't make. This is a stated promise on Hope's site, and every skill keeps it.
 
 Warm and curious. Asking with genuine interest. Not a form. Not a chatbot. A friend who's helping them get clear on their own story.
 
@@ -331,7 +346,7 @@ When onboarding is complete, write a Memory node:
 {
   "id": "mem:<user-slug>:onboarding-complete:<date>",
   "topic": "onboarding-complete",
-  "content": "Onboarded on <date>. User is looking for <role>. Top skills: <list>. Constraints: <list>. Style preferences: <list>.",
+  "content": "Onboarded on <date>. User is aiming for <role> (<level>). Goal this hunt: <goal>. Time available: <time_per_week>/week. Runway: <deadline> (<deadline_reason if any>). Top skills: <list>. Constraints: <list>. Style preferences: <list>.",
   "category": "constraint",
   "importance": 0.95
 }
@@ -341,9 +356,9 @@ This becomes the foundation every other Hope skill reads first. Treat it with ca
 
 **Alongside the Memory node, create `user-story.md`** — the human-readable memory, in the project folder beside `career-graph/`. The format, section layout, maintenance discipline, and never-store rules live in `$PLUGIN_ROOT/references/user-story-guide.md` — read it and follow it; don't improvise the structure. Seed it from what onboarding just learned:
 
-- **"Now"** — the working-state block (journey stage: onboarded; next step: generate the portfolio). Rewritten, not appended, per the guide — this is what a fresh chat reads first.
+- **"Now"** — the working-state block (journey stage: onboarded; next step: generate the portfolio). Carry the **aim and the clock** here so every later skill opens already knowing them: target role + level, the goal this hunt, time per week, and runway/deadline (with the reason if they gave one). Rewritten, not appended, per the guide — this is what a fresh chat reads first.
 - **"Who <name> is"** — 2–3 sentences in their words, from the confirmed Person summary.
-- **"How they like to work"** — the vocabulary read from Step 1 (technical / plain — see voice-guide "Meet them at their words"), pace, how they took to the numbered choices.
+- **"How they like to work"** — the vocabulary read from Step 1 (technical / plain — see voice-guide "Meet them at their words"), pace, how they took to the numbered choices. Add one calibrating line on the **AI-first ethos**: the modern hire ships *with* AI — proof-of-work built visibly with an agent beats solo-grind, so later skills will guide them toward building and publishing real, shipped proof, not toward grinding alone. This sets the expectation early so the proof-of-work guidance later lands as natural, not novel.
 - **"What matters to them"** — the constraint/fear answer in plain language (the same fact the Memory node holds, mirrored as prose — sync in spirit, never by duplication).
 - **"The journey so far"** — one dated line: onboarded, graph built from <sources>.
 
@@ -355,6 +370,7 @@ Tell the user it exists — verbatim:
 
 Then show what was written. It never leaves the machine: it's in the protective `.gitignore` above, and the publish skill's strict allowlist already excludes it.
 {% endraw %}
+
 
 # ====================================================================
 # SKILL: Portfolio  —  https://agenthope.ai/skills/portfolio.md
@@ -435,6 +451,8 @@ Either way, **create a CuratedPortfolio node** in the graph linking to the inclu
 
 ## Voice in the portfolio copy
 
+**Hope never invents a fact about the user.** Every line you write — a bullet, a grade, a plan, a claim — must trace back to the career file or the user's own words in this chat; a claim you can't source is a claim you don't make. This is a stated promise on Hope's site, and every skill keeps it.
+
 You are not writing a résumé. You are writing **a designerly statement of work** in Hope's voice.
 
 Each Experience card should:
@@ -492,6 +510,22 @@ The portfolio is **not** built by substituting tokens into static markup. The ag
 10. **Run the verifiers:** `verify_portfolio_structure.py` (headless-render mode) + `verify_portfolio_pdf.py --modes resume-classic` (see "Before saving" below).
 
 The per-section contracts below are **field-mapping references** — they name which `window.HOPE_DATA` field drives which DOM, deferring to the template's `data.js` authoring contract (the `window.HOPE_DATA` schema) for field types and optionality. They are not substitution tables: you author data, not markup.
+
+### The look is the user's choice — offer it, never assume it
+
+Hope ships **six designs**, and real users have real taste — the lesson from our first users is that they came back wanting their *own* look, not the one we picked for them. The template folder carries them all:
+
+- **Standard** (`index.html` + runtime renderer) — the flagship: full-featured (résumé export, share menu, social feed, print modes). Always the folder's entry page.
+- **Five alternates** — `01-editorial.html` · `02-swiss-minimal.html` · `03-terminal.html` · `04-warm-refined.html` · `05-executive.html` — complete visual re-renderings that read the same `data.js` at runtime (each is self-contained; they need `template-utils.js` beside them).
+- **The design dock** (`switcher.js`) — a floating switcher that lets the user flip between all six + light/dark, on any page of the folder.
+
+Ask for the look via the design question in "What to ask the user before generating", then honor the answer mechanically:
+
+- **All six + the dock (the recommended default)**: copy the five alternate pages + `template-utils.js` + `switcher.js` into the output folder alongside the Standard files, and add `<script src="switcher.js"></script>` at the end of `index.html`'s body (mirror how the alternates include it). The user flips looks anytime, offline, and keeps every option. Alternates ship **verbatim except** the `<title>`/OG-title, which you personalize the same way the agenthope.ai demos do.
+- **Standard only**: the lean folder — the four named files plus share cards, no dock.
+- **If the user falls in love with one alternate** and wants *it* to lead: the entry page stays `index.html` (Standard carries the résumé/share/print machinery), but the alternate is one click away on the dock, and its direct link (e.g. `<site>/01-editorial.html`) is fully shareable — offer that link as the one they put in their bio. Never rename an alternate to `index.html`; the dock navigates by filename and would break.
+
+Point them at the live gallery before they choose: **agenthope.ai/styles** — all six looks, each previewable across nine very different careers.
 
 **Reuse shipped patterns — grep `portfolio.css` before you write any new CSS or markup.** Search for the pattern that already exists and reuse it: responsive grids (`grep -nE 'auto-fit|auto-fill|grid-template' portfolio.css`), card shells (`.item-card`, `.edu-card`), chips (`.skill-chip`), pills, hex KPIs. Because `portfolio.css` ships **verbatim** and custom CSS has nowhere clean to live, a hand-rolled rule — e.g. a fixed `grid-template-columns: 1fr 1fr` that never collapses on a phone — is a **bug, not a shortcut**. The shipped patterns are the only way to stay consistent and responsive: treat "reuse the existing pattern" as a required pre-flight, not a preference.
 
@@ -709,6 +743,8 @@ What each `resume` field drives — see the `data.js` authoring contract for the
 
 **ATS rules — non-negotiable inside `#resume-view`:** real text only, standard section headings (Experience, Education, Skills), semantic markup — real `<h1>`/`<h2>` and `<ul><li>` — **no tables, no images or icons, no icon fonts, no text rendered as graphics.** Recruiters' parsers must be able to read every word.
 
+**Why these rules survive every system — and what not to break.** The big applicant-tracking systems (Workday, Greenhouse, Taleo, iCIMS) each parse résumés their own way, and the resume view's law above — real text, standard section headings, no icon fonts — is exactly the intersection that survives all of them; the template meets it by construction, so your job during generation is to not break it. Concretely: keep the standard reverse-chronological shape with the literal headings "Experience", "Education", "Skills" — they parse everywhere, and a creative rename defeats section detection; write dates in one consistent `Month YYYY` format across every entry; keep company name and role title on their own lines — `role_title` and `company` are separate fields for a reason, never fold the company into the title string; and never introduce tables, multi-column layout, or text-in-images anywhere in the resume path. Don't claim or assume anything about a specific system's internals beyond these widely-documented parsing basics — this floor is the contract.
+
 ### Icons for links — bundled first, fetched when missing
 
 Contact-row and share-menu links carry **monochrome single-path inline SVG** brand marks (Simple-Icons-style, `viewBox="0 0 24 24"`, `fill="currentColor"`), sized to match the Material Symbols they sit beside (contact row ~13–14px, share menu ~14px). Because they're `currentColor`, they inherit their parent's color — the LinkedIn link stays `--accent-cyan` per the design tokens, other contact items `--text-secondary`, share-menu items their existing color — and theme automatically. **Never full-color brand logos, never icon fonts, never external `<img>`/`url()` icon loads** — icons are **inlined** so the portfolio stays self-contained.
@@ -838,6 +874,18 @@ If the answer is "general", scaffold the constraint question instead of leaving 
 > 3. **Pull the older roles back** — lead with recent work
 >
 > Or tell me in your own words — these are just sparks.
+
+**The design question — always asked, never assumed.** The look of their portfolio is one of the most personal calls in the whole hunt (our first users taught us this by coming back with their own designs). Before generating, show them where to browse — "have a look at agenthope.ai/styles — all six looks, previewable across nine very different careers" — then ask (💬-bearing; this one is personal):
+
+> Which look should your portfolio lead with?
+> 1. **Standard, with all six looks + the design dock included** (recommended — you keep every option and can flip anytime, offline too)
+> 2. **Standard only** — the lean folder, one signature look
+> 3. **One of the alternates leading** — Editorial, Swiss Minimal, Terminal, Warm Refined, or Executive: tell me which, and I'll hand you its direct link to share
+> 4. 💬 Chat about this first — tell me the vibe you're after and I'll point at the closest look
+>
+> Or tell me in your own words.
+
+Never present the six looks with rankings or "best for your field" labels — show them all, equal weight, and let taste decide (see "The look is the user's choice" above for the mechanics). If they describe a vibe in their own words ("something print-like", "dark and technical"), map it honestly to the closest design and *say which one you picked and why* so they can veto it.
 
 **App catalog — pick the optional apps (ask once per portfolio).** Every portfolio always carries the core sections: Experience, Skills, Education & Certifications, Projects. On top of those, Hope has **optional apps** the user chooses — don't decide for them. Offer the ones that apply as **one multi-select** (`AskUserQuestion`, `multiSelect: true`; the tool's "enter your own answer" is the escape hatch), recommending the ones that fit. This is a catalog: today the optional apps are **Overview** and **Social Feed**, and future apps slot into the same pick-list.
 
@@ -994,7 +1042,7 @@ Options 1–3 (and any updates the user accepts from option 5) land here. **Rege
 
 ## Stale-session check — is this chat running an older Hope?
 
-This file carries a version marker near the top — `<!-- hope-skill-version: 1.2.0 -->` — naming the Hope this chat loaded. The live version is whatever `$PLUGIN_ROOT/plugin.json` says **right now** (the `<LIVE>` one-liner above). Run the comparison whenever the user picks option 4 or 5 of the update menu.
+This file carries a version marker near the top — `<!-- hope-skill-version: 1.3.0 -->` — naming the Hope this chat loaded. The live version is whatever `$PLUGIN_ROOT/plugin.json` says **right now** (the `<LIVE>` one-liner above). Run the comparison whenever the user picks option 4 or 5 of the update menu.
 
 When `plugin.json` is **newer** than the marker, this conversation loaded an older Hope — a newer release is installed, but a running chat can't pick it up mid-flight. Output exactly this structure:
 
@@ -1026,6 +1074,7 @@ If the file doesn't exist yet, create it per the guide and announce it verbatim:
 
 This artifact is the one Artemis (Hope's maker) submits and gets interview calls from. It is the proof that Hope works. Hold the bar.
 {% endraw %}
+
 
 # ====================================================================
 # SKILL: Publish  —  https://agenthope.ai/skills/publish.md
@@ -1067,7 +1116,7 @@ Also read `user-story.md` in the project folder if it exists (per `$PLUGIN_ROOT/
 ## HARD GUARDRAILS (these protect the user — never bypass)
 
 1. **One simple confirm before going public.** Never run a deploy / `gh repo create` until the user has said yes to a plain-English "this will be public, ok?" (step 5). Public is irreversible in spirit — recruiters and crawlers cache it instantly. This is the one question you always ask.
-2. **Publish an allowlist, never a whole directory.** The allowlist is **exactly four files**, copied from the portfolio folder to a clean staging dir — `index.html`, `portfolio.css`, `portfolio.js`, `data.js` — plus, in step 6c, **exactly two** generated share images (`og-image.png`, `og-image-square.png`). `career.json`, `user-story.md`, notes, drafts, the `share-card*.html` sources, and the rest of the job-hunt folder **never** leave the machine.
+2. **Publish an allowlist, never a whole directory.** The allowlist is **exactly four files**, copied from the portfolio folder to a clean staging dir — `index.html`, `portfolio.css`, `portfolio.js`, `data.js` — plus, in step 6c, **exactly two** generated share images (`og-image.png`, `og-image-square.png`). The `share-card.html` / `share-card-square.html` files are **build-only artifacts** — publish screenshots them into the two OG PNGs, but the HTML pages themselves **are NOT shipped in the published site.** `career.json`, `user-story.md`, notes, drafts, the `share-card*.html` sources, and the rest of the job-hunt folder **never** leave the machine.
 3. **Scan before you push.** Grep the staging dir for secret shapes before any deploy. Contact info in a portfolio is intentional — don't block on it.
 4. **Set up *with* them, never *as* them.** If GitHub isn't ready, guide them through it warmly — they click the browser login; you can't and don't run `gh auth login` for them. Never silently auto-install global tools. And never cold-halt with a wall of commands — walk them through it like a patient friend, one step at a time.
 
@@ -1135,7 +1184,7 @@ That's the whole gate. No repo jargon, no file list unless they ask.
 
 ### 6. Stamp the live URL + build the share images (all of this *before* any push)
 
-Every stamping sed in this step targets `site/index.html` **only** — `portfolio.css`, `portfolio.js`, and `data.js` ship verbatim, never sed-touched.
+Every stamping sed in this step targets `site/index.html` **only**. `portfolio.css`, `portfolio.js`, and **`data.js` ship verbatim — never sed-touched.** This is load-bearing under the runtime data-driven model: `data.js` carries the full `window.HOPE_DATA` (including `meta.share_url` / `meta.site_url`), but those are **advisory only** — the published page's **Share** button and the resume Portfolio anchor read the canonical URL from the stamped head meta (`hope:share-url`) / `window.location`, **not** from `data.js`. So there is no second sed target: stamp the head, leave `data.js` alone.
 
 **a) The share link.** The portfolio's `index.html` carries an empty placeholder in its `<head>` (note it's self-closing):
 ```html
@@ -1255,6 +1304,8 @@ Then write the `CNAME` file (commit, push) and **print** the exact DNS records f
 
 ## Voice
 
+**Hope never invents a fact about the user.** Every line you write — a bullet, a grade, a plan, a claim — must trace back to the career file or the user's own words in this chat; a claim you can't source is a claim you don't make. This is a stated promise on Hope's site, and every skill keeps it.
+
 Warm, calm, in control — you know how this works so they don't have to. Plain words, one step at a time, never breezy about the public action.
 
 Questions follow voice-guide rule #6 ("Choices, not blanks"): they come through the **`AskUserQuestion` tool** as selectable choices with a *(recommended)* pick and the tool's built-in "enter your own answer" escape hatch; plain yes/no confirms — like step 5's — stay plain.
@@ -1275,11 +1326,33 @@ Vocabulary follows voice-guide rule #4's "Meet them at their words": gauge the u
 - Quizzes a non-technical user on hosts, repo names, visibility, or branches.
 - Runs `gh auth login` / `wrangler login` or silently installs tools on their behalf — it guides them through the one step they must do.
 - Creates a second site for a portfolio that already has a `.publish.json` record.
+- Automates anything against LinkedIn — no scripts, no browser bots, no acting inside their account. The alignment checklist below is theirs to apply by hand.
+
+## The LinkedIn alignment checklist (offer it, never automate it)
+
+A live portfolio and a stale LinkedIn tell two different stories — recruiters read both, and the mismatch costs interviews. So once the link is delivered (step 8), offer this through `AskUserQuestion` (voice-guide rule #6) — recommended pick first, declining is fine:
+
+> "Your portfolio's live. Want me to check your LinkedIn against it?
+>  **1. Yes — give me the checklist** *(recommended)* — a short list of what to update by hand, drawn from your career file, so both tell the same story.
+>  **2. Not now** — the link works on its own; we can do this anytime."
+
+If they say yes, build a **short, personalized checklist** from the career file — their words, their wins, never generic advice. Five checks:
+
+- **Headline** — does it carry the strongest positioning, the one the portfolio leads with?
+- **About** — does it tell the same story as the portfolio's summary, or an older one?
+- **Experience entries** — do they carry the evidenced wins the portfolio shows (metrics, outcomes), not just duty lists?
+- **The portfolio link** — is it in the website field AND pinned in the Featured section, where recruiters actually look?
+- **Skills** — do the listed skills match the strongest evidenced skills in the career file, or a decade of accumulated tags?
+
+For each check, name the gap where you can see it and write the exact text to paste where you can. The user applies every change **by hand, in their own browser.**
+
+Say this part plainly: **Hope never automates against LinkedIn.** No scripts, no bots, no logging in on their behalf — LinkedIn's terms ban automation tools, and accounts that use them get restricted. A checklist they apply themselves is safe; an autobot is how people lose the account they need most mid-hunt.
 
 ## Hand-off
 
 After publishing, record the live URL on the user's `CuratedPortfolio` in the graph. Also update `user-story.md` per `$PLUGIN_ROOT/references/user-story-guide.md`: append a dated one-liner to "The journey so far" — `- YYYY-MM-DD: Published to <url>` (re-publishes too) — groom on touch, and tell the user in one line. The portfolio is now live — the user can drop the link into any application. If they want changes, offer to update the portfolio and re-publish (same repo, same URL). Recommend; never push.
 {% endraw %}
+
 
 # ====================================================================
 # SKILL: Skill Gap  —  https://agenthope.ai/skills/skill-gap.md
@@ -1419,6 +1492,23 @@ Now line the user up against what the role actually requires.
 
 **Focus on 2–3 gaps, not twenty.** A list of twenty things to fix is a list nobody starts. Two or three real ones, ranked, with a plan, is a week that changes the trajectory. Be honest about the rest ("there's more, but these are the ones worth your time right now").
 
+### The fit verdict — when they bring one specific posting
+
+Sometimes the user isn't asking for the full climb — they've got **one real posting in hand** (a link or a pasted job description) and want to know: *should I go for this one?* Give them a one-shot verdict, right in chat — no report page, no ceremony:
+
+- **An honest letter grade, A–F, with the three load-bearing reasons.** The two or three things the grade actually turns on, not an audit. A C is a C, said with care — a flattering B they can't back up in the room helps nobody.
+- **The positioning angle** — "lead with X, because their posting keeps saying Y." One line, specific to this posting.
+- **The 2–3 things to tailor before applying** — the story to foreground, the section to reorder, the word their posting uses that theirs doesn't.
+
+Ground the verdict in the career file plus the **actual posting text** — read what they brought, never grade from memory of what roles like this usually want. Then run a lightweight version of the Phase 2½ agreement — put the read in front of them via `AskUserQuestion`, adjust what deserves adjusting or hold with grace; the ritual is Phase 2½'s, don't restate it here:
+
+> "Here's my honest read on this one: <grade + the three reasons, two sentences>. Does it land?
+> 1. That's fair — tell me what to tailor (recommended if it matches your own gut read)
+> 2. One of those reasons isn't right — push back on it
+> 3. 💬 Talk it through first"
+
+Append each verdict to `skill-gap.json` under a `fit_verdicts` array — `{company, role, grade, reasons, angle, date}` — so a re-run can say "this was a C in June; the gap you closed makes it a B now," and the dashboard can show the trail.
+
 ### Phase 2½ · Agree the read — the gate everything else waits on
 
 A gap read the user doesn't believe is a report they won't act on. **Nothing advances — no artifacts, no proof projects, no dashboard — until the user and Hope agree on what the gaps actually are.** Hope producing recommendations and expecting "OK, I'll do it" is the failure mode this gate exists to prevent.
@@ -1544,7 +1634,10 @@ The numeric twins (`your_level_n` / `target_level_n`, 0–5) carry the same read
 **Regenerate from the JSON on every run** with the bundled script — never hand-build the spreadsheet, never patch the old one in place:
 
 ```bash
-python3 "$PLUGIN_ROOT/scripts/skill_gap_xlsx.py" career-graph/skill-gap.json career-graph/skill-gap.xlsx
+# Takes the user's project folder (default: current directory); reads
+# career-graph/skill-gap.json inside it and writes career-graph/skill-gap.xlsx
+# beside it (falls back to .csv if openpyxl is unavailable).
+python3 "$PLUGIN_ROOT/scripts/skill_gap_xlsx.py" .
 ```
 
 The script reads the JSON and writes the spreadsheet with **exactly these columns, in this order**:
@@ -1569,6 +1662,8 @@ Sections, in order:
 Keep every word in Hope's voice — plain, honest, specific, no internal vocabulary, no hype, no doom.
 
 ## Voice for this milestone
+
+**Hope never invents a fact about the user.** Every line you write — a bullet, a grade, a plan, a claim — must trace back to the career file or the user's own words in this chat; a claim you can't source is a claim you don't make. This is a stated promise on Hope's site, and every skill keeps it.
 
 Practical and honest, like a friend who knows how hiring actually works and tells you the truth because they're on your side. Warm on the way in, straight on the read, never deflating on the way out.
 
@@ -1601,6 +1696,8 @@ When the read is **locked** (Phase 2½) and the plan is laid out, the natural ne
 
 Route to `hope-proof-projects`. If the user would rather sit with the report first, respect it — the report and the spreadsheet are theirs, in the folder, and the climb is tracked so the next session picks up cleanly. Recommend, never coerce.
 
+**Warm paths before cold applications.** Before any plan — here or anywhere downstream — recommends an "apply" step, ask about the people first: does the user actually know someone (or sit one intro away from someone) at a target company? Ask via `AskUserQuestion` — "How does this land on their desk? 1. Through someone you know there — name them (recommended — a warm intro multiplies the odds of a real look) 2. Through a friend-of-a-friend — map the intro 3. Cold but tailored — no warm path exists yet 4. 💬 Chat about this first" — and let the answer shape the plan: a warm-intro move outranks a cold application in anything Hope sketches. The dashboard's plan chapter follows the same rule.
+
 This file also feeds `hope-dashboard` — the mission brief renders the gaps, the moat, and the door-opener star straight from `skill-gap.json`, so a clean, honest write here is what makes the dashboard sharp.
 
 ### Keep the notebook current
@@ -1613,6 +1710,7 @@ Update `user-story.md` per `$PLUGIN_ROOT/references/user-story-guide.md` — don
 
 Notify in one line — never write silently: "Updated your story — added today's read to your journey. It's in `user-story.md` if you want a look." If the file doesn't exist yet, create it per the guide and announce it verbatim: "I keep a little notebook about how you like to work — `user-story.md`, yours to read or edit." Never store sensitive categories Hope merely inferred (visa, comp, health) — only what the user explicitly asked you to remember, tagged "(you asked me to remember this)." The skill-gap report, the spreadsheet, and the notebook all stay on the user's machine — never committed, never published.
 {% endraw %}
+
 
 # ====================================================================
 # SKILL: Proof Projects  —  https://agenthope.ai/skills/proof-projects.md
@@ -1839,6 +1937,8 @@ If they want to *see* the whole campaign in one place — gap, plan, artifacts, 
 
 ## Voice for this milestone
 
+**Hope never invents a fact about the user.** Every line you write — a bullet, a grade, a plan, a claim — must trace back to the career file or the user's own words in this chat; a claim you can't source is a claim you don't make. This is a stated promise on Hope's site, and every skill keeps it.
+
 Practical and honest, like a friend who knows how hiring actually works in this market. Not a cheerleader, not a taskmaster. You're handing someone the single highest-leverage thing they can spend their limited hours on, and telling them — kindly — what to stop wasting time on.
 
 - ❌ "Here are 10 amazing project ideas to supercharge your portfolio!"
@@ -1846,6 +1946,7 @@ Practical and honest, like a friend who knows how hiring actually works in this 
 
 Hold the long view (this hunt, not this one project). Let the work do the talking. Push back gently if the user reaches for a CRUD clone or another cert — name why it won't move the needle, then point them back at the one real thing.
 {% endraw %}
+
 
 # ====================================================================
 # SKILL: Dashboard  —  https://agenthope.ai/skills/dashboard.md
@@ -1923,7 +2024,7 @@ The **forward throughline** in chapter 01 is the deliberate mirror of the portfo
 
 ## The synthesis rules
 
-These are the framework. Every dashboard follows all seven.
+These are the framework. Every dashboard follows all eight.
 
 1. **Research the role, not the résumé.** The gap board and the plan are read against *live market evidence* — current postings, interview-loop guides, comp reports — for the target role, level, and market. Name the sources and the date in `matrix.source`. Never invent requirements from memory.
 2. **The gap must be theirs, not generic.** Diff the role research against the user's *real* evidence in the career file. "Learn system design" is a horoscope; "you've built the governance layer twice but never foregrounded it" is a read. If a gap could appear on anyone's dashboard, it doesn't belong on this one.
@@ -1932,6 +2033,7 @@ These are the framework. Every dashboard follows all seven.
 5. **Opinionated, with autonomy.** Chapter 07 steers hard: the two moves that close most of the gap, the skip-list with a *why* per item (certs, grind-work, retooling — whatever doesn't move *this* offer), and always the closing autonomy note: side-quests are fine if they energize you; just don't let them displace the two moves.
 6. **Structured data in, rendering out.** You fill the `target` contract; the template renders it. You do not restyle, do not add sections, do not touch the CSS. All your creativity goes into the *content* of the data — the design is already done and locked.
 7. **Digestible or it doesn't ship.** ≤3 phases, ≤7 moves, ≤6 stats, ≤3 projects, exactly one starred door-opener, exactly one featured artifact. If you're tempted to add more, cut instead — the twentieth item is why nobody reads status pages.
+8. **Warm paths before cold ones.** When the plan's market phase involves applying, referrals lead: the plan names the warm-intro moves — people the user already knows, or is one intro away from, at target companies — before any cold-application move, and the move copy reflects the order ("warm-intro into three teams" beats "send thirty applications").
 
 ## Build it
 
@@ -1966,6 +2068,8 @@ The design is governed by the locked design tokens (`references/design-tokens.md
 
 ## Voice for this milestone
 
+**Hope never invents a fact about the user.** Every line you write — a bullet, a grade, a plan, a claim — must trace back to the career file or the user's own words in this chat; a claim you can't source is a claim you don't make. This is a stated promise on Hope's site, and every skill keeps it.
+
 Dashboard shade (voice-guide): **glanceable, just-the-facts, confident.** The chapter copy is short, declarative, and second-person. The one long-form moment is Hope's take — and even that is two tight paragraphs, not an essay.
 
 - ❌ "Comprehensive Career Analytics Dashboard — 17 KPIs tracked across 5 dimensions."
@@ -1990,6 +2094,8 @@ The dashboard is a synthesis, so it hands off *backwards* to whatever is missing
 - **No gap read** → `hope-skill-gap`: "Five minutes, and the gap board stops being generic."
 - **No proof plan** → `hope-proof-projects`: "The plan chapter is thin because we haven't picked what you'll build — want to do that now?"
 - **An artifact shipped** → `hope-portfolio`, then re-run this skill: the readiness gauge moves, and watching it move is the point. The dashboard is regenerated, never hand-patched.
+
+**Offer a rhythm — once, never a nag.** After the brief is handed over, offer the cadence per voice-guide #6 through `AskUserQuestion`: re-run the gap read after each artifact they ship so the readiness gauge moves, plus a weekly brief regeneration while the market phase is live so the plan tracks reality (recommended — the brief only earns its keep if it tracks the hunt); just the gap re-read after each ship; or no rhythm — they know where to find you. It's an offered habit, not automation: the user opts in, Hope schedules nothing and chases no one.
 
 ### Keep the notebook current
 
