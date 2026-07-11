@@ -50,6 +50,151 @@ Discovery runs **any time after onboarding**. It pairs with the gap skill in eit
 
 **Binding voice rule:** every question in this skill — including improvised ones — is delivered through `AskUserQuestion` per voice-guide #6: 2–4 options, exactly one "(recommended)" with a one-clause why, 💬 "Chat about this first" on the personal ones. And the internal-vocab ban holds: the user has *a board, target roles, a careers page* — never "nodes", "edges", "statuses", "the graph".
 
+## The questions Hope asks you
+
+So the user knows what's coming before it starts, tell them plainly: this skill only ever asks a handful of things, and it never re-asks what it already knows.
+
+1. **"What kind of role are you after?"** — skipped if onboarding already answered it. Hope won't make you say it twice.
+2. **"How many jobs should I find?"** — a simple choice: 25 · 100 · 200. Whatever the number, Hope checks every single one is still open before it shows you anything.
+3. **"Anywhere you WON'T work?"** — the skip-list. Companies, industries, setups you're ruling out.
+4. **"Who do you know that loves where they work?"** — people first. A warm path beats a cold posting almost every time.
+5. **"Which of these make your board?"** — you pick. Nothing is added without your yes.
+
+## Set up your AI first
+
+A browser-driving AI turns this from "here's a list" into "Hope opened the pages and checked them for you." See the **application skill's setup table** for exactly which AI to use, what to turn on, and what to expect — the same setup covers both skills. No browser mode on your AI? No problem — Hope runs in guided mode instead, same quality, just typed in by you.
+
+## How discovery works, start to finish
+
+<div class="ig-disc-wrap">
+<style>
+.ig-disc-wrap { margin: 1.8em 0 2.2em; }
+.ig-disc-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-sm);
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.ig-disc-flow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(0deg, var(--scan-line) 0 1px, transparent 1px 3px);
+  opacity: 0.6;
+}
+.ig-disc-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1 1 0;
+  min-width: 118px;
+  padding: 0 10px;
+  z-index: 1;
+}
+.ig-disc-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-bg);
+  border: 1.5px solid var(--accent-edge);
+  color: var(--accent-text);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+.ig-disc-label { font-weight: 650; color: var(--text-primary); font-size: 0.92rem; line-height: 1.3; }
+.ig-disc-sub { color: var(--text-muted); font-size: 0.78rem; margin-top: 4px; line-height: 1.3; }
+.ig-disc-connector {
+  align-self: flex-start;
+  margin-top: 20px;
+  flex: 0 0 28px;
+  height: 1.5px;
+  background: var(--border-hover);
+  position: relative;
+  z-index: 1;
+}
+.ig-disc-connector::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid var(--border-hover);
+  border-top: 1.5px solid var(--border-hover);
+  transform: translateY(-50%) rotate(45deg);
+}
+.ig-disc-outcome {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+}
+.ig-disc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-edge);
+  color: var(--accent-text);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+}
+@media (max-width: 640px) {
+  .ig-disc-flow { flex-direction: column; padding: 22px 18px; }
+  .ig-disc-step { min-width: 0; padding: 10px 0; }
+  .ig-disc-connector { display: none; }
+}
+</style>
+<div class="ig-disc-flow" role="img" aria-label="Discovery flow: you say what you want, Hope scrapes the web, checks each job is still open, grades them honestly, you pick your board, and it lands on your dashboard.">
+  <div class="ig-disc-step">
+    <div class="ig-disc-circle">1</div>
+    <div class="ig-disc-label">You say what you want</div>
+  </div>
+  <div class="ig-disc-connector"></div>
+  <div class="ig-disc-step">
+    <div class="ig-disc-circle">2</div>
+    <div class="ig-disc-label">Hope scrapes the web</div>
+    <div class="ig-disc-sub">boards + company career pages</div>
+  </div>
+  <div class="ig-disc-connector"></div>
+  <div class="ig-disc-step">
+    <div class="ig-disc-circle">3</div>
+    <div class="ig-disc-label">Checks each job is still open</div>
+  </div>
+  <div class="ig-disc-connector"></div>
+  <div class="ig-disc-step">
+    <div class="ig-disc-circle">4</div>
+    <div class="ig-disc-label">Grades them honestly (A–F)</div>
+  </div>
+  <div class="ig-disc-connector"></div>
+  <div class="ig-disc-step">
+    <div class="ig-disc-circle">5</div>
+    <div class="ig-disc-label">You pick your board</div>
+  </div>
+</div>
+<div class="ig-disc-outcome">
+  <span class="ig-disc-chip">Your board, on your dashboard</span>
+</div>
+</div>
+
 ## Phase 0 · Learn the pull — before you search anything
 
 Read what you already know first: the `Goal` node (role, level, hours, runway), the agreed gap read if it exists, the notebook. **Never re-ask what onboarding captured.** Then fill in only what's missing, drawn out per the draw-out framework (the gap skill's Phase 0 — same sources: your host's memory of the user, the notebook, the career file; don't restate it here):
