@@ -39,10 +39,10 @@ Your facts live in one file on your own computer. Hope keeps a small notebook to
 
 ## Where it's going
 
-Today Hope handles presentation — portfolio, résumé, and your link. Coming next: weighing roles, tailored cover letters, applying with care, interview prep, negotiation support, and a dashboard across all of it.
+Today Hope handles presentation, the honest gap to a real role, finding roles worth pursuing, and applying with your yes on every send — portfolio, résumé, your link, a validated board, and real applications, all on one dashboard. Coming next: interview prep, negotiation support, and tailored cover letters beyond what applying already drafts.
 
 <figure class="figure figure--plain">
-  <img src="{{ '/assets/img/roadmap.webp' | relative_url }}" alt="A roadmap — NOW: portfolio, résumé, your link; NEXT: cover letters, applying, interview prep, negotiation" width="1200" height="675" loading="lazy" />
+  <img src="{{ '/assets/img/roadmap.webp' | relative_url }}" alt="A roadmap — NOW: portfolio, résumé, your link, your gap, your board, applying with your yes; NEXT: interview prep, negotiation" width="1200" height="675" loading="lazy" />
 </figure>
 
 ## Who made this, and why
