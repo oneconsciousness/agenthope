@@ -83,4 +83,8 @@ No terminal, no commands — just clicking and dragging in your browser.
 > **Is it really free?**
 > Yes — no credit card, no trial that expires. The free plan covers all of this, forever.
 
+## Your link is live — what's next?
+
+Publishing is step 3 of 8, not the finish line. From here, Hope can [measure your skill gap and build your growth plan]({{ '/skills/skill-gap/' | relative_url }}) before you apply anywhere, [find real openings worth your time]({{ '/skills/discovery/' | relative_url }}) — say **"find me jobs"** — and [fill the applications while you watch]({{ '/skills/application/' | relative_url }}), with your yes on every send. [See all eight skills →]({{ '/skills/' | relative_url }})
+
 </div>
