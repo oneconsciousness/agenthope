@@ -7,7 +7,7 @@ description: JobHunt with Hope is a free, open-source pack of AI skills for laid
 
 # About JobHunt with Hope
 
-**The hiring side already runs on AI** — résumé screeners, ranking, instant auto-rejects. Doing your whole hunt by hand, alone, while everyone else has help, is how you fall behind. JobHunt with Hope hands the AI you already use a set of **free skills** so it can build your portfolio, your résumé, and one link you own — and market you well.
+**The hiring side already runs on AI** — résumé screeners, ranking, instant auto-rejects. Doing your whole hunt by hand, alone, while everyone else has help, is how you fall behind. JobHunt with Hope hands the AI you already use a set of **free skills** so it can run your whole hunt: build your portfolio, your résumé, and one link you own; find your skill gaps and your growth plan <em>before</em> you apply; then find real openings, apply with your yes on every send, and track it all on one dashboard.
 
 It's for people in the middle of it: **just laid off, switching fields, or starting out**. No coding, no account, and nothing leaves your computer except the page you choose to publish.
 
