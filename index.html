@@ -1,8 +1,8 @@
 ---
 layout: doc
 body_class: home
-title: "Use AI to Build Your Job-Hunt Portfolio & Résumé — Free"
-description: "Free, open-source AI skills that turn your work into a designed portfolio, a recruiter-ready résumé, and one shareable link. No coding, no account."
+title: "Free AI Job Search — Build Your Portfolio & Résumé, Find Jobs, Apply"
+description: "Free, open-source AI skills for your whole job hunt — a designed portfolio, a recruiter-ready résumé (CV), cover letters, a skill-gap growth plan, real jobs found and verified, applications sent with your approval. No coding, no account."
 og_image: /assets/img/portfolio-engineer.webp
 og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, and live posts — built with the AI you already use"
 ---
@@ -12,8 +12,8 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
   <div class="hero-grid">
     <div class="hero-copy">
       <p class="kicker">Free · Open source · Works with any AI</p>
-      <h1>Build a portfolio, a résumé, and one link you own — with the AI you already use.</h1>
-      <p class="lede">You talk; your AI builds. A designed portfolio that looks like you tried, a résumé the screeners read cleanly, and one shareable link — no coding, no account, nothing leaves your laptop.</p>
+      <h1>A portfolio, a résumé, jobs found, applications sent — with the AI you already use.</h1>
+      <p class="lede">You talk; your AI does the work. It builds a designed portfolio and a résumé the screeners read cleanly, finds your skill gaps and builds your growth plan <em>before</em> you apply, then scouts real openings and fills the applications while you watch — your yes on every send. No coding, no account, nothing leaves your laptop.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#start">Start now — copy your instructions <span class="arrow">↓</span></a>
         <a class="btn btn-ghost" href="{{ '/demo/' | relative_url }}">See a live demo</a>
@@ -59,6 +59,19 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
   </div>
 </section>
 
+<!-- ░░ 1b · The journey — eight skills, three acts ░░ -->
+<section class="band" aria-label="The journey">
+  <div class="band__inner">
+    <div class="band__head center">
+      <p class="kicker">The journey</p>
+      <h2>Eight skills. One hunt. All of it yours.</h2>
+      <p class="lede">This is an AI job search done honestly: Hope shows your work first, closes your gap <strong>before</strong> you apply, then finds real openings, applies with your yes, and keeps the whole hunt on one page. Tap any step to see exactly how it works.</p>
+    </div>
+    {% include ig-journey.html %}
+    <p class="hiw-note">Want the plain-words tour? <a href="{{ '/how/' | relative_url }}">How it works</a> · <a href="{{ '/skills/' | relative_url }}">All eight skills</a></p>
+  </div>
+</section>
+
 <!-- ░░ 2 · Start now — per-engine instructions (the action) ░░ -->
 <section id="start" class="band band--alt cta-final" aria-label="Get started">
   <div class="band__inner">
@@ -76,12 +89,12 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
           <span class="engine__plats">Mobile · Web · Desktop</span>
         </header>
         <p class="engine__why">The smoothest path. <span class="ai">{% include ai-claude.svg %}Claude</span> can pull in the Hope skills with almost no setup, so it needs only a short nudge and does the rest.</p>
-        <pre class="engine__prompt" data-prompt="claude"><code>I'd like to build my portfolio with JobHunt with Hope (free, open-source).
+        <pre class="engine__prompt" data-prompt="claude"><code>I'd like to run my job hunt with JobHunt with Hope (free, open-source) — portfolio and résumé first, then my skill gaps, then finding and applying to real jobs.
 
 First: make sure you can write to my GitHub Pages repo — that's where my site goes live. Confirm that before we publish anything; if you're not connected to my GitHub, tell me how to connect you and wait.
 
 Then walk me through it like I'm not technical:
-1. Use the Hope skills from github.com/oneconsciousness/job-hunt-with-hope (if you support plugins, install hope@hope first). Start with the onboarding skill.
+1. Use the Hope skills from github.com/oneconsciousness/job-hunt-with-hope (if you support plugins, install hope@hope first). Start with the onboarding skill, and when a step is done, offer me the next one — portfolio, publish, skill gap, proof projects, find me jobs, apply for me, dashboard.
 2. Ask me ONCE for everything — I'll upload my resume PDF and a headshot photo, and give you my GitHub details + target role. Don't re-ask in circles; if I skip something, pick a sensible default and tell me.
 3. Build using Hope's own template and design — keep the styling, layout, and code exactly as Hope provides; only fill in MY content.
 4. Before publishing, show me the result and ask in plain English. After I say yes, publish to my GitHub Pages site and give me the live link.
@@ -101,9 +114,9 @@ Keep a short note of what you used and made. Start with onboarding — don't jum
           <span class="engine__plats">Mobile · Web · Desktop</span>
         </header>
         <p class="engine__why">Works well too. The instructions tell it to trust our design and only fill in your content — so you get a real Hope page, not a hand-built one.</p>
-        <pre class="engine__prompt" data-prompt="chatgpt"><code>I'd like to build my portfolio with JobHunt with Hope (free, open-source). Treat me as non-technical — explain each step simply, don't assume I know anything technical, and be as hands-free as you can: ask me as little as possible and do the rest yourself.
+        <pre class="engine__prompt" data-prompt="chatgpt"><code>I'd like to run my job hunt with JobHunt with Hope (free, open-source) — portfolio and résumé first, then my skill gaps, then finding and applying to real jobs. Treat me as non-technical — explain each step simply, don't assume I know anything technical, and be as hands-free as you can: ask me as little as possible and do the rest yourself.
 
-1. Follow the Hope skills at github.com/oneconsciousness/job-hunt-with-hope — read them and do what they say, starting with onboarding, then building my portfolio. You're in Agent mode with a computer: if `git clone` is blocked, download the repo as a ZIP from that page and read the files from disk.
+1. Follow the Hope skills at github.com/oneconsciousness/job-hunt-with-hope — read them and do what they say, starting with onboarding, then building my portfolio; when a step is done, offer me the next skill (publish, skill gap, proof projects, find me jobs, apply for me, dashboard). You're in Agent mode with a computer: if `git clone` is blocked, download the repo as a ZIP from that page and read the files from disk.
 2. Ask me ONCE — I'll upload my resume PDF and a headshot photo and tell you my target role. If I skip something, pick a sensible default and tell me; don't loop.
 3. Build it the way Hope works now: put MY information into one data file, and use Hope's small page that loads the design from Hope's shared link. Keep Hope's design exactly — don't restyle or hand-build anything.
 4. Show me a preview, then ask before publishing.
@@ -189,7 +202,7 @@ Keep a short note of what you used and made. Start with onboarding — don't jum
   <div class="band__inner">
     <div class="band__head">
       <p class="kicker">What you get</p>
-      <h2>Three things, all yours.</h2>
+      <h2>The whole hunt, all yours.</h2>
     </div>
     <div class="features">
       <div class="feature">
@@ -199,13 +212,28 @@ Keep a short note of what you used and made. Start with onboarding — don't jum
       </div>
       <div class="feature">
         <span class="feat-ico" aria-hidden="true">▤</span>
-        <h3>A résumé the screeners read cleanly</h3>
+        <h3>A résumé (CV) the screeners read cleanly</h3>
         <p>Key phrases bolded for the 7-second skim, links clickable, text never too small. The screening software parses it cleanly, and a person actually wants to read it.</p>
       </div>
       <div class="feature">
         <span class="feat-ico" aria-hidden="true">↗</span>
         <h3>One link you own</h3>
         <p>Published free to a page in <em>your</em> name. Drop it on LinkedIn and it unfurls with your own preview card. Only you can change it.</p>
+      </div>
+      <div class="feature">
+        <span class="feat-ico" aria-hidden="true">▲</span>
+        <h3>Your gaps closed before you apply</h3>
+        <p>An honest skill-gap read against the role you want, then a growth plan — one or two proof projects that close your biggest gaps fastest. You'll know you're ready before you hit apply.</p>
+      </div>
+      <div class="feature">
+        <span class="feat-ico" aria-hidden="true">▦</span>
+        <h3>A job board Hope actually checked</h3>
+        <p>Say <em>“find me jobs”</em> and Hope scrapes the web — the big job boards <em>and</em> the company career pages most tools miss — then verifies every opening is still live and grades each one honestly. You pick what makes the board.</p>
+      </div>
+      <div class="feature">
+        <span class="feat-ico" aria-hidden="true">✓</span>
+        <h3>Applications sent with your yes</h3>
+        <p>Say <em>“apply for me”</em> and Hope fills each job application while you watch — every field shown first, a cover letter drafted from your real story, nothing sent until you say so. All of it tracked on one private dashboard.</p>
       </div>
     </div>
     <p class="hiw-note">Ready? <a href="#start">Copy your instructions and start ↑</a> — or <a href="{{ '/how/' | relative_url }}">see how it works</a> first.</p>
@@ -282,7 +310,7 @@ Keep a short note of what you used and made. Start with onboarding — don't jum
       "name": "JobHunt with Hope",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Any (works with ChatGPT, Claude, Gemini and other AI agents)",
-      "description": "A free, open-source pack of AI skills that helps non-technical job seekers build a designed portfolio website, a recruiter-ready résumé, and one shareable link — using the AI agent they already use, with no coding. Career data stays on the user's own machine.",
+      "description": "A free, open-source pack of AI skills that runs a job seeker's whole hunt with the AI agent they already use: a designed portfolio website, a recruiter-ready résumé (CV) and cover letters, an honest skill-gap analysis with a growth plan, an AI job search that finds and verifies real openings, applications filled and sent only with the user's approval, and one private dashboard tracking it all. No coding; career data stays on the user's own machine.",
       "url": "https://agenthope.ai/",
       "softwareHelp": "https://agenthope.ai/skills/onboarding/",
       "license": "https://opensource.org/licenses/MIT",
@@ -290,9 +318,15 @@ Keep a short note of what you used and made. Start with onboarding — don't jum
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "featureList": [
         "Designed portfolio website with a playable career timeline",
-        "Recruiter-ready, ATS-friendly résumé PDF",
+        "Recruiter-ready, ATS-friendly résumé (CV) PDF",
         "One free shareable link in your name",
-        "Runs on your existing AI agent (ChatGPT, Claude, Gemini)",
+        "Skill-gap analysis against a real target role, with a growth plan",
+        "Proof projects that close your biggest gaps fastest",
+        "AI job search across job boards and company career pages, every posting verified still open",
+        "Job applications filled while you watch (Greenhouse, Lever, Workday, Ashby) — sent only with your approval",
+        "Cover letters drafted from your real story",
+        "One private dashboard tracking the whole hunt",
+        "Runs on your existing AI agent (ChatGPT, Claude, Gemini, Copilot)",
         "No coding required",
         "Privacy-first: your data never leaves your machine"
       ],
@@ -303,7 +337,7 @@ Keep a short note of what you used and made. Start with onboarding — don't jum
       "@id": "https://agenthope.ai/#website",
       "url": "https://agenthope.ai/",
       "name": "JobHunt with Hope",
-      "description": "Free, open-source AI skills that build your portfolio, résumé, and one shareable link.",
+      "description": "Free, open-source AI skills for the whole job hunt — portfolio, résumé, skill-gap growth plan, job search, applications, and a dashboard.",
       "inLanguage": "en",
       "publisher": { "@id": "https://agenthope.ai/#org" }
     },
