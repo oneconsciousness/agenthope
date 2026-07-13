@@ -5,7 +5,7 @@ sitemap: false
 ---
 # JobHunt with Hope
 
-> Free, open-source AI skills that turn the agent you already use into your job-hunt partner — building you a portfolio, a résumé, and one shareable link you own. No coding, no account, no catch.
+> Free, open-source AI skills that turn the agent you already use into your whole job-hunt partner — a designed portfolio, a recruiter-ready résumé, your skill gaps closed with a growth plan before you apply, real openings found and verified, applications filled and sent only with the user's approval, and one private dashboard tracking it all. No coding, no account, no catch.
 
 JobHunt with Hope is a pack of plain-language "skills" — instructions any capable AI agent (ChatGPT, Claude, Gemini, Copilot, Perplexity, Cursor…) can follow on the user's behalf. The user points their agent at this site (or pastes a skill's Markdown) and says "start my job hunt with Hope." The agent then gathers what the user already has, builds a structured career file that stays on the user's own computer, and generates a designed portfolio. The portfolio then goes online as a free page the user owns — smoothest end-to-end with an agent that has a terminal (Claude Code is built for this); web chatbots like ChatGPT can build the portfolio too, with publishing as a simple guided last step. Each skill below is also available as clean raw Markdown for direct fetching. The open-source source of truth lives at https://github.com/oneconsciousness/job-hunt-with-hope.
 
