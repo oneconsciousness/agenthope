@@ -6,11 +6,25 @@ tagline: "Hope scouts job boards and company career pages directly, grades every
 plain_intro: "Your agent learns what you actually want, sweeps the obvious job boards and the company career pages that aggregators miss, and grades every posting honestly against your real skills and stories. You get a short, ranked shortlist — never a firehose — and nothing gets targeted without your yes."
 say: "find me jobs"
 raw_md: /skills/discovery.md
-description: "Hope's discovery skill scouts job boards and company career pages directly, grades every posting against your real evidence, and builds a validated board of target roles — only you decide what makes it."
+description: "Hope's AI job search scouts job boards and company career pages directly, verifies every posting is still open, grades each against your real evidence, and builds a validated board of target roles — only you decide what makes it."
 permalink: /skills/discovery/
 seo_title: "AI Job Search — Find Me Jobs Worth Applying To"
 og_type: article
 og_image: /assets/img/portfolio-engineer.webp
+jsonld: |-
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to find jobs with AI — real, open, graded honestly",
+    "description": "Hope's AI job search scrapes job boards and company career pages, verifies every posting is still open, grades each against your real experience, and you pick what makes your board.",
+    "step": [
+      { "@type": "HowToStep", "name": "Say what you want", "text": "Role, level, location, and how many openings to bring back — 25, 100, or 200." },
+      { "@type": "HowToStep", "name": "Hope scrapes the web", "text": "The big job boards plus the company career pages most tools miss." },
+      { "@type": "HowToStep", "name": "Every job verified", "text": "Each posting is checked to be real and still open before you see it." },
+      { "@type": "HowToStep", "name": "Graded honestly", "text": "Every find gets an A-to-F grade against your real skills and stories." },
+      { "@type": "HowToStep", "name": "You pick the board", "text": "Nothing is targeted without your yes — and the board lands on your dashboard." }
+    ]
+  }
 ---
 {% raw %}
 # Hope Discovery · Roles worth pursuing

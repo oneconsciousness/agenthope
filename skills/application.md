@@ -6,11 +6,24 @@ tagline: "Hope fills the form while you watch. Every field shown before it's fil
 plain_intro: "Your agent drives the actual application form — Greenhouse, Lever, Workday, Ashby and the rest — through whichever browser control your AI already has. It shows you every field it's about to fill, in order, before it fills it, drafts your cover letter from your real story, and asks a plain \"Should I submit?\" before anything goes out. You do every login yourself; Hope never sees a password. LinkedIn and Indeed stay guide-only — Hope preps everything, you click submit."
 say: "apply for me"
 raw_md: /skills/application.md
-description: "Hope's application skill fills real job applications with you watching — every field shown before it's filled, every submission approved by you, your logins stay yours. Never a bulk spray."
+description: "Hope's application skill fills real job applications — Greenhouse, Lever, Workday, Ashby — with you watching: every field shown before it's filled, your cover letter drafted from your story, every submission approved by you. Never a bulk spray."
 permalink: /skills/application/
 seo_title: "AI Apply to Jobs For Me — With Your Approval, Every Time"
 og_type: article
 og_image: /assets/img/portfolio-engineer.webp
+jsonld: |-
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to apply to jobs with AI — with your approval on every send",
+    "description": "Hope fills real job application forms (Greenhouse, Lever, Workday, Ashby) while you watch — every field shown before it is filled, a cover letter drafted from your real story, and nothing submitted until you approve.",
+    "step": [
+      { "@type": "HowToStep", "name": "Set up your AI", "text": "Turn on your AI's browser mode — Claude in Chrome, ChatGPT agent mode, Gemini, or Copilot — or use guided mode with any AI, where Hope preps every answer and you paste them in." },
+      { "@type": "HowToStep", "name": "Pick a job from your board", "text": "Hope takes one job at a time from the board you validated — never a bulk spray." },
+      { "@type": "HowToStep", "name": "Watch every field", "text": "Hope shows each answer before it fills it, drafts your cover letter from your real story, and you do every login yourself — Hope never sees a password." },
+      { "@type": "HowToStep", "name": "Approve the send", "text": "Nothing is submitted until you say so. Hope saves the confirmation and updates your dashboard." }
+    ]
+  }
 ---
 {% raw %}
 # Hope Application · Applied, in your name, with your yes
