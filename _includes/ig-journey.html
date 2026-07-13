@@ -1,0 +1,213 @@
+<!-- The eight-skill journey, in three acts. Self-contained (scoped styles, ig-jny-* only) so it can be dropped into any page — or a reel. -->
+<div class="ig-jny-wrap">
+<style>
+.ig-jny-wrap { margin: 1.8em 0 2.2em; }
+.ig-jny-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-sm);
+  padding: 26px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.ig-jny-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(0deg, var(--scan-line) 0 1px, transparent 1px 3px);
+  opacity: 0.6;
+}
+.ig-jny-act { position: relative; z-index: 1; }
+.ig-jny-act-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.ig-jny-act-num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-edge);
+  border-radius: var(--radius-pill);
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+.ig-jny-act-name { font-weight: 700; color: var(--text-primary); font-size: 0.98rem; }
+.ig-jny-act-when { color: var(--text-muted); font-size: 0.8rem; }
+.ig-jny-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0;
+}
+.ig-jny-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1 1 0;
+  min-width: 118px;
+  padding: 0 10px;
+  text-decoration: none;
+}
+.ig-jny-step:hover .ig-jny-label { color: var(--accent-text); }
+.ig-jny-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-bg);
+  border: 1.5px solid var(--accent-edge);
+  color: var(--accent-text);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+.ig-jny-label { font-weight: 650; color: var(--text-primary); font-size: 0.92rem; line-height: 1.3; }
+.ig-jny-sub { color: var(--text-muted); font-size: 0.78rem; margin-top: 4px; line-height: 1.3; }
+.ig-jny-connector {
+  align-self: flex-start;
+  margin-top: 20px;
+  flex: 0 0 28px;
+  height: 1.5px;
+  background: var(--border-hover);
+  position: relative;
+}
+.ig-jny-connector::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid var(--border-hover);
+  border-top: 1.5px solid var(--border-hover);
+  transform: translateY(-50%) rotate(45deg);
+}
+.ig-jny-drop {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  width: 1.5px;
+  height: 16px;
+  background: var(--border-hover);
+}
+.ig-jny-drop::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid var(--border-hover);
+  border-bottom: 1.5px solid var(--border-hover);
+  transform: translateX(-50%) rotate(45deg);
+}
+.ig-jny-outcome {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+}
+.ig-jny-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-edge);
+  color: var(--accent-text);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+}
+@media (max-width: 640px) {
+  .ig-jny-card { padding: 22px 18px; }
+  .ig-jny-row { flex-direction: column; }
+  .ig-jny-step { min-width: 0; padding: 10px 0; }
+  .ig-jny-connector { display: none; }
+}
+</style>
+<div class="ig-jny-card" aria-label="The eight Hope skills in three acts. Act one, show your work: onboarding, portfolio, publish. Act two, close your gap before you apply: skill gap, proof projects. Act three, get the job: discovery, application, dashboard. Outcome: you walk in ready.">
+  <div class="ig-jny-act">
+    <div class="ig-jny-act-head"><span class="ig-jny-act-num">Act 1</span><span class="ig-jny-act-name">Show your work</span></div>
+    <div class="ig-jny-row">
+      <a class="ig-jny-step" href="{{ '/skills/onboarding/' | relative_url }}">
+        <span class="ig-jny-circle">1</span>
+        <span class="ig-jny-label">Onboarding</span>
+        <span class="ig-jny-sub">tell your story once</span>
+      </a>
+      <div class="ig-jny-connector"></div>
+      <a class="ig-jny-step" href="{{ '/skills/portfolio/' | relative_url }}">
+        <span class="ig-jny-circle">2</span>
+        <span class="ig-jny-label">Portfolio &amp; résumé</span>
+        <span class="ig-jny-sub">a page that looks like you tried</span>
+      </a>
+      <div class="ig-jny-connector"></div>
+      <a class="ig-jny-step" href="{{ '/skills/publish/' | relative_url }}">
+        <span class="ig-jny-circle">3</span>
+        <span class="ig-jny-label">Publish</span>
+        <span class="ig-jny-sub">one link you own</span>
+      </a>
+    </div>
+  </div>
+  <div class="ig-jny-drop" aria-hidden="true"></div>
+  <div class="ig-jny-act">
+    <div class="ig-jny-act-head"><span class="ig-jny-act-num">Act 2</span><span class="ig-jny-act-name">Close your gap</span><span class="ig-jny-act-when">— before you search and apply</span></div>
+    <div class="ig-jny-row">
+      <a class="ig-jny-step" href="{{ '/skills/skill-gap/' | relative_url }}">
+        <span class="ig-jny-circle">4</span>
+        <span class="ig-jny-label">Skill gap</span>
+        <span class="ig-jny-sub">the honest read on where you stand</span>
+      </a>
+      <div class="ig-jny-connector"></div>
+      <a class="ig-jny-step" href="{{ '/skills/proof-projects/' | relative_url }}">
+        <span class="ig-jny-circle">5</span>
+        <span class="ig-jny-label">Proof projects</span>
+        <span class="ig-jny-sub">your growth plan, built not bought</span>
+      </a>
+    </div>
+  </div>
+  <div class="ig-jny-drop" aria-hidden="true"></div>
+  <div class="ig-jny-act">
+    <div class="ig-jny-act-head"><span class="ig-jny-act-num">Act 3</span><span class="ig-jny-act-name">Get the job</span></div>
+    <div class="ig-jny-row">
+      <a class="ig-jny-step" href="{{ '/skills/discovery/' | relative_url }}">
+        <span class="ig-jny-circle">6</span>
+        <span class="ig-jny-label">Discovery</span>
+        <span class="ig-jny-sub">real openings, found &amp; verified</span>
+      </a>
+      <div class="ig-jny-connector"></div>
+      <a class="ig-jny-step" href="{{ '/skills/application/' | relative_url }}">
+        <span class="ig-jny-circle">7</span>
+        <span class="ig-jny-label">Application</span>
+        <span class="ig-jny-sub">your yes on every send</span>
+      </a>
+      <div class="ig-jny-connector"></div>
+      <a class="ig-jny-step" href="{{ '/skills/dashboard/' | relative_url }}">
+        <span class="ig-jny-circle">8</span>
+        <span class="ig-jny-label">Dashboard</span>
+        <span class="ig-jny-sub">the whole hunt, one page</span>
+      </a>
+    </div>
+  </div>
+  <div class="ig-jny-outcome">
+    <span class="ig-jny-chip">So when the role you want says “come in” — you walk in ready</span>
+  </div>
+</div>
+</div>
