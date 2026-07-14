@@ -5,7 +5,7 @@
 .ig-jny-card {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-panel);
@@ -22,12 +22,44 @@
   background-image: repeating-linear-gradient(0deg, var(--scan-line) 0 1px, transparent 1px 3px);
   opacity: 0.6;
 }
-.ig-jny-act { position: relative; z-index: 1; }
+
+/* ─── Act rows — each act gets its own accent, its own tinted panel ───── */
+.ig-jny-act {
+  --act-accent: var(--accent);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--act-accent) 7%, var(--card-bg));
+  border: 1px solid color-mix(in srgb, var(--act-accent) 26%, var(--border));
+  border-left: 3px solid var(--act-accent);
+  border-radius: var(--radius-card);
+  padding: 20px 22px 22px;
+}
+.ig-jny-act--1 { --act-accent: var(--cyan); }
+.ig-jny-act--2 { --act-accent: var(--violet); }
+.ig-jny-act--3 { --act-accent: var(--emerald); }
+.ig-jny-act::after {
+  content: attr(data-act-index);
+  position: absolute;
+  top: -0.28em;
+  right: 10px;
+  font-family: var(--font-mono);
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--act-accent);
+  opacity: 0.09;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .ig-jny-act-head {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: baseline;
   gap: 10px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 .ig-jny-act-num {
   font-family: var(--font-mono);
@@ -35,21 +67,26 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent-text);
-  background: var(--accent-bg);
-  border: 1px solid var(--accent-edge);
+  color: var(--act-accent);
+  background: color-mix(in srgb, var(--act-accent) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--act-accent) 38%, transparent);
   border-radius: var(--radius-pill);
   padding: 3px 10px;
   white-space: nowrap;
 }
 .ig-jny-act-name { font-weight: 700; color: var(--text-primary); font-size: 0.98rem; }
 .ig-jny-act-when { color: var(--text-muted); font-size: 0.8rem; }
+
 .ig-jny-row {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
+  justify-content: center;
   gap: 0;
 }
+.ig-jny-act--2 .ig-jny-row { max-width: 560px; margin: 0 auto; }
 .ig-jny-step {
   display: flex;
   flex-direction: column;
@@ -60,63 +97,61 @@
   padding: 0 10px;
   text-decoration: none;
 }
-.ig-jny-step:hover .ig-jny-label { color: var(--accent-text); }
+.ig-jny-step:hover .ig-jny-label { color: var(--act-accent); }
+.ig-jny-step:hover .ig-jny-circle {
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--act-accent) 16%, transparent);
+  transform: translateY(-1px);
+}
 .ig-jny-circle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: var(--radius-pill);
-  background: var(--accent-bg);
-  border: 1.5px solid var(--accent-edge);
-  color: var(--accent-text);
+  background: color-mix(in srgb, var(--act-accent) 14%, var(--card-bg));
+  border: 1.5px solid color-mix(in srgb, var(--act-accent) 48%, transparent);
+  color: var(--act-accent);
   font-family: var(--font-mono);
   font-weight: 700;
   font-size: 0.95rem;
   margin-bottom: 10px;
   flex-shrink: 0;
+  transition: box-shadow 0.16s, transform 0.16s;
 }
-.ig-jny-label { font-weight: 650; color: var(--text-primary); font-size: 0.92rem; line-height: 1.3; }
+.ig-jny-label { font-weight: 650; color: var(--text-primary); font-size: 0.92rem; line-height: 1.3; transition: color 0.16s; }
 .ig-jny-sub { color: var(--text-muted); font-size: 0.78rem; margin-top: 4px; line-height: 1.3; }
+
 .ig-jny-connector {
   align-self: flex-start;
-  margin-top: 20px;
-  flex: 0 0 28px;
-  height: 1.5px;
-  background: var(--border-hover);
-  position: relative;
+  flex: 0 0 32px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--act-accent);
+  font-size: 1.3rem;
+  font-weight: 700;
+  opacity: 0.75;
 }
-.ig-jny-connector::after {
-  content: "";
-  position: absolute;
-  right: -1px;
-  top: 50%;
-  width: 5px;
-  height: 5px;
-  border-right: 1.5px solid var(--border-hover);
-  border-top: 1.5px solid var(--border-hover);
-  transform: translateY(-50%) rotate(45deg);
-}
+.ig-jny-connector::after { content: "\2192"; }
+
 .ig-jny-drop {
   position: relative;
   z-index: 1;
   align-self: center;
-  width: 1.5px;
-  height: 16px;
-  background: var(--border-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  opacity: 0.85;
 }
-.ig-jny-drop::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 50%;
-  width: 5px;
-  height: 5px;
-  border-right: 1.5px solid var(--border-hover);
-  border-bottom: 1.5px solid var(--border-hover);
-  transform: translateX(-50%) rotate(45deg);
-}
+.ig-jny-drop::after { content: "\2193"; }
+.ig-jny-drop--to-2 { color: var(--violet); }
+.ig-jny-drop--to-3 { color: var(--emerald); }
+
 .ig-jny-outcome {
   position: relative;
   z-index: 1;
@@ -135,16 +170,19 @@
   font-size: 0.88rem;
   padding: 9px 18px;
   border-radius: var(--radius-pill);
+  box-shadow: var(--accent-glow);
 }
 @media (max-width: 640px) {
-  .ig-jny-card { padding: 22px 18px; }
+  .ig-jny-card { padding: 22px 18px; gap: 16px; }
+  .ig-jny-act { padding: 16px 16px 18px; }
+  .ig-jny-act::after { font-size: 3rem; opacity: 0.07; }
   .ig-jny-row { flex-direction: column; }
   .ig-jny-step { min-width: 0; padding: 10px 0; }
-  .ig-jny-connector { display: none; }
+  .ig-jny-connector { align-self: center; margin: 0; transform: rotate(90deg); flex: 0 0 auto; }
 }
 </style>
 <div class="ig-jny-card" aria-label="The eight Hope skills in three acts. Act one, show your work: onboarding, portfolio, publish. Act two, close your gap before you apply: skill gap, proof projects. Act three, get the job: discovery, application, dashboard. Outcome: you walk in ready.">
-  <div class="ig-jny-act">
+  <div class="ig-jny-act ig-jny-act--1" data-act-index="1">
     <div class="ig-jny-act-head"><span class="ig-jny-act-num">Act 1</span><span class="ig-jny-act-name">Show your work</span></div>
     <div class="ig-jny-row">
       <a class="ig-jny-step" href="{{ '/skills/onboarding/' | relative_url }}">
@@ -166,8 +204,8 @@
       </a>
     </div>
   </div>
-  <div class="ig-jny-drop" aria-hidden="true"></div>
-  <div class="ig-jny-act">
+  <div class="ig-jny-drop ig-jny-drop--to-2" aria-hidden="true"></div>
+  <div class="ig-jny-act ig-jny-act--2" data-act-index="2">
     <div class="ig-jny-act-head"><span class="ig-jny-act-num">Act 2</span><span class="ig-jny-act-name">Close your gap</span><span class="ig-jny-act-when">— before you search and apply</span></div>
     <div class="ig-jny-row">
       <a class="ig-jny-step" href="{{ '/skills/skill-gap/' | relative_url }}">
@@ -183,8 +221,8 @@
       </a>
     </div>
   </div>
-  <div class="ig-jny-drop" aria-hidden="true"></div>
-  <div class="ig-jny-act">
+  <div class="ig-jny-drop ig-jny-drop--to-3" aria-hidden="true"></div>
+  <div class="ig-jny-act ig-jny-act--3" data-act-index="3">
     <div class="ig-jny-act-head"><span class="ig-jny-act-num">Act 3</span><span class="ig-jny-act-name">Get the job</span></div>
     <div class="ig-jny-row">
       <a class="ig-jny-step" href="{{ '/skills/discovery/' | relative_url }}">
