@@ -33,8 +33,8 @@ How you publish depends on whether your AI has a built-in **terminal** (a place 
 
 | If you use… | Can it publish for you? | Your path |
 |---|---|---|
-| {% include ai-claude.svg %}**Claude Code**, **Cursor**, **VS Code + {% include ai-copilot.svg %}Copilot**, **Windsurf** | ✅ Yes, end-to-end | **The easy way** below — your AI does it; you click "Authorize" once. |
-| {% include ai-chatgpt.svg %}**ChatGPT**, {% include ai-gemini.svg %}**Gemini**, {% include ai-perplexity.svg %}**Perplexity** (web chatbots) | ❌ Not directly | **The no-code way** below — you drag-and-drop. It can guide you, but it can't upload for you (that's just how web chatbots work). |
+| {% include ai-claude.svg %}**Claude Code**, {% include ai-chatgpt.svg %}**Codex**, **Cursor**, **VS Code + {% include ai-copilot.svg %}Copilot**, **Windsurf** | ✅ Yes, end-to-end | **The easy way** below — your AI does it; you click "Authorize" once. |
+| {% include ai-chatgpt.svg %}**ChatGPT** (web chat, not Codex), {% include ai-gemini.svg %}**Gemini**, {% include ai-perplexity.svg %}**Perplexity** (web chatbots) | ❌ Not directly | **The no-code way** below — you drag-and-drop. It can guide you, but it can't upload for you (that's just how web chatbots work). |
 
 Both paths end with the same thing: your free `https://yourname.github.io/portfolio/` link.
 
