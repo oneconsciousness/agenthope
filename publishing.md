@@ -2,7 +2,7 @@
 layout: doc
 title: "GitHub, explained"
 permalink: /publishing/
-seo_title: "What is GitHub? Publish Your Portfolio Free (No Code)"
+seo_title: "What Is GitHub? Publish Free, No Code · JobHunt with Hope"
 description: "What GitHub is, in plain English — and exactly how to publish your portfolio to a free link with whatever AI you use. No coding, nothing to worry about."
 ---
 <div class="skill-body" markdown="1">
@@ -85,6 +85,6 @@ No terminal, no commands — just clicking and dragging in your browser.
 
 ## Your link is live — what's next?
 
-Publishing is step 3 of 8, not the finish line. From here, Hope can [measure your skill gap and build your growth plan]({{ '/skills/skill-gap/' | relative_url }}) before you apply anywhere, [find real openings worth your time]({{ '/skills/discovery/' | relative_url }}) — say **"find me jobs"** — and [fill the applications while you watch]({{ '/skills/application/' | relative_url }}), with your yes on every send. [See all eight skills →]({{ '/skills/' | relative_url }})
+Publishing is not the finish line. From here, Hope can [find real openings worth your time]({{ '/skills/discovery/' | relative_url }}) — say **"find me jobs"** — [fill the application in your browser and stop at submit]({{ '/skills/application/' | relative_url }}) so you press send, and [draft every message in your own voice]({{ '/skills/write/' | relative_url }}). [See all ten skills →]({{ '/skills/' | relative_url }})
 
 </div>

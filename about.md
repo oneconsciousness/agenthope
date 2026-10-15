@@ -7,7 +7,7 @@ description: JobHunt with Hope is a free, open-source pack of AI skills for laid
 
 # About JobHunt with Hope
 
-**The hiring side already runs on AI** — résumé screeners, ranking, instant auto-rejects. Doing your whole hunt by hand, alone, while everyone else has help, is how you fall behind. JobHunt with Hope hands the AI you already use a set of **free skills** so it can run your whole hunt: build your portfolio, your résumé, and one link you own; find your skill gaps and your growth plan <em>before</em> you apply; then find real openings, apply with your yes on every send, and track it all on one dashboard.
+**The hiring side already runs on AI** — résumé screeners, ranking, instant auto-rejects. Doing your whole hunt by hand, alone, while everyone else has help, is how you fall behind. JobHunt with Hope hands the AI you already use a set of **free skills** so it can run your whole hunt: your portfolio, your résumé, and one link you own; real openings found and screened against your rules; applications filled for you to review and send; every message in your voice; prep before every interview and a debrief after; and one tracker you own.
 
 It's for people in the middle of it: **just laid off, switching fields, or starting out**. No coding, no account, and nothing leaves your computer except the page you choose to publish.
 
@@ -39,10 +39,15 @@ Your facts live in one file on your own computer. Hope keeps a small notebook to
 
 ## Where it's going
 
-Today Hope handles presentation, the honest gap to a real role, finding roles worth pursuing, and applying with your yes on every send — portfolio, résumé, your link, a validated board, and real applications, all on one dashboard. Coming next: interview prep, negotiation support, and tailored cover letters beyond what applying already drafts.
+**Hope 2.0 shipped in October 2026.** Its maker spent four months running a real job hunt with Claude as the partner, then rebuilt Hope to work the way that hunt actually worked. Hope now runs the whole thing, in ten skills: your portfolio, résumé and link; real openings found and screened; applications filled for you to send; every message in your voice; interview prep with a reminder to record the call and a debrief after; a morning catch-up on your email and LinkedIn, read-only; and one tracker you own. It was also rewritten so a smaller model, like Claude Sonnet, can run every step.
+
+Three skills retired along the way: Skill Gap, Proof Projects and the Dashboard. The honest fit read now comes with every role Hope finds or fills, and the tracker took the dashboard's place.
+
+**Coming next: negotiation and decision support.** Help when an offer arrives: what to ask for, how to say it, and how to choose between offers.
 
 <figure class="figure figure--plain">
-  <img src="{{ '/assets/img/roadmap.webp' | relative_url }}" alt="A roadmap — NOW: portfolio, résumé, your link, your gap, your board, applying with your yes; NEXT: interview prep, negotiation" width="1200" height="675" loading="lazy" />
+  <img src="{{ '/assets/img/roadmap.webp' | relative_url }}" alt="The earlier roadmap: NOW holds portfolio, résumé and your link; NEXT holds weighing roles, cover letters, applying, interview prep, negotiation and deciding" width="1200" height="675" loading="lazy" />
+  <figcaption class="muted">The roadmap we drew before 2.0. Weighing roles, cover letters, applying and interview prep have now shipped. Negotiation and deciding are next.</figcaption>
 </figure>
 
 ## Who made this, and why
@@ -70,7 +75,7 @@ The evolution of AI may have ended the original product — but the **spirit of 
 
 ## For AI agents
 
-Every page here is plain, pre-rendered HTML — no JavaScript needed to read it. Each skill is also available as clean raw Markdown, linked at the top of its page, and there's an [llms.txt](/llms.txt) / [llms-full.txt](/llms-full.txt) index at the site root.
+Every page here is plain, pre-rendered HTML — no JavaScript needed to read it. All ten skills are also available as clean raw Markdown, linked at the top of each skill page, and there's an [llms.txt](/llms.txt) / [llms-full.txt](/llms-full.txt) index at the site root. An agent helping someone for the first time should begin with [Start]({{ '/skills/start/' | relative_url }}).
 
 ---
 
