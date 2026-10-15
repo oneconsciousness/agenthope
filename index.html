@@ -85,10 +85,10 @@ og_image_alt: "A finished Hope portfolio — a career timeline, impact stats, an
       <!-- Claude — recommended -->
       <article class="engine engine--rec">
         <header class="engine__head">
-          <span class="engine__name"><span class="ai">{% include ai-claude.svg %}Claude</span> <span class="engine__badge">Recommended</span></span>
-          <span class="engine__plats">Mobile · Web · Desktop</span>
+          <span class="engine__name"><span class="ai">{% include ai-claude.svg %}Claude Code</span> <span class="engine__badge">Recommended</span></span>
+          <span class="engine__plats">Desktop app · Terminal · Web</span>
         </header>
-        <p class="engine__why">The smoothest path. <span class="ai">{% include ai-claude.svg %}Claude</span> can pull in the Hope skills with almost no setup, so it needs only a short nudge and does the rest.</p>
+        <p class="engine__why">The smoothest path, and the one Hope was built and tested on. <span class="ai">{% include ai-claude.svg %}Claude Code</span> installs the Hope skills as a plugin in one command, has a terminal and a browser, and runs every step: it even works with the smaller Sonnet model.</p>
         <pre class="engine__prompt" data-prompt="claude"><code>I'd like to run my job hunt with JobHunt with Hope (free, open-source). Start with onboarding, then portfolio and publish, then set up my application profile and hunt folder. After that, run the daily rhythm with me: sync, find jobs, apply, write, interview, tracker.
 
 First: make sure you can write to my GitHub Pages repo — that's where my site goes live. Confirm that before we publish anything; if you're not connected to my GitHub, tell me how to connect you and wait.
@@ -102,55 +102,50 @@ Then walk me through it like I'm not technical:
 Keep a short note of what you used and made. Start with onboarding — don't jump ahead.</code></pre>
         <div class="engine__actions">
           <button class="copy-btn js-copy" data-copy-target="claude" type="button">Copy instructions</button>
-          <a class="open-btn" data-open="claude" href="#" target="_blank" rel="noopener"><span class="ai">Open in {% include ai-claude.svg %}Claude</span> <span class="arrow">→</span></a>
+          <a class="open-btn" data-open="claude" href="#" target="_blank" rel="noopener"><span class="ai">Open in {% include ai-claude.svg %}Claude Code</span> <span class="arrow">→</span></a>
         </div>
-        <p class="engine__note">“Open in <span class="ai">{% include ai-claude.svg %}Claude</span>” prefills a fresh chat (the desktop app is most reliable). If nothing loads, just use <strong>Copy</strong> — it always works.</p>
+        <p class="engine__note">“Open in <span class="ai">{% include ai-claude.svg %}Claude Code</span>” prefills a fresh chat in the Claude desktop app (the Code tab). If nothing loads, use <strong>Copy</strong> and paste it into Claude Code in an empty folder. Already have it installed? <a href="#claude-code-install">Install the plugin in one command ↓</a></p>
       </article>
 
-      <!-- ChatGPT -->
+      <!-- Codex -->
       <article class="engine">
         <header class="engine__head">
-          <span class="engine__name"><span class="ai">{% include ai-chatgpt.svg %}ChatGPT</span></span>
-          <span class="engine__plats">Mobile · Web · Desktop</span>
+          <span class="engine__name"><span class="ai">{% include ai-chatgpt.svg %}Codex</span></span>
+          <span class="engine__plats">Desktop app · Terminal · IDE</span>
         </header>
-        <p class="engine__why">Works well too. The instructions tell it to trust our design and only fill in your content — so you get a real Hope page, not a hand-built one.</p>
-        <pre class="engine__prompt" data-prompt="chatgpt"><code>I'd like to run my job hunt with JobHunt with Hope (free, open-source). Start with onboarding, then portfolio and publish, then set up my application profile and hunt folder. After that, run the daily rhythm with me: sync, find jobs, apply, write, interview, tracker. Treat me as non-technical — explain each step simply, don't assume I know anything technical, and be as hands-free as you can: ask me as little as possible and do the rest yourself.
+        <p class="engine__why">OpenAI's coding agent works too. It has a terminal, so it can read the Hope skills from GitHub, run the helper scripts, and publish your page end to end. Comes with a ChatGPT Plus, Pro, Business or Enterprise plan.</p>
+        <pre class="engine__prompt" data-prompt="codex"><code>I'd like to run my job hunt with JobHunt with Hope (free, open-source). Start with onboarding, then portfolio and publish, then set up my application profile and hunt folder. After that, run the daily rhythm with me: sync, find jobs, apply, write, interview, tracker. Treat me as non-technical: explain each step simply, and ask me as little as possible.
 
-1. Follow the Hope skills at github.com/oneconsciousness/job-hunt-with-hope — read them and do what they say, starting with onboarding, then building my portfolio; when a step is done, offer me the next skill (publish, my application profile and hunt folder, then the daily rhythm: sync, find jobs, apply, write, interview, tracker). You're in Agent mode with a computer: if `git clone` is blocked, download the repo as a ZIP from that page and read the files from disk.
-2. Ask me ONCE — I'll upload my resume PDF and a headshot photo and tell you my target role. If I skip something, pick a sensible default and tell me; don't loop.
-3. Build it the way Hope works now: put MY information into one data file, and use Hope's small page that loads the design from Hope's shared link. Keep Hope's design exactly — don't restyle or hand-build anything.
-4. Show me a preview, then ask before publishing.
-5. Publish to my GitHub Pages repo and give me my live link. The two small text files go up for me automatically; for my photo, give me one dead-simple guided step to add it (a single upload).
+1. Clone github.com/oneconsciousness/job-hunt-with-hope into a folder next to this one and read skills/start/SKILL.md first. It routes you to the other skills; follow each SKILL.md literally, step by step, running its checks. When a step is done, offer me the next one. Set CLAUDE_PLUGIN_ROOT to the cloned folder before you run any of the bash blocks in the skills.
+2. Ask me ONCE for everything: I'll give you my resume PDF, a headshot photo, my GitHub login and my target role. If I skip something, pick a sensible default and tell me; don't loop.
+3. Build using Hope's own template and design: keep the styling, layout and code exactly as Hope provides; only fill in MY content.
+4. Before publishing, show me the result and ask in plain English. After I say yes, publish to my GitHub Pages site and give me the live link.
+5. Never send anything in my name. Fill forms and draft messages, then stop; I press send.
 
-Keep a short note of what you used and made. Start with onboarding — don't jump ahead.</code></pre>
+Keep a short note of what you used and made. Start with onboarding; don't jump ahead.</code></pre>
         <div class="engine__actions">
-          <button class="copy-btn js-copy" data-copy-target="chatgpt" type="button">Copy instructions</button>
-          <a class="open-btn" data-open="chatgpt" href="#" target="_blank" rel="noopener"><span class="ai">Open in {% include ai-chatgpt.svg %}ChatGPT</span> <span class="arrow">→</span></a>
+          <button class="copy-btn js-copy" data-copy-target="codex" type="button">Copy instructions</button>
         </div>
-        <p class="engine__note">Best in <strong><span class="ai">{% include ai-chatgpt.svg %}ChatGPT</span> Agent mode</strong> — it builds your portfolio, and the last step to go live is quick and guided. <a href="#chatgpt-setup">Set it up once (Agent mode + GitHub) ↓</a>. “Open in ChatGPT” may truncate this prompt; if it looks cut off, use <strong>Copy</strong>.</p>
+        <p class="engine__note">Copy, then paste into <span class="ai">{% include ai-chatgpt.svg %}Codex</span> opened in an empty folder. <a href="#codex-setup">Set it up once (install + GitHub) ↓</a>. We tested Hope 2.0 on Claude Code; Codex follows the same plain-language skills, and we'd love to hear how it goes.</p>
       </article>
 
     </div>
-    <details class="install-collapse">
+    <details class="install-collapse" id="claude-code-install">
       <summary>Already use <span class="ai">{% include ai-claude.svg %}Claude Code</span>? Install in one command</summary>
       <div class="skill-body">
         <pre><code>/plugin marketplace add oneconsciousness/job-hunt-with-hope
 /plugin install hope@hope</code></pre>
-        <p class="muted">Then, in a fresh chat in an empty folder, say <strong>start my job hunt with Hope</strong>.</p>
+        <p class="muted">Then, in a fresh chat in an empty folder, say <strong>run my job hunt with Hope</strong>.</p>
       </div>
     </details>
-    <details class="install-collapse" id="chatgpt-setup">
-      <summary>Using <span class="ai">{% include ai-chatgpt.svg %}ChatGPT</span>? Set it up once — Agent mode + GitHub</summary>
+    <details class="install-collapse" id="codex-setup">
+      <summary>Using <span class="ai">{% include ai-chatgpt.svg %}Codex</span>? Set it up once: install + GitHub</summary>
       <div class="skill-body">
         <ol>
-          <li><strong>Turn on Agent mode.</strong> Start a new chat and switch ChatGPT to <strong>Agent mode</strong> — the one with a real computer, so it can build your portfolio and help with the steps to go live. (On Plus/Pro plans.)</li>
-          <li><strong>Connect GitHub.</strong> Open <strong>Settings → Apps</strong>, connect <strong>GitHub</strong>, then use its <strong>“⋯” → Settings</strong> to give it access to the repository where your site will live. That's what lets ChatGPT help put your page online.</li>
-          <li><strong>Attach GitHub in the chat.</strong> In the message box, tap <strong>＋ → GitHub</strong> so the agent can read and write your repo — then paste the instructions above and follow along.</li>
+          <li><strong>Install Codex.</strong> The desktop app from OpenAI, or in a terminal: <code>npm install -g @openai/codex</code>. Sign in with your ChatGPT account.</li>
+          <li><strong>Connect GitHub.</strong> Install the GitHub CLI (<code>brew install gh</code> on a Mac) and run <code>gh auth login</code> once. That is what lets Codex put your page online in your own account.</li>
+          <li><strong>Open an empty folder.</strong> Make a folder for your hunt, open Codex there, paste the instructions above, and follow along. Everything it makes stays in that folder.</li>
         </ol>
-        <figure class="figure figure--plain">
-          <img src="{{ '/assets/img/chatgpt-github.webp' | relative_url }}" alt="ChatGPT Settings → Apps with the GitHub app open — the ⋯ menu showing Settings and Reconnect, and where to grant access to your repository" width="1800" height="1038" loading="lazy" />
-          <figcaption class="muted">Settings → Apps → GitHub → “⋯” → Settings, then grant access to your repo.</figcaption>
-        </figure>
       </div>
     </details>
   </div>
@@ -172,8 +167,8 @@ Keep a short note of what you used and made. Start with onboarding — don't jum
     </figure>
     <p class="trust-strip"><strong>Free &amp; open-source (MIT).</strong> No account, no tracking. Hope never sends anything in your name, and it only ever reads your email and LinkedIn. Nothing leaves your laptop except the page you choose to publish.</p>
     <div class="agents-line agents-line--center">
-      <span class="agent-pill">{% include ai-chatgpt.svg %}ChatGPT</span>
-      <span class="agent-pill">{% include ai-claude.svg %}Claude</span>
+      <span class="agent-pill">{% include ai-claude.svg %}Claude Code</span>
+      <span class="agent-pill">{% include ai-chatgpt.svg %}Codex</span>
       <span class="agent-pill">{% include ai-gemini.svg %}Gemini</span>
       <span class="agent-pill">{% include ai-copilot.svg %}Copilot</span>
       <span class="agent-pill">{% include ai-perplexity.svg %}Perplexity</span>
@@ -280,7 +275,7 @@ Keep a short note of what you used and made. Start with onboarding — don't jum
   document.querySelectorAll('[data-open]').forEach(function(a){
     var key=a.getAttribute('data-open');
     var p=prompts[key]; if(!p)return;
-    var base=key==='chatgpt'?'https://chatgpt.com/?hints=agent&q=':'https://claude.ai/new?q=';
+    if(key!=='claude')return; var base='https://claude.ai/new?q=';
     a.setAttribute('href',base+encodeURIComponent(p));
     a.addEventListener('click',function(){writeClip(p,function(){});});
   });
@@ -324,7 +319,7 @@ Keep a short note of what you used and made. Start with onboarding — don't jum
       "@id": "https://agenthope.ai/#software",
       "name": "JobHunt with Hope",
       "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Any (works with ChatGPT, Claude, Gemini and other AI agents)",
+      "operatingSystem": "Any (works with Claude Code, Codex, Gemini and other AI agents)",
       "description": "A free, open-source pack of AI skills that runs a job seeker's whole hunt with the AI agent they already use: a designed portfolio website and a recruiter-ready résumé (CV), a shortlist of real openings matched on the full job description, applications filled in the browser for the user to review and send, every message drafted in the user's own voice, interview prep with a record-the-call reminder and a debrief, a read-only morning sync of email and LinkedIn, and one tracker spreadsheet the user owns. No coding; career data stays on the user's own machine.",
       "url": "https://agenthope.ai/",
       "softwareHelp": "https://agenthope.ai/skills/start/",
@@ -342,7 +337,7 @@ Keep a short note of what you used and made. Start with onboarding — don't jum
         "Interview prep, a record-the-call reminder, and a debrief from your recording",
         "A morning sync of email and LinkedIn, read-only",
         "One job tracker spreadsheet you own",
-        "Runs on your existing AI agent (ChatGPT, Claude, Gemini, Copilot), including smaller models like Claude Sonnet",
+        "Runs on your existing AI agent (Claude Code, Codex, Gemini, Copilot), including smaller models like Claude Sonnet",
         "No coding required",
         "Privacy-first: your data never leaves your machine"
       ],
