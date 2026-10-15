@@ -15,7 +15,9 @@ Hope does the work through the tools Claude is connected to. Connect these once,
 
 Install the Claude desktop app from [claude.ai/download](https://claude.ai/download), sign in, and open the **Code** tab. Hope runs here, not in the normal chat, because this is where Claude has a terminal and can read and write files on your computer.
 
-Make an empty folder for your hunt (for example `Documents/job-hunt`) and open it in the Code tab. Everything Hope makes stays in that folder.
+Make a folder for your hunt (for example `Documents/job-hunt`) and open it in the Code tab. Everything Hope makes stays in that folder.
+
+**Put your past job-search files in it before you start:** every résumé version you have, cover letters, any tracker spreadsheet or notes, saved application answers, interview notes. Hope reads them as evidence (an older résumé often holds a bullet the latest one dropped, and old notes hold the stories), imports your tracker rows into its one log, and files old answers next to the matching roles. It keeps its own layout for everything it writes, so every skill knows where things are.
 
 ## 2. The Hope plugin
 
