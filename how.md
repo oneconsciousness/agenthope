@@ -74,4 +74,6 @@ Then, in a fresh chat in an empty folder, say **start my job hunt with Hope**.
 
 [Copy your instructions and start →](/#start) · [Read all ten skills →]({{ '/skills/' | relative_url }}) · [See a live portfolio first →]({{ '/demo/' | relative_url }})
 
+Setting up for the first time? [Connect Claude to your tools once →]({{ '/setup/' | relative_url }})
+
 New to GitHub or publishing a page? [Here's the plain-English walkthrough →]({{ '/publishing/' | relative_url }})
