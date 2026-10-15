@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: "FAQ — JobHunt with Hope"
+title: "FAQ"
 permalink: /faq/
 description: "Answers about JobHunt with Hope: is it free, is my data private, does it send anything for me, does it apply for me, the tracker, and will it get you hired."
 ---
