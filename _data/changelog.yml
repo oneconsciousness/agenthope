@@ -15,6 +15,50 @@
 # Bad:   "Added a Goal node to the career graph schema (v1.1)."
 # ─────────────────────────────────────────────────────────────────────────────
 
+- date: "Oct 2026"
+  headline: "One spreadsheet keeps score of your whole hunt, and it's yours."
+  body: "Every role, its status, the next step and dated notes live in one spreadsheet in your folder. Ask \"where do I stand?\" or \"what needs me?\" any time, and Hope saves a backup before every change."
+
+- date: "Oct 2026"
+  headline: "Find real openings that fit, matched on what the job actually is."
+  body: "Hope reads job boards straight from their own listings and matches on the full job description, not just the title. It screens out what breaks your rules, skips what you've already tracked, and hands you a shortlist. You pick."
+
+- date: "Oct 2026"
+  headline: "Your applications get filled in. You press send."
+  body: "Give Hope a job link and it saves the posting, fills the form in your browser while you watch, and writes down every answer it gave. It leaves the legal boxes and anything you'd rather answer yourself, and it stops at submit."
+
+- date: "Oct 2026"
+  headline: "Every message sounds like you, and more like you over time."
+  body: "Emails, LinkedIn messages, cover letters, follow-ups and replies to recruiters, drafted in your own voice and saved for you to send. Each time you edit a draft, Hope learns what you changed."
+
+- date: "Oct 2026"
+  headline: "Walk into every interview prepared, and learn from every one."
+  body: "The moment a call is booked, Hope reminds you to record it and puts your prep in the reminder: what to land, your honest gaps, two questions to ask. Afterwards it turns your recording into a debrief and drafts your follow-up."
+
+- date: "Oct 2026"
+  headline: "Start each morning knowing what changed."
+  body: "Hope reads your email and LinkedIn, and only reads, then updates your tracker with confirmations, rejections and recruiter messages. It tells you in a few lines what needs you today."
+
+- date: "Oct 2026"
+  headline: "Answer the form questions once, not on every application."
+  body: "Work authorization, pay, where you'll work, the standard questions: Hope asks them once and keeps your answers in one profile. Every application after that starts from your own words."
+
+- date: "Oct 2026"
+  headline: "Correct Hope once, and it remembers."
+  body: "Your facts, your rules and your corrections live in one file Hope reads before it works. When you fix something, Hope writes the fix down that day, so the same mistake doesn't come back."
+
+- date: "Oct 2026"
+  headline: "Not sure what's next? Hope tells you where you are."
+  body: "Say \"start my job hunt with Hope\" on any day and it looks at your folder, tells you where things stand, and points you to the next step. It also shows you the short daily rhythm that keeps a hunt moving."
+
+- date: "Oct 2026"
+  headline: "Runs well on smaller, cheaper AI models."
+  body: "Every step is now short and plain, with a check after each one, so a smaller model like Claude Sonnet can run your whole hunt reliably. You get the full benefit without the biggest model."
+
+- date: "Oct 2026"
+  headline: "Three skills retired, and their best idea kept."
+  body: "Skill Gap, Proof Projects and the Dashboard have retired. A real job hunt never needed them as separate steps. The honest read on how well you fit now comes with every role Hope finds or fills, and your tracker takes the dashboard's place."
+
 - date: "Jul 2026"
   headline: "Your portfolio now reads like a great résumé."
   body: "Every bullet point has been slimmed down to what a recruiter actually reads — the sentence, the result in a soft highlight, and the skills used. And when you save your résumé as a PDF, you now choose how much goes in: just the highlights, the top five per role, or every single bullet."

@@ -1,6 +1,7 @@
-<!-- The eight-skill journey, in three acts. Verbatim design — do not restyle;
+<!-- The ten-skill journey, in three acts. Verbatim design — do not restyle;
      wrapper below only centers the fixed-width card and caps it at 100% so it
-     doesn't overflow narrow viewports. -->
+     doesn't overflow narrow viewports. The connector gradient's stops follow
+     the act boundaries (2 rows · 2 rows · 6 rows). -->
 <div class="ig-jny-wrap">
 <style>
 .ig-jny-wrap { margin: 1.8em 0 2.2em; display: flex; justify-content: center; }
@@ -8,44 +9,52 @@
 </style>
 <div class="dv-card" style="width: 480px; padding: 36px 32px;">
   <div style="position: relative; padding-left: 34px; display: flex; flex-direction: column; gap: 30px;">
-    <div style="position: absolute; left: 17px; top: 17px; bottom: 17px; width: 2px; background: linear-gradient(#0E7490, #6D4DAE, #15803D);"></div>
+    <div style="position: absolute; left: 17px; top: 17px; bottom: 17px; width: 2px; background: linear-gradient(#0E7490 0%, #0E7490 14%, #6D4DAE 27%, #6D4DAE 36%, #15803D 50%, #15803D 100%);"></div>
 
-    <div style="font: 700 11px 'JetBrains Mono', monospace; letter-spacing: .06em; text-transform: uppercase; color: #0E7490; margin-left: -34px; padding-left: 34px;">Show your work</div>
+    <div style="font: 700 11px 'JetBrains Mono', monospace; letter-spacing: .06em; text-transform: uppercase; color: #0E7490; margin-left: -34px; padding-left: 34px;">Set up</div>
     <div style="display: flex; gap: 16px; align-items: flex-start; margin-left: -34px;">
-      <div style="position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: #0E7490; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px 'JetBrains Mono', monospace; flex-shrink: 0;">1</div>
-      <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">ONBOARDING</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">tell your story once</div></div>
+      <div style="position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: #0E7490; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px 'JetBrains Mono', monospace; flex-shrink: 0;">0</div>
+      <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">START</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">know where you are, every day</div></div>
     </div>
     <div style="display: flex; gap: 16px; align-items: flex-start; margin-left: -34px;">
-      <div style="position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: #0E7490; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px 'JetBrains Mono', monospace; flex-shrink: 0;">2</div>
+      <div style="position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: #0E7490; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px 'JetBrains Mono', monospace; flex-shrink: 0;">1</div>
+      <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">ONBOARDING</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">your story and your form answers, asked once</div></div>
+    </div>
+
+    <div style="font: 700 11px 'JetBrains Mono', monospace; letter-spacing: .06em; text-transform: uppercase; color: #6D4DAE; margin-left: -34px; padding-left: 34px; margin-top: 4px;">Show your work</div>
+    <div style="display: flex; gap: 16px; align-items: flex-start; margin-left: -34px;">
+      <div style="position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: #6D4DAE; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px 'JetBrains Mono', monospace; flex-shrink: 0;">2</div>
       <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">PORTFOLIO &amp; RÉSUMÉ</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">a page that looks like you tried</div></div>
     </div>
     <div style="display: flex; gap: 16px; align-items: flex-start; margin-left: -34px;">
-      <div style="position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: #0E7490; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px 'JetBrains Mono', monospace; flex-shrink: 0;">3</div>
+      <div style="position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: #6D4DAE; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px 'JetBrains Mono', monospace; flex-shrink: 0;">3</div>
       <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">PUBLISH</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">one link you own</div></div>
     </div>
 
-    <div style="font: 700 11px 'JetBrains Mono', monospace; letter-spacing: .06em; text-transform: uppercase; color: #6D4DAE; margin-left: -34px; padding-left: 34px; margin-top: 4px;">Close your gap</div>
+    <div style="font: 700 11px 'JetBrains Mono', monospace; letter-spacing: .06em; text-transform: uppercase; color: #15803D; margin-left: -34px; padding-left: 34px; margin-top: 4px;">Run the hunt, every day</div>
     <div style="display: flex; gap: 16px; align-items: flex-start; margin-left: -34px;">
-      <div style="position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: #6D4DAE; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px 'JetBrains Mono', monospace; flex-shrink: 0;">4</div>
-      <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">SKILL GAP</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">where you stand</div></div>
+      <div style="position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: #15803D; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px 'JetBrains Mono', monospace; flex-shrink: 0;">4</div>
+      <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">FIND JOBS</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">a shortlist that fits your rules</div></div>
     </div>
     <div style="display: flex; gap: 16px; align-items: flex-start; margin-left: -34px;">
-      <div style="position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: #6D4DAE; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px 'JetBrains Mono', monospace; flex-shrink: 0;">5</div>
-      <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">PROOF PROJECTS</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">a growth plan, built not bought</div></div>
+      <div style="position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: #15803D; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px 'JetBrains Mono', monospace; flex-shrink: 0;">5</div>
+      <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">APPLY</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">the form filled, you press send</div></div>
     </div>
-
-    <div style="font: 700 11px 'JetBrains Mono', monospace; letter-spacing: .06em; text-transform: uppercase; color: #15803D; margin-left: -34px; padding-left: 34px; margin-top: 4px;">Get the job</div>
     <div style="display: flex; gap: 16px; align-items: flex-start; margin-left: -34px;">
       <div style="position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: #15803D; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px 'JetBrains Mono', monospace; flex-shrink: 0;">6</div>
-      <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">DISCOVERY</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">real openings, verified</div></div>
+      <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">WRITE</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">every message in your voice</div></div>
     </div>
     <div style="display: flex; gap: 16px; align-items: flex-start; margin-left: -34px;">
       <div style="position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: #15803D; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px 'JetBrains Mono', monospace; flex-shrink: 0;">7</div>
-      <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">APPLICATION</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">your best case, every time</div></div>
+      <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">INTERVIEW</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">record it, prep for it, learn from it</div></div>
     </div>
     <div style="display: flex; gap: 16px; align-items: flex-start; margin-left: -34px;">
       <div style="position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: #15803D; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px 'JetBrains Mono', monospace; flex-shrink: 0;">8</div>
-      <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">DASHBOARD</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">the whole hunt, one page</div></div>
+      <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">SYNC</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">each morning, what changed and what needs you</div></div>
+    </div>
+    <div style="display: flex; gap: 16px; align-items: flex-start; margin-left: -34px;">
+      <div style="position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: #15803D; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px 'JetBrains Mono', monospace; flex-shrink: 0;">9</div>
+      <div style="padding-top: 5px;"><div style="font-weight: 650; font-size: 15px; color: #1A1612;">TRACKER</div><div style="font-size: 12.5px; color: #6B5D49; margin-top: 2px;">one spreadsheet you own keeps score</div></div>
     </div>
 
     <div style="margin-left: -34px; margin-top: 4px; padding-top: 18px; border-top: 1px solid rgba(31,22,14,0.10); text-align: center; font-weight: 600; color: #B45309; font-size: 14.5px;">"Come in" — and you walk in ready.</div>
