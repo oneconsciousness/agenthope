@@ -119,7 +119,7 @@ No new files. This skill reads the hunt folder and keeps two files current:
 |---|---|---|---|
 | 1 | A call starts within the next hour (`WORKING-PAD.md` "Urgent", the calendar, a tracker row, or the user says so). | `hope-interview`: prep that call. | "Your call with <who> is at <time, user's zone>. Prepping that first. Everything else waits." |
 | 2 | No `career-graph/career.json`, or `graph_query.py` prints "No Person node yet". | `hope-onboarding`, Part 1. | "First I need to know you. That is onboarding, one sitting." If the user gave a link, save it under "Paused" in `WORKING-PAD.md`. |
-| 3 | A career file, no portfolio folder, no `applications/_common/resume.pdf`, and the user asked for nothing specific. | `hope-portfolio`. | "Your career file is in. Next is your portfolio and the résumé it exports." |
+| 3 | A career file, no portfolio folder, no `applications/_common/resume.pdf`, the tracker is missing or has no rows (the hunt has not started), and the user asked for nothing specific. | `hope-portfolio`. | "Your career file is in. Next is your portfolio and the résumé it exports." |
 | 4 | A portfolio folder, no `.publish.json`, the user asked for nothing specific, and "Decisions" in `user-story.md` does not say they chose not to publish. | Offer `hope-publish`. Options: publish now (recommended) / skip it and set up the hunt. A skip goes under "Decisions" in `user-story.md`. | "Your portfolio is built but not online yet." |
 | 5 | `HUNT-PROTOCOL.md`, `applications/_common/profile.md` or the tracker (`job-tracker.xlsx` or `job-tracker.csv`) is missing, and the user asks to find jobs, apply, sync, write, prep an interview, or update the tracker, or asks for nothing specific. | `hope-onboarding`, Part 2. | "Forms and the tracker read your application profile, so we set that up first. One sitting." |
 | 6 | The user gives a job link. | `hope-application`. | - |
@@ -127,7 +127,7 @@ No new files. This skill reads the hunt folder and keeps two files current:
 | 8 | "sync", "any news", "check my email", "did they reply". | `hope-sync`. | - |
 | 9 | "draft", "reply", "write", "cover letter", "message". | `hope-write`. | - |
 | 10 | "interview", "call", "screen", "they want to talk". | `hope-interview`. | - |
-| 11 | "where do I stand", "what needs me", "update the tracker". | `hope-tracker`. | - |
+| 11 | "where do I stand", "where am I", "what needs me", "update the tracker". For "where am I" give the five-line report (step 5) and then route by the rest of the table. | `hope-tracker`. | - |
 | 12 | "portfolio", "résumé", "publish", "put it online". | `hope-portfolio` or `hope-publish`. | - |
 | 13 | Anything else, or nothing specific ("morning", "let's go", "what's next", "I'm back"). | The daily rhythm: run `hope-sync`, then offer the next step. | "Next: the morning sync. Running it now." |
 
@@ -165,7 +165,7 @@ Five lines or fewer, in this shape:
 
 ```
 **Where you are:** <the stage, and the tracker counts by status>
-**Needs you:** <the tracker's "Needs you" rows, most urgent first, one short clause each; or "nothing in the tracker">
+**Needs you:** <the tracker's "Needs you" rows, most urgent first, one short clause each, with the role folder path and the posting link from its `JD.md` after each; or "nothing in the tracker">
 **Paused:** <what WORKING-PAD.md holds, and where it resumes; or "nothing">
 **Today:** <weekday, date, time and zone; any call today>
 **Next:** <the one recommended step>
@@ -518,7 +518,7 @@ Group up to four related questions in one `AskUserQuestion` call. Each question 
    **Check:** `grep -c "^## " applications/_common/my-voice.md` prints `4`. `grep -n "<[A-Za-z]" applications/_common/my-voice.md` prints nothing. Each sample matches the paste, word for word.
 
 4. **Put the one résumé at `applications/_common/resume.pdf`.**
-   - **A portfolio exists** (a folder in `career-graph/documents/portfolios/`): ask the user to open its `index.html`, click **Save as PDF** (it exports the résumé), and save the file as `applications/_common/resume.pdf`. Wait until they say it is saved. If they saved it somewhere else, copy it here. `hope-portfolio` explains the export if they need help.
+   - **A portfolio exists** (a folder in `career-graph/documents/portfolios/`): run `python3 "$PLUGIN_ROOT/scripts/export_resume_pdf.py" <portfolio-folder> --out applications/_common/resume.pdf` (the portfolio skill's "The one résumé" explains it). If the script exits 2, ask the user to open the portfolio's `index.html`, click **Save as PDF**, and save the file as `applications/_common/resume.pdf`; wait until they say it is saved, and copy it here if they saved it elsewhere.
    - **The user has their own PDF:** copy it here as `applications/_common/resume.pdf`. Say the portfolio can replace it later.
    - **Neither:** leave it missing. `hope-portfolio` becomes the next step.
 
@@ -1634,6 +1634,14 @@ gh api "repos/<login>/<login>.github.io" --jq '.name + " - " + (.description // 
 
 ### 5. Scan for secrets
 
+Run this on the staging folder and read every hit before you push:
+
+```bash
+grep -rniE "api[_-]?key|secret|token|password|BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|AKIA[0-9A-Z]{16}" site/ --include="*.html" --include="*.js" --include="*.css" || echo "no secret shapes found"
+```
+
+Contact details in a portfolio are intentional; do not block on them. Anything that looks like a key or a password stops the publish until the user has seen it.
+
 Grep the staging folder for obvious secret patterns. If you find one, stop and show the user. Contact info is expected in a portfolio: note it and continue.
 
 **Check:** the scan ran on `site/`, and it found no secrets (or the user has seen what it found).
@@ -2170,7 +2178,7 @@ echo "PLUGIN_ROOT=$PLUGIN_ROOT"   # check this before reading bundled files; emp
 4. Read these hunt-folder files: `HUNT-PROTOCOL.md` (the canon and "My rules"), `applications/_common/profile.md` (all nine sections; section 8 is the hard limits, section 9 the ATS notes), `applications/_common/my-voice.md`, `career-graph/career.json`, and `user-story.md` and `WORKING-PAD.md` if they exist.
 5. Preconditions:
    - No `applications/_common/profile.md`: run `hope-onboarding` Part 2 first. Never fill a form without it.
-   - No `applications/_common/resume.pdf`: `hope-portfolio` exports it, or ask the user for their file.
+   - No `applications/_common/resume.pdf`: steps 1 to 3 may still run (capture the posting, run the gates). Step 4 then stops: `hope-portfolio` exports the file (`scripts/export_resume_pdf.py`), or ask the user for their own PDF and copy it to that path. Do not open the form without it.
    - No `job-tracker.xlsx` and no `job-tracker.csv`: run `tracker.py init --hunt-dir .`
 6. Check today's date and time: `date "+%A %d %B %Y %H:%M %Z"`.
 
@@ -2212,7 +2220,8 @@ Also: the form filled and left open in its own tab, not submitted. A tracker row
    | Per-company cap | Live rows in that list: the status starts with `Ready to apply`, `Applied`, `Interviewing` or `Offer` | This one would pass the cap in `profile.md` section 5 (default 2), or it is a different skill set from the live one |
    | Posting's own cap | The `Caps / limits` line in `JD.md` | The user's rows at this company would pass it |
    | Title, seniority and shape | `profile.md` section 5 (exclusions, the verb test); the user's years, from the lesson 14 command with the start date changed to their first relevant start | An excluded title, a family that is out, duties that break a rule (managing a team for an individual contributor), or a years bar well above the user's |
-   | Pay | Top of the band in `JD.md` vs the screen in `profile.md` section 3 | The top is below the screen. "not published" passes: say so. OTE is not base pay. |
+   | Location | `JD.md` location and remote line vs `profile.md` section 4 (where they will work from, cities they would move to, remote stance) | The role needs a city or an in-office share the profile rules out. "Open to relocation" rows and travel limits are the user's call: Ask. |
+| Pay | Top of the band in `JD.md` vs the screen in `profile.md` section 3 | The top is below the screen. "not published" passes: say so. OTE is not base pay. |
    | Sponsorship | Quote the `JD.md` line and `profile.md` section 2 side by side | Pass only when the profile needs no sponsorship. Otherwise Ask: the user decides. Never infer their status. |
    | Referral | Tracker notes, `HUNT-PROTOCOL.md`, the user's words | Someone is referring the user for this role. Never cold-apply. Ask how the referrer submits. |
    | AI notice | The form's notice, read when the form opens (step 5), before typing | It bans AI-written answers or any AI help (hard rule 7). Say what it bans. |
@@ -2571,7 +2580,7 @@ After the user sends, Hope also updates `applications/_common/my-voice.md`, "Wha
 
       ```bash
       sed '1,/^---$/d' <draft file> > draft-text.tmp
-      git diff --no-index --word-diff draft-text.tmp applications/<slug>/sent-<what>-<YYYY-MM-DD>.md
+      git diff --no-index --word-diff draft-text.tmp applications/<slug>/sent-<what>-<YYYY-MM-DD>.md   # no git: diff -u draft-text.tmp <the sent file>
       rm draft-text.tmp
       ```
 
@@ -2595,6 +2604,8 @@ After the user sends, Hope also updates `applications/_common/my-voice.md`, "Wha
    **Check:** the `sent-` file exists, the tracker printed `Updated row` and a `Backup:` line, and `my-voice.md` has a new entry when there was a pattern.
 
 ## Rules for this skill
+
+- **A source whose weekday and date disagree** ("Thu 16 Oct" when 16 Oct is a Friday) is not resolved by guessing. The draft asks the other side to confirm the day in one line, and the user hears why.
 
 - **Rule 1.** Hope never sends. No send, no reply, no post. The draft is a file. The user sends.
 - **Rule 2.** LinkedIn is read-only. Hope drafts. The user pastes and sends from their own account. No connection requests, likes or follows.
@@ -2703,7 +2714,7 @@ echo "PLUGIN_ROOT=$PLUGIN_ROOT"   # check this before reading bundled files; emp
 - Read `user-story.md` and `WORKING-PAD.md` if they exist.
 - Never delay the record line (step 1) to read files. Say it first, then read.
 - The user's time zone is the `Time zone` row in `applications/_common/profile.md` section 1. Missing: ask once, then add the row with their answer.
-- `applications/_common/profile.md` or `HUNT-PROTOCOL.md` missing: run the quick path. Steps 1, 3 (with what you have), 4, 5 and 7. Fill the brief with what you have. Then offer `hope-onboarding` (part 2). Full prep needs the canon.
+- `applications/_common/profile.md` or `HUNT-PROTOCOL.md` missing: run the quick path. Steps 1, 2 (the role folder only), 3 (with what you have), 4, 5 and 7. Fill the brief with what you have. Then offer `hope-onboarding` (part 2). Full prep needs the canon.
 
 ## What you make
 
@@ -2725,6 +2736,8 @@ Also updated: `applications/_common/interview-stories.md`, "What you have told t
 ## Steps
 
 ### Part A: when a call is known
+
+**A time is confirmed when the other side has agreed to it in writing** (their calendar invite, or their reply naming the day and time). A slot the user picked but the other side has not yet agreed to is **proposed**: write the prep, but create no calendar events and no "booked" wording until it is confirmed; set the next action to "You: send the reply; tell Hope when they confirm". **If a source's weekday and date disagree** (for example "Thu 16 Oct" when 16 Oct is a Friday), do not pick one: ask the user to confirm the day with the sender first. **If the interviewer's name differs from the prep file**, use the newest source and note the change in the prep file.
 
 A call is known when it is in an email, an invite, a `hope-sync` report, or the user says so.
 
@@ -2795,7 +2808,9 @@ A call is known when it is in an email, an invite, a `hope-sync` report, or the 
    No calendar tool: ask whether the invite is already on the user's calendar. Then make the `.ics` files. As in `interview-kit.md` section 1, the description file is `INTERVIEW-PREP.md` itself: its top holds the round line and the live-call sheet. `--start` is the user's own clock time, with no zone.
 
    ```bash
-   python3 "$PLUGIN_ROOT/scripts/make_ics.py" --title "🔴 RECORD THE CALL - Acme Design Systems / Alex Kim in 10 min" --start "2026-10-15T12:50" --minutes 10 --alarm 10 --alarm 0 --free --description-file "applications/acme-senior-product-designer/INTERVIEW-PREP.md" --out "applications/acme-senior-product-designer/record-reminder-2026-10-15.ics"
+   Write the brief section of `INTERVIEW-PREP.md` (the round, three beats, have-ready list, two questions, consent note; never pay numbers) to `applications/<slug>/record-brief.md` first; that short file is the event description. The whole prep file never goes into a calendar event.
+
+   python3 "$PLUGIN_ROOT/scripts/make_ics.py" --title "🔴 RECORD THE CALL - Acme Design Systems / Alex Kim in 10 min" --start "2026-10-15T12:50" --minutes 10 --alarm 10 --alarm 0 --free --description-file "applications/acme-senior-product-designer/record-brief.md" --out "applications/acme-senior-product-designer/record-reminder-2026-10-15.ics"
    python3 "$PLUGIN_ROOT/scripts/make_ics.py" --title "Acme Design Systems - hiring manager call with Alex Kim" --start "2026-10-15T13:00" --minutes 45 --alarm 60 --alarm 15 --description "Join: https://zoom.example/j/123 · Full prep: applications/acme-senior-product-designer/INTERVIEW-PREP.md" --out "applications/acme-senior-product-designer/call-2026-10-15.ics"
    ```
 
@@ -2817,7 +2832,7 @@ A call is known when it is in an email, an invite, a `hope-sync` report, or the 
 7. **Update the tracker and the working pad.**
 
    ```bash
-   python3 "$PLUGIN_ROOT/scripts/tracker.py" update --hunt-dir "<hunt folder>" --match "<Company>" --role "<role words>" --status "Interviewing - <round> on <D Mon>" --next "You: record the call; then hand Hope the file" --note "<round> with <Person> booked for <D Mon>, <time> <zone>"
+   python3 "$PLUGIN_ROOT/scripts/tracker.py" update --hunt-dir "<hunt folder>" --match "<Company>" --role "<role words>" --status "Interviewing - <round> on <D Mon>" --next "You: record the call; then hand Hope the file" (or "You: send the reply; tell Hope when they confirm" while the time is only proposed) --note "<round> with <Person> booked for <D Mon>, <time> <zone>"
    ```
 
    Skip the command if the row already shows this round and time (`hope-sync` may have set it).
@@ -2825,6 +2840,8 @@ A call is known when it is in an email, an invite, a `hope-sync` report, or the 
    A call within the hour: add it under "Urgent" in `WORKING-PAD.md`. Say the record line again in the last message you send before the call. That is the one the user will see.
 
    **Check:** the script printed `Updated row`, `Notes now start:` and `Backup:`, or the row already showed this round.
+
+Part A also writes one dated line in `user-story.md` ("prep written for <Company>, <round> on <D Mon YYYY>") and updates `WORKING-PAD.md`: the call under "Urgent" if it is within 24 hours, and the "Waiting on someone" line for this company cleared or rewritten. **Check:** `grep -c "<Company>" WORKING-PAD.md user-story.md` prints at least 1 for each.
 
 ### Part B: after the call
 
@@ -3103,6 +3120,8 @@ python3 "$PLUGIN_ROOT/scripts/tracker.py" update --hunt-dir "<hunt folder>" --ta
 9. **Keep the notebook current.** Add one dated line to "The journey so far" in `user-story.md`, for example `- 14 Oct 2026: Sync since 12 Oct: 1 confirmation, 1 reply waiting on Jane.` A later sync the same day updates that line instead of adding one. Something now urgent (a call in the next 24 hours, a reply due today, a deadline): add it under "Urgent" in `WORKING-PAD.md` (no `WORKING-PAD.md` yet: create it from `hunt-folder.md` section 5.7). Tell the user in one line. **Check:** `grep -cw "$(date '+%-d %b %Y'): Sync" user-story.md` prints `1`.
 
 ## Rules for this skill
+
+- **A message whose weekday and date disagree** ("Thu 16 Oct" when 16 Oct is a Friday) gets no calendar event and no "booked" status. Flag it under "needs you" and let `hope-write` draft a one-line check with the sender. **A pasted email with no date** is noted with today's date and "(date not in the paste)".
 
 - **Rule 1:** Hope never sends anything. Replies are draft files from hope-write. The user sends.
 - **Rule 2:** LinkedIn is read-only, in the user's signed-in browser. No messages, connections, likes, comments, follows or Easy Apply. Never a plain fetch of a linkedin.com URL.
