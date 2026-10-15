@@ -16,6 +16,10 @@
 # ─────────────────────────────────────────────────────────────────────────────
 
 - date: "Oct 2026"
+  headline: "Hope 2.0 is live: your whole job hunt, not just your portfolio."
+  body: "Ten skills now run the hunt the way a real one works: find real openings, fill each application while you press send, every message in your voice, interview prep with a reminder to record the call, a morning sync of email and LinkedIn, and one tracker you own. Built so a smaller, cheaper AI model can run every step. Say \"run my job hunt with Hope\" to start."
+
+- date: "Oct 2026"
   headline: "One spreadsheet keeps score of your whole hunt, and it's yours."
   body: "Every role, its status, the next step and dated notes live in one spreadsheet in your folder. Ask \"where do I stand?\" or \"what needs me?\" any time, and Hope saves a backup before every change."
 
